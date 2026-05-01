@@ -1,20 +1,18 @@
 #ifndef __FRUIT_H__ 
 #define __FRUIT_H__
 
-#include "screen.h"
-//Até o momento que faço este commit, estes arquivos se encontram em fase de prototipação
+#include "chipmunk/chipmunk.h"
+#include "raylib.h"
 
 #define MAX_FRUITS     128
 #define FRUIT_LEVELS   8
 
-//Caracteríticas de cada fruta
-typedef struct {
-    char        ch;       //Caractere visual
-    int         radius;   //Raio para colisão
-    screenColor fg;       //Cor do "texto"/fruta
-    screenColor bg;       //Cor do fundo
-    int         points;   //Pontuação de cada fruta
-} FruitsDef;
+
+typedef struct Def_Fruta{
+    float  raio;   
+    Color Cor;       
+    int   pontos;   
+} FruitaDef;
 
 extern const FruitDef FRUIT_DEFS[FRUIT_LEVELS];
  

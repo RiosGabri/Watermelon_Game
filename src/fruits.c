@@ -1,13 +1,18 @@
 #include "fruits.h"
+#include <stdlib.h>
 
-const FruitsDef FRUITS_DEFS[FRUITS_LEVEL] = {
-    { '.', 1, LIGHTRED,     BLACK, 1  },
-    { 'o', 1, RED,          BLACK, 2  },
-    { 'O', 1, MAGENTA,      BLACK, 4  },
-    { '@', 1, YELLOW,       BLACK, 8  },
-    { '0', 1, LIGHTGREEN,   BLACK, 16 },
-    { '#', 1, GREEN,        BLACK, 32 },
-    { '*', 1, CYAN,         BLACK, 64 },
-    { '&', 1, LIGHTCYAN,    BLACK, 128},
+#define RGB(r, g, b) (Color){r, g, b, 255}
 
+const DefFruta DEFS_FRUTA[NIVEIS_FRUTA] = {
+    { 15.0f, RGB(255,  80,  80),   1 },  
+    { 20.0f, RGB(220,  80, 120),   2 },  
+    { 27.0f, RGB(170,  60, 200),   4 },  
+    { 35.0f, RGB(255, 130,   0),   8 },  
+    { 43.0f, RGB(255,  30,  30),  16 },  
+    { 52.0f, RGB(180, 200,  50),  32 },  
+    { 62.0f, RGB(230, 190,  30),  64 },  
+    { 73.0f, RGB( 60, 200, 100), 128 },  
 }
+/*Lista de frutas na ordem:
+Cereja, Morango, Uva, Laranja, Maçã, Pera, Abacaxi, Melancia
+*/
