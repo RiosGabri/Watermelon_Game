@@ -14,15 +14,14 @@ typedef struct Def_Fruta{
     int   pontos;   
 } FruitaDef;
 
-extern const FruitDef FRUIT_DEFS[FRUIT_LEVELS];
+extern const FruitaDef DEFS_FRUTA[NIVEIS_FRUTA];
  
-/* Uma fruta no tabuleiro */
 typedef struct {
-    int x, y;       //Posição (coluna, linha) atual na tela
-    int level;      // Nível da fruta (0-7)
-    //int active; ->   Ver se existe no tabuleiro
-    //int falling;  ->  Ver se estar caindo
-    //int merging;  ->  Ver se pode fundir
-} Fruit;
+    cpBody  *body;      
+    cpShape *shape;     
+    int      nivel;     /* Nível da fruta*/
+    int      ativa;     /* 1 = existe, 0 = removida*/
+    int      fundindo;  /* flag temporário de fusão*/
+} Fruta;
  
 #endif
