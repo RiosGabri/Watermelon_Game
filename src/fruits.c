@@ -3,7 +3,7 @@
 
 #define RGB(r, g, b) (Color){r, g, b, 255}
 
-const DefFruta DEFS_FRUTA[NIVEIS_FRUTA] = {
+const FrutaDef DEFS_FRUTA[NIVEIS_FRUTA] = {
     { 15.0f, RGB(255,  80,  80),   1 },  
     { 20.0f, RGB(220,  80, 120),   2 },  
     { 27.0f, RGB(170,  60, 200),   4 },  
