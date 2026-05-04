@@ -10,12 +10,13 @@
 //Nesse espaço deve possuir as dimensões do jogo (janela)
 
 typedef struct Def_Fruta{
+    char *nome;
     float  raio;   
     Color Cor;       
     int   pontos;   
-} FruitaDef;
+} Fruita_Def;
 
-extern const FruitaDef DEFS_FRUTA[NIVEIS_FRUTA];
+extern const Fruita_Def LISTA_FRUTAS[NIVEIS_FRUTA];
  
 typedef struct {
     cpBody  *body;      /*Posição e velocidade do objeto rígido*/
