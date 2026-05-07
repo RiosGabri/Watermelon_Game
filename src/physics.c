@@ -1,4 +1,7 @@
 #include "chipmunk.h"
+#include "physics.h"
+
+#include "fruits.h"
 
 cpSpace* initEspaco() {
     cpSpace *espaco = cpSpaceNew(); //cria um espaco e guarda o endereço dele em um ponteiro
@@ -39,4 +42,55 @@ cpShape* criarCorpoFruta(cpSpace* espaco, float x, float y, float raio, int tipo
 
     cpShapeSetCollisionType(formatoFruta, tipo); //seta o formato da fruta para um tipo (como se tivesse colocando um id nela)
     return formatoFruta;
+}
+
+//fila das fusoes das frutas
+FusaoPendente filaFusoes[MAX_FUSOES];
+int           numFusoesPendentes = 0;
+
+//guardar e detectar fusao
+cpBool callbackFusao (cpArbiter* arbiter, cpSpace* espaco, cpDataPointer userData) {
+    //arbiter = informações sobre o que colidiu
+    CP_ARBITER_GET_SHAPES(arbiter, formatoA, formatoB); //busca o que colidiu e insere os valores em A e B
+
+    for (int i = 0; i < numFusoesPendentes; i++) { //verificar se a colisao aconteceu mais de uma vez no mesmo frame
+        if (filaFusoes[i].formatoA == formatoA || filaFusoes[i].formatoB == formatoB || filaFusoes[i].formatoA == formatoB || filaFusoes[i].formatoA == formatoB) {
+            return cpFalse;
+        }
+    }
+
+    //busca os corpos de acordo com formato correspondente para saber a posicao da fruta
+    cpBody* corpoA = cpShapeGetBody(formatoA);
+    cpBody* corpoB = cpShapeGetBody(formatoB);
+
+    //busca a posicao dos corpos
+    cpVect posA = cpBodyGetPosition(corpoA);
+    cpVect posB = cpBodyGetPosition(corpoB);
+    cpVect meio = cpvlerp(posA, posB, 0.5f); // calcula o ponto medio entre A e B
+
+    //busca o userData de inserirFruta
+    Fruta* frutaA = (Fruta*)cpShapeGetUserData(formatoA);
+    Fruta* frutaB = (Fruta*)cpShapeGetUserData(formatoB);
+
+    //marcando como fundindo:
+    frutaA->fundindo = 1;
+    frutaB->fundindo = 1;
+
+    int nivelResultante = frutaA->nivel+1; //aumenta ela de nivel
+
+    //inserir as informações na fila das fusoes pendentes
+    filaFusoes[numFusoesPendentes].formatoA = formatoA;
+    filaFusoes[numFusoesPendentes].formatoB = formatoB;
+    filaFusoes[numFusoesPendentes].posicaoMedia = meio;
+    filaFusoes[numFusoesPendentes].nivelResultante = nivelResultante;
+    numFusoesPendentes++;
+    return cpFalse; //diz que nao vai ter uma resposta fisica e as frutas nao vao se empurrar quando gerar a nova fruta
+}
+
+//registra as fusões e chama a funcao callback para executar a funcao
+void registrarFusoes(cpSpace* espaco) {
+    for (int i = 0; i < NIVEIS_FRUTA - 1; i++) {
+        cpCollisionHandler *h = cpSpaceAddCollisionHandler(espaco, i, i);
+        h->beginFunc = callbackFusao;
+    }
 }

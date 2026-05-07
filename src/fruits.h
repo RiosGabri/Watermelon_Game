@@ -2,7 +2,7 @@
 #define __FRUITS_H__
 
 #include "chipmunk/chipmunk.h"
-#include "raylib.h"
+//#include "raylib.h"
 
 #define MAX_FRUITS     128
 #define NIVEIS_FRUTA   8
@@ -38,3 +38,4 @@ typedef struct NodeFruta { //struct node fruta para a lista encadeada
 Fruta criarFruta(cpSpace *espaco, float x, float y, int tipo);
 NodeFruta* criarNodeFruta(Fruta fruta);
 void inserirFruta(cpSpace* espaco, float x, float y, int tipo, NodeFruta** head);
+void processarFusoes(cpSpace* espaco, NodeFruta **head);
