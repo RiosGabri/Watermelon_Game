@@ -3,17 +3,17 @@
 #include "physics.h"
 #include <stdlib.h>
 
-#define RGB(r, g, b) (Color){r, g, b, 255}
+//#define RGB(r, g, b) (Color){r, g, b, 255}
 
 const Fruta_Def LISTA_FRUTAS[NIVEIS_FRUTA] = {
-    {"Uva",  15.0f, RGB(170,  60,  200),   1 },  //tipo da uva = 0
-    {"Cereja", 20.0f, RGB(255,  80, 80),   2 },  //tipo da cereja = 1
-    {"Morango", 27.0f, RGB(192, 64, 66),   4 },  //tipo do morango = 2 ..
-    {"Maçã",   35.0f, RGB(255, 30,   30),   8 },  
-    {"Pera",    43.0f, RGB(180,  200,  50),  16 },  
-    {"Laranja",   52.0f, RGB(255, 130, 0),  32 },  
-    {"Abacaxi",  62.0f, RGB(230, 190,  30),  64 },  
-    {"Melancia",73.0f, RGB(47, 173, 83), 128 },  
+    {"Uva",  15.0f,    1 },  //tipo da uva = 0
+    {"Cereja", 20.0f,    2 },  //tipo da cereja = 1
+    {"Morango", 27.0f,    4 },  //tipo do morango = 2 ..
+    {"Maçã",   35.0f,    8 },
+    {"Pera",    43.0f,   16 },
+    {"Laranja",   52.0f,   32 },
+    {"Abacaxi",  62.0f,   64 },
+    {"Melancia",73.0f,  128 },
 };
 
 Fruta criarFruta(cpSpace *espaco, float x, float y, int tipo) {
@@ -72,4 +72,24 @@ void removerFruta(cpSpace* espaco, cpShape *frutaRemover, NodeFruta** head) {
         free(aux);
 
     }
+}
+//fim das funcoes da lista encadeada
+
+//processar as fusoes (fazer a lista das pendencias andarem):
+void processarFusoes(cpSpace* espaco, NodeFruta **head) {
+    //percorrendo cada funcao agendada na lista:
+    for (int i = 0; i < numFusoesPendentes; i++) {
+
+        FusaoPendente *f = &filaFusoes[i]; //guarda a funcao pendente
+
+        // remove as duas frutas da lista encadeada e do chipmunk
+        removerFruta(espaco, f->formatoA, head);
+        removerFruta(espaco, f->formatoB, head);
+
+        // so cria a fruta maior se nao ultrapassar o nivel maximo (8)
+        if (f->nivelResultante < NIVEIS_FRUTA) {
+            inserirFruta(espaco, f->posicaoMedia.x, f->posicaoMedia.y, f->nivelResultante, head);
+        }
+    }
+    numFusoesPendentes = 0; //limpa a fila
 }
