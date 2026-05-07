@@ -1,69 +1,64 @@
-//hello world do chipmunk para testar a biblioteca (será removido depois)
-#include <stdio.h>
-#include <chipmunk/chipmunk.h>
+#ifdef _WIN32
+#define _STAT_DEFINED
+#define stat    _stat64i32
+#define fstat   _fstat64i32
+#endif
 
-int main(void){
-  // cpVect is a 2D vector and cpv() is a shortcut for initializing them.
-  cpVect gravity = cpv(0, -100);
-  
-  // Create an empty space.
-  cpSpace *space = cpSpaceNew();
-  cpSpaceSetGravity(space, gravity);
-  
-  // Add a static line segment shape for the ground.
-  // We'll make it slightly tilted so the ball will roll off.
-  // We attach it to a static body to tell Chipmunk it shouldn't be movable.
-  cpShape *ground = cpSegmentShapeNew(cpSpaceGetStaticBody(space), cpv(-20, 5), cpv(20, -5), 0);
-  cpShapeSetFriction(ground, 1);
-  cpSpaceAddShape(space, ground);
-  
-  // Now let's make a ball that falls onto the line and rolls off.
-  // First we need to make a cpBody to hold the physical properties of the object.
-  // These include the mass, position, velocity, angle, etc. of the object.
-  // Then we attach collision shapes to the cpBody to give it a size and shape.
-  
-  cpFloat radius = 5;
-  cpFloat mass = 1;
-  
-  // The moment of inertia is like mass for rotation
-  // Use the cpMomentFor*() functions to help you approximate it.
-  cpFloat moment = cpMomentForCircle(mass, 0, radius, cpvzero);
-  
-  // The cpSpaceAdd*() functions return the thing that you are adding.
-  // It's convenient to create and add an object in one line.
-  cpBody *ballBody = cpSpaceAddBody(space, cpBodyNew(mass, moment));
-  cpBodySetPosition(ballBody, cpv(0, 15));
-  
-  // Now we create the collision shape for the ball.
-  // You can create multiple collision shapes that point to the same body.
-  // They will all be attached to the body and move around to follow it.
-  cpShape *ballShape = cpSpaceAddShape(space, cpCircleShapeNew(ballBody, radius, cpvzero));
-  cpShapeSetFriction(ballShape, 0.7);
-  
-  // Now that it's all set up, we simulate all the objects in the space by
-  // stepping forward through time in small increments called steps.
-  // It is *highly* recommended to use a fixed size time step.
-  cpFloat timeStep = 1.0/60.0;
-  for(cpFloat time = 0; time < 10; time += timeStep){
-    cpVect pos = cpBodyGetPosition(ballBody);
-    cpVect vel = cpBodyGetVelocity(ballBody);
-    printf(
-      "Time is %5.2f. ballBody is at (%5.2f, %5.2f). It's velocity is (%5.2f, %5.2f)\n",
-      time, pos.x, pos.y, vel.x, vel.y
-    );
-    
-    cpSpaceStep(space, timeStep);
-  }
-  
-  // Clean up our objects and exit!
-  cpShapeFree(ballShape);
-  cpBodyFree(ballBody);
-  cpShapeFree(ground);
-  cpSpaceFree(space);
-  
-  return 0;
+#include "raylib.h"
+
+#define JANELA_W 600
+#define JANELA_H 700
+#define RGB(r, g, b) (Color){r, g, b, 255}
+
+static void desenharBotao(Rectangle botao, const char *texto, Color cor, Color corHover)
+{
+    Vector2 mouse = GetMousePosition();
+    int     hover = CheckCollisionPointRec(mouse, botao);
+
+    Color corAtual = hover ? corHover : cor;
+
+    DrawRectangleRec(botao, corAtual);
+    DrawRectangleLinesEx(botao, 2, RGB(30, 100, 40));
+
+    int largura = MeasureText(texto, 22);
+    DrawText(texto,
+             (int)(botao.x + botao.width  / 2 - largura / 2),
+             (int)(botao.y + botao.height / 2 - 11),
+             22, RGB(255, 255, 255));
 }
 
-//comando para compilar: gcc main.c (Get-ChildItem .\src\chipmunk\*.c -Recurse | % FullName) -Iinclude -o game.exe -lm
-//comando para rodar: .\game.exe
-//como não tem interface gráfica, o programa vai imprimir valores no terminal ;)
+int main(void)
+{
+    InitWindow(JANELA_W, JANELA_H, "Watermelon Game");
+    SetTargetFPS(60);
+
+    Rectangle btnPlay   = { JANELA_W / 2.0f - 100, 360, 200, 52 };
+    Rectangle btnConf   = { JANELA_W / 2.0f - 100, 424, 200, 52 };
+    Rectangle btnMusica = { JANELA_W / 2.0f - 100, 488, 200, 52 };
+    Rectangle btnSair   = { JANELA_W / 2.0f - 100, 552, 200, 52 };
+
+    while (!WindowShouldClose())
+    {
+        BeginDrawing();
+            ClearBackground(RGB(245, 235, 210));
+
+            /* Título */
+            DrawText("Watermelon Game",
+                     JANELA_W / 2 - MeasureText("Watermelon Game", 42) / 2,
+                     40, 42, RGB(40, 140, 60));
+            DrawText("Combine fruits to grow!",
+                     JANELA_W / 2 - MeasureText("Combine fruits to grow!", 18) / 2,
+                     96, 18, RGB(100, 100, 100));
+
+            /* Botões — cor normal / cor hover */
+            desenharBotao(btnPlay,   "PLAY",          RGB(60,  160, 70),  RGB(80,  200, 90));
+            desenharBotao(btnConf,   "Configuracoes", RGB(60,  160, 70),  RGB(80,  200, 90));
+            desenharBotao(btnMusica, "Musica",         RGB(60,  160, 70),  RGB(80,  200, 90));
+            desenharBotao(btnSair,   "Sair",           RGB(170, 30,  30),  RGB(210, 60,  60));
+
+        EndDrawing();
+    }
+
+    CloseWindow();
+    return 0;
+}
