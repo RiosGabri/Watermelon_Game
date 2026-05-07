@@ -24,8 +24,17 @@ typedef struct {
     cpBody  *body;      /*Posição e velocidade do objeto rígido*/
     cpShape *shape;     /*Colisão*/  
     int      nivel;     /* Nível da fruta*/
-    int      ativa;     /* 1 = existe, 0 = removida*/
+    //int ativa removido pois essa parte é verificada atraves de nodeFruta
     int      fundindo;  /* flag temporário de fusão*/
 } Fruta;
+
+typedef struct NodeFruta { //struct node fruta para a lista encadeada
+    Fruta fruta;
+    struct NodeFruta *next;
+}NodeFruta;
  
 #endif
+
+Fruta criarFruta(cpSpace *espaco, float x, float y, int tipo);
+NodeFruta* criarNodeFruta(Fruta fruta);
+void inserirFruta(cpSpace* espaco, float x, float y, int tipo, NodeFruta** head);
