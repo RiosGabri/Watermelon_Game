@@ -10,6 +10,7 @@
 #define JANELA_H 700
 #define RGB(r, g, b) (Color){r, g, b, 255}
 
+//Cria o botão no protótipo do menu
 static void desenharBotao(Rectangle botao, const char *texto, Color cor, Color corHover)
 {
     Vector2 mouse = GetMousePosition();
@@ -20,16 +21,22 @@ static void desenharBotao(Rectangle botao, const char *texto, Color cor, Color c
     DrawRectangleRec(botao, corAtual);
     DrawRectangleLinesEx(botao, 2, RGB(30, 100, 40));
 
-    int largura = MeasureText(texto, 22);
+    int largura = MeasureText(texto, 22); //Tamanhos provisórios, preciso mudar o tamanho da tela
     DrawText(texto,
              (int)(botao.x + botao.width  / 2 - largura / 2),
              (int)(botao.y + botao.height / 2 - 11),
              22, RGB(255, 255, 255));
 }
 
+static int botaoClicado(Rectangle botao)
+{
+    Vector2 mouse = GetMousePosition();
+    return CheckCollisionPointRec(mouse, botao) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON);
+}
+
 int main(void)
 {
-    InitWindow(JANELA_W, JANELA_H, "Watermelon Game");
+    InitWindow(JANELA_W, JANELA_H, "Watermelon Game"); //Abre a janela
     SetTargetFPS(60);
 
     Rectangle btnPlay   = { JANELA_W / 2.0f - 100, 360, 200, 52 };
@@ -39,10 +46,10 @@ int main(void)
 
     while (!WindowShouldClose())
     {
+        if (botaoClicado(btnSair)) break; //Se clicar em Sair, fecha a janela
         BeginDrawing();
             ClearBackground(RGB(245, 235, 210));
 
-            /* Título */
             DrawText("Watermelon Game",
                      JANELA_W / 2 - MeasureText("Watermelon Game", 42) / 2,
                      40, 42, RGB(40, 140, 60));
@@ -50,15 +57,12 @@ int main(void)
                      JANELA_W / 2 - MeasureText("Combine fruits to grow!", 18) / 2,
                      96, 18, RGB(100, 100, 100));
 
-            /* Botões — cor normal / cor hover */
             desenharBotao(btnPlay,   "PLAY",          RGB(60,  160, 70),  RGB(80,  200, 90));
             desenharBotao(btnConf,   "Configuracoes", RGB(60,  160, 70),  RGB(80,  200, 90));
             desenharBotao(btnMusica, "Musica",         RGB(60,  160, 70),  RGB(80,  200, 90));
             desenharBotao(btnSair,   "Sair",           RGB(170, 30,  30),  RGB(210, 60,  60));
-
         EndDrawing();
     }
-
     CloseWindow();
     return 0;
 }
