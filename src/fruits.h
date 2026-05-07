@@ -14,9 +14,9 @@ typedef struct Def_Fruta{
     float  raio;   
     Color Cor;       
     int   pontos;   
-} Fruita_Def;
+} Fruta_Def;
 
-extern const Fruita_Def LISTA_FRUTAS[NIVEIS_FRUTA];
+extern const Fruta_Def LISTA_FRUTAS[NIVEIS_FRUTA];
  
 typedef struct {
     cpBody  *body;      /*Posição e velocidade do objeto rígido*/
