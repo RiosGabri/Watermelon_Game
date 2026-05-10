@@ -31,6 +31,5 @@ if(WIN32)
     target_link_options(Watermelon_Game PRIVATE
             -mwindows
             -Wl,--allow-multiple-definition
-            -Wl,--defsym,stat64i32=stat
     )
 endif()

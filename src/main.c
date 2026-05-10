@@ -7,8 +7,8 @@
 #include "raylib.h"
 
 // Tamanho do jogo (ainda não definido, provisório para testes)
-#define Largura 600
-#define Altura 700
+#define Largura 800
+#define Altura 800
 #define RGB(r, g, b) (Color){r, g, b, 255}
 
 // Fluxo de estados, coloquei para acompanhar o swich case
@@ -45,6 +45,7 @@ int main(void)
 {
     // Inicializa a janela
     InitWindow(Largura, Altura, "Watermelon Game");
+    Texture2D bg_menu = LoadTexture("Resources/menu_background.png");   //define o bg do menu
     SetExitKey(KEY_NULL);// Desabilita o ESC fechar o jogo automaticamente, optei por colocá-lo para levar ao menu (não definitivo)
     SetTargetFPS(60);
 
@@ -78,10 +79,10 @@ int main(void)
 
         BeginDrawing(); // Renderização na tela (Provisório para testes)
         // Aplicação do mapa + frutas
-            ClearBackground(RGB(245, 235, 210));
 
             if (estado == EST_MENU)// // Entra aqui apenas se o jogador estiver na tela inicial
             {
+                DrawTexture(bg_menu, 0, 0, WHITE);
                 DrawText("Watermelon Game", Largura / 2 - MeasureText("Watermelon Game", 42) / 2, 40, 42, RGB(40, 140, 60));
                 DrawText("Desenvolvido por Rios, Larissa e Heitor",(int)(Largura / 2.0f - MeasureText("Desenvolvido por Rios, Larissa e Heitor", 18) / 2.0f),96, 18, RGB(100, 100, 100));
                 desenha_botao(r_play,  "JOGAR",      RGB(60, 160, 70), RGB(80, 200, 90));
@@ -98,6 +99,7 @@ int main(void)
         EndDrawing();
     }
 fechar:
+    UnloadTexture(bg_menu);
     CloseWindow();
     return 0;
 }
