@@ -9,7 +9,14 @@ typedef enum jogo {
     EST_CONFIG
 } Estado_Jogo;
 
-void desenha_botao(Rectangle ret, const char *texto, Color cor_base, Color cor_hover);
-int foi_clicado(Rectangle ret);
+typedef struct Botao {
+    Rectangle area;
+
+    Texture2D normal;
+    Texture2D hover;
+
+} Botao;
+
+void desenha_botao(Botao b);
 
 #endif

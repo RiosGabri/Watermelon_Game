@@ -1835,12 +1835,24 @@ CMakeFiles/Watermelon_Game.dir/src/main.c.obj: C:/Users/heito/Downloads/Watermel
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdbool.h
 
-CMakeFiles/Watermelon_Game.dir/src/menu.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/menu.c
+CMakeFiles/Watermelon_Game.dir/src/menu.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/menu.c \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/raylib.h \
+  C:/msys64/ucrt64/include/_mingw.h \
+  C:/msys64/ucrt64/include/_mingw_mac.h \
+  C:/msys64/ucrt64/include/_mingw_secapi.h \
+  C:/msys64/ucrt64/include/_mingw_stdarg.h \
+  C:/msys64/ucrt64/include/stdarg.h \
+  C:/msys64/ucrt64/include/vadefs.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdbool.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/menu.h
 
 CMakeFiles/Watermelon_Game.dir/src/physics.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/physics.c
 
 
 C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/physics.c:
+
+C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/menu.h:
 
 C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/menu.c:
 
