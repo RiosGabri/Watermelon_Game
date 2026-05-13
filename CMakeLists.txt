@@ -1,0 +1,81 @@
+cmake_minimum_required(VERSION 4.1)
+project(Watermelon_Game C)
+
+set(CMAKE_C_STANDARD 11)
+
+include_directories(include)
+include_directories(include/chipmunk)
+include_directories(src)
+include_directories(src/chipmunk)
+
+add_executable(Watermelon_Game
+        include/chipmunk/chipmunk.h
+        include/chipmunk/chipmunk_ffi.h
+        include/chipmunk/chipmunk_private.h
+        include/chipmunk/chipmunk_structs.h
+        include/chipmunk/chipmunk_types.h
+        include/chipmunk/chipmunk_unsafe.h
+        include/chipmunk/cpArbiter.h
+        include/chipmunk/cpBB.h
+        include/chipmunk/cpBody.h
+        include/chipmunk/cpConstraint.h
+        include/chipmunk/cpDampedRotarySpring.h
+        include/chipmunk/cpDampedSpring.h
+        include/chipmunk/cpGearJoint.h
+        include/chipmunk/cpGrooveJoint.h
+        include/chipmunk/cpHastySpace.h
+        include/chipmunk/cpMarch.h
+        include/chipmunk/cpPinJoint.h
+        include/chipmunk/cpPivotJoint.h
+        include/chipmunk/cpPolyline.h
+        include/chipmunk/cpPolyShape.h
+        include/chipmunk/cpRatchetJoint.h
+        include/chipmunk/cpRobust.h
+        include/chipmunk/cpRotaryLimitJoint.h
+        include/chipmunk/cpShape.h
+        include/chipmunk/cpSimpleMotor.h
+        include/chipmunk/cpSlideJoint.h
+        include/chipmunk/cpSpace.h
+        include/chipmunk/cpSpatialIndex.h
+        include/chipmunk/cpTransform.h
+        include/chipmunk/cpVect.h
+        src/chipmunk/chipmunk.c
+        src/chipmunk/cpArbiter.c
+        src/chipmunk/cpArray.c
+        src/chipmunk/cpBBTree.c
+        src/chipmunk/cpBody.c
+        src/chipmunk/cpCollision.c
+        src/chipmunk/cpConstraint.c
+        src/chipmunk/cpDampedRotarySpring.c
+        src/chipmunk/cpDampedSpring.c
+        src/chipmunk/cpGearJoint.c
+        src/chipmunk/cpGrooveJoint.c
+        src/chipmunk/cpHashSet.c
+        src/chipmunk/cpHastySpace.c
+        src/chipmunk/cpMarch.c
+        src/chipmunk/cpPinJoint.c
+        src/chipmunk/cpPivotJoint.c
+        src/chipmunk/cpPolyline.c
+        src/chipmunk/cpPolyShape.c
+        src/chipmunk/cpRatchetJoint.c
+        src/chipmunk/cpRobust.c
+        src/chipmunk/cpRotaryLimitJoint.c
+        src/chipmunk/cpShape.c
+        src/chipmunk/cpSimpleMotor.c
+        src/chipmunk/cpSlideJoint.c
+        src/chipmunk/cpSpace.c
+        src/chipmunk/cpSpaceComponent.c
+        src/chipmunk/cpSpaceDebug.c
+        src/chipmunk/cpSpaceHash.c
+        src/chipmunk/cpSpaceQuery.c
+        src/chipmunk/cpSpaceStep.c
+        src/chipmunk/cpSpatialIndex.c
+        src/chipmunk/cpSweep1D.c
+        src/chipmunk/prime.h
+        src/fruits.c
+        src/fruits.h
+        src/main.c
+        src/menu.c
+        src/menu.h
+        src/physics.c
+        src/physics.h)
