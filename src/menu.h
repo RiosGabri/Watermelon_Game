@@ -2,21 +2,19 @@
 #define MENU_H
 
 #include "raylib.h"
+#include <stdbool.h>
 
 typedef enum jogo {
     EST_MENU,
-    EST_JOGO,
-    EST_CONFIG
+    EST_JOGO
 } Estado_Jogo;
 
 typedef struct Botao {
     Rectangle area;
-
-    Texture2D normal;
-    Texture2D hover;
-
+    Texture2D textura;
 } Botao;
 
+bool foi_clicado(Botao b);
 void desenha_botao(Botao b);
 
 #endif
