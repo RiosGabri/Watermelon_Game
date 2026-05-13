@@ -1,0 +1,9 @@
+[submodule "external/raylib"]
+    path = external/raylib
+    urls = https://github.com/raysan5/raylib.git
+
+[sublodule "external/Chipmunk2D"]
+    path = external/Chipmunk2D
+    urls = https://github.com/slembcke/Chipmunk2D.git
+    
+
