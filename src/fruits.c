@@ -1,5 +1,5 @@
 #include "fruits.h"
-#include "chipmunk.h"
+#include <chipmunk/chipmunk.h>
 #include "physics.h"
 #include <stdlib.h>
 

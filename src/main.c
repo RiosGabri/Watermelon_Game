@@ -21,12 +21,16 @@ int main(void) {
     Texture2D tex_play = LoadTexture("Resources/button_play.png");
     Texture2D tex_exit = LoadTexture("Resources/button_exit.png");
     Texture2D tex_settings = LoadTexture("Resources/button_settings.png"); 
-    Texture2D tex_music = LoadTexture("Resources/button_music.png");       
+    Texture2D tex_music = LoadTexture("Resources/button_music.png");
+    Texture2D tex_play_hover     = LoadTexture("Resources/button_play_hover.png");
+    Texture2D tex_exit_hover     = LoadTexture("Resources/button_exit_hover.png");
+    Texture2D tex_settings_hover = LoadTexture("Resources/button_settings_hover.png");
+    Texture2D tex_music_hover    = LoadTexture("Resources/button_music_hover.png"); 
 
-    Botao btnPlay = { {(Largura/2.0f - 100), 300, 200, 60}, tex_play };
-    Botao btnExit = { {(Largura/2.0f - 100), 400, 200, 60}, tex_exit };
-    Botao btnSettings = { {(Largura/2.0f - 100), 500, 200, 60}, tex_settings };
-    Botao btnMusic = { {(Largura/2.0f - 100), 600, 200, 60}, tex_music };
+    Botao btnPlay     = { {(Largura/2.0f - 145), 300, 290, 78}, tex_play,     tex_play_hover };
+    Botao btnMusic    = { {(Largura/2.0f - 145), 398, 290, 78}, tex_music,    tex_music_hover };
+    Botao btnSettings = { {(Largura/2.0f - 145), 496, 290, 78}, tex_settings, tex_settings_hover };
+    Botao btnExit     = { {(Largura/2.0f - 145), 594, 290, 78}, tex_exit,     tex_exit_hover };
 
     cpSpace *espaco = cpSpaceNew();
     cpSpaceSetGravity(espaco, cpv(0, 900));
@@ -58,10 +62,10 @@ int main(void) {
             ClearBackground(RAYWHITE);
             if (estado == EST_MENU) {
                 DrawTexture(bg_menu, 0, 0, WHITE);
-                desenha_botao(btnPlay);
-                desenha_botao(btnExit);
-                desenha_botao(btnSettings);
-                desenha_botao(btnMusic);
+                    desenha_botao(btnPlay);
+                    desenha_botao(btnMusic);
+                    desenha_botao(btnSettings);
+                    desenha_botao(btnExit);
             } else {
                 cpVect pos = cpBodyGetPosition(bolaBody);
                 DrawCircleV((Vector2){ (float)pos.x, (float)pos.y }, 25, ORANGE);
@@ -73,7 +77,13 @@ int main(void) {
 fechar:
     UnloadTexture(bg_menu);
     UnloadTexture(tex_play);
+    UnloadTexture(tex_settings);
+    UnloadTexture(tex_music);
     UnloadTexture(tex_exit);
+    UnloadTexture(tex_play_hover);
+    UnloadTexture(tex_exit_hover);
+    UnloadTexture(tex_settings_hover);
+    UnloadTexture(tex_music_hover);
     cpSpaceFree(espaco);
     CloseWindow();
     return 0;

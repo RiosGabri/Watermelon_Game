@@ -1,7 +1,7 @@
 #ifndef PHYSICS_H
 #define PHYSICS_H
 
-#include "chipmunk.h"
+#include <chipmunk/chipmunk.h>
 
 cpSpace* initEspaco();
 void criarArea(cpSpace* espaco);

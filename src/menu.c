@@ -7,14 +7,15 @@ bool foi_clicado(Botao b) {
 
 void desenha_botao(Botao b) {
     bool hover = CheckCollisionPointRec(GetMousePosition(), b.area);
-    Color cor = hover ? LIGHTGRAY : WHITE;
+    Texture2D tex = hover ? b.textura_hover : b.textura;
+
 
     DrawTexturePro(
-        b.textura,
-        (Rectangle){0, 0, (float)b.textura.width, (float)b.textura.height},
+        tex,
+        (Rectangle){0, 0, (float)tex.width, (float)tex.height},
         b.area,
         (Vector2){0, 0},
         0.0f,
-        cor
+        WHITE
     );
 }

@@ -12,6 +12,7 @@ typedef enum jogo {
 typedef struct Botao {
     Rectangle area;
     Texture2D textura;
+    Texture2D textura_hover;
 } Botao;
 
 bool foi_clicado(Botao b);
