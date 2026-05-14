@@ -6,6 +6,7 @@
 cpSpace* initEspaco() {
     cpSpace *espaco = cpSpaceNew(); //cria um espaco e guarda o endereço dele em um ponteiro
     cpSpaceSetGravity(espaco, cpv(0, 900)); //define a gravidade do espaco
+    cpSpaceSetIterations(espaco, 20);
     return espaco;
 }
 
@@ -13,19 +14,24 @@ void criarArea(cpSpace* espaco) {
     cpBody *corpoEstatico = cpSpaceGetStaticBody(espaco); //busca o corpo estatico (que nao é afetado pela fisica) dentro do espaco
 
     //definindo o chao:
-    cpShape* chao = cpSegmentShapeNew(corpoEstatico, cpv(0,600), cpv(400,600), 0); //cria a area do chao com as cordenadas e a espessura da linha
-    cpSpaceAddShape(espaco, chao); //insere o chao no espaco
+    cpShape* chao = cpSegmentShapeNew(corpoEstatico, cpv(100, 750), cpv(700, 750), 2); //cria a area do chao com as cordenadas e a espessura da linha
+    cpSpaceAddShape(espaco, chao);//insere o chao no espaco
     cpShapeSetFriction(chao, 0.5);
+    cpShapeSetElasticity(chao, 0.1);
+    
 
     //definindo parede esquerda:
-    cpShape* paredeEsquerda = cpSegmentShapeNew(corpoEstatico, cpv(0,0), cpv(0, 600), 0);
+    
+    cpShape* paredeEsquerda = cpSegmentShapeNew(corpoEstatico, cpv(100, 150), cpv(100, 750), 0);
     cpSpaceAddShape(espaco, paredeEsquerda);
     cpShapeSetFriction(paredeEsquerda, 0.8);
+    cpShapeSetElasticity(paredeEsquerda, 0.1);
 
     //definindo parede direita:
-    cpShape* paredeDireita = cpSegmentShapeNew(corpoEstatico, cpv(400,0), cpv(400, 600), 0);
+    cpShape* paredeDireita = cpSegmentShapeNew(corpoEstatico, cpv(700, 150), cpv(700, 750), 0);
     cpSpaceAddShape(espaco, paredeDireita);
     cpShapeSetFriction(paredeDireita, 0.8);
+    cpShapeSetElasticity(paredeDireita, 0.1);
 }
 
 cpShape* criarCorpoFruta(cpSpace* espaco, float x, float y, float raio, int tipo) {
@@ -41,6 +47,8 @@ cpShape* criarCorpoFruta(cpSpace* espaco, float x, float y, float raio, int tipo
     cpShapeSetElasticity(formatoFruta, 0.1f); //se ela pula/quica ao colidir
 
     cpShapeSetCollisionType(formatoFruta, tipo); //seta o formato da fruta para um tipo (como se tivesse colocando um id nela)
+    cpBodySetVelocityUpdateFunc(corpoFruta, cpBodyUpdateVelocity); 
+    cpSpaceSetCollisionSlop(espaco, 0.1f);
     return formatoFruta;
 }
 
@@ -71,6 +79,8 @@ cpBool callbackFusao (cpArbiter* arbiter, cpSpace* espaco, cpDataPointer userDat
     //busca o userData de inserirFruta
     Fruta* frutaA = (Fruta*)cpShapeGetUserData(formatoA);
     Fruta* frutaB = (Fruta*)cpShapeGetUserData(formatoB);
+
+    if (!frutaA || !frutaB) return cpFalse;
 
     //marcando como fundindo:
     frutaA->fundindo = 1;

@@ -1886,7 +1886,9 @@ CMakeFiles/Watermelon_Game.dir/src/main.c.obj: C:/Users/heito/Downloads/Watermel
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h \
-  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/menu.h
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/fruits.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/menu.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/physics.h
 
 CMakeFiles/Watermelon_Game.dir/src/menu.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/menu.c \
   C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/raylib.h \

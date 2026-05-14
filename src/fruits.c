@@ -18,7 +18,7 @@ const Fruta_Def LISTA_FRUTAS[NIVEIS_FRUTA] = {
 
 Fruta criarFruta(cpSpace *espaco, float x, float y, int tipo) {
     float raio = LISTA_FRUTAS[tipo].raio;
-    cpShape* formatoFruta = criarCorpoFruta(espaco, 200, 300, raio, tipo); //criando o corpo da fruta de acrodo com o tipo dela
+    cpShape* formatoFruta = criarCorpoFruta(espaco, x, y, raio, tipo); //criando o corpo da fruta de acrodo com o tipo dela
     cpBody* corpoFruta = cpShapeGetBody(formatoFruta);
 
     //criando a fruta

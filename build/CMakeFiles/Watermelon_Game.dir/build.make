@@ -690,7 +690,8 @@ Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceStep.c.o
 Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpatialIndex.c.obj
 Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSweep1D.c.obj
 Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/build.make
-Watermelon_Game.exe: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/lib/libraylib.a
+Watermelon_Game.exe: C:/msys64/ucrt64/lib/libraylib.a
+Watermelon_Game.exe: C:/msys64/ucrt64/lib/libglfw3.dll.a
 Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/linkLibs.rsp
 Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/objects1.rsp
 Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/link.txt

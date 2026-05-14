@@ -2,6 +2,8 @@
 #include "menu.h"               
 #include <chipmunk/chipmunk.h> 
 #include <stdio.h>
+#include "physics.h"
+#include "fruits.h"
 
 #define Largura 800
 #define Altura 800
@@ -32,30 +34,33 @@ int main(void) {
     Botao btnSettings = { {(Largura/2.0f - 145), 496, 290, 78}, tex_settings, tex_settings_hover };
     Botao btnExit     = { {(Largura/2.0f - 145), 594, 290, 78}, tex_exit,     tex_exit_hover };
 
-    cpSpace *espaco = cpSpaceNew();
-    cpSpaceSetGravity(espaco, cpv(0, 900));
+    cpSpace *espaco = initEspaco();
+    criarArea(espaco);
+    registrarFusoes(espaco);
 
-    cpBody *bolaBody = cpSpaceAddBody(espaco, cpBodyNew(1.0, cpMomentForCircle(1.0, 0, 25, cpvzero)));
-    cpBodySetPosition(bolaBody, cpv(Largura/2, 100));
-    cpSpaceAddShape(espaco, cpCircleShapeNew(bolaBody, 25, cpvzero));
+    NodeFruta *head = NULL;
 
     Estado_Jogo estado = EST_MENU;
 
     while (!WindowShouldClose()) {
         switch (estado) {
             case EST_MENU:
-                if (foi_clicado(btnPlay)) {
-                    estado = EST_JOGO;
-                    cpBodySetPosition(bolaBody, cpv(Largura/2, 100));
-                    cpBodySetVelocity(bolaBody, cpvzero);
-                }
+                if (foi_clicado(btnPlay)) estado = EST_JOGO;
                 if (foi_clicado(btnExit)) goto fechar;
                 break;
 
             case EST_JOGO:
-                if (IsKeyPressed(KEY_ESCAPE)) estado = EST_MENU;
-                cpSpaceStep(espaco, 1.0f / 60.0f);
-                break;
+            if (IsKeyPressed(KEY_ESCAPE)) estado = EST_MENU;
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)){   //imput do jogo para spawnar fruta: lmb
+                Vector2 mouse = GetMousePosition();
+                float x = mouse.x;
+                if (x < 115) x = 115;   //só spawna dentro da "cesta"
+                if (x > 685) x = 685;
+                inserirFruta(espaco, x, 160, 0, &head);
+            }
+            cpSpaceStep(espaco, 1.0f / 60.0f);
+            processarFusoes(espaco, &head);
+            break;
         }
 
         BeginDrawing();
@@ -67,14 +72,34 @@ int main(void) {
                     desenha_botao(btnSettings);
                     desenha_botao(btnExit);
             } else {
-                cpVect pos = cpBodyGetPosition(bolaBody);
-                DrawCircleV((Vector2){ (float)pos.x, (float)pos.y }, 25, ORANGE);
-                DrawRectangle(0, Altura - 50, Largura, 50, DARKGRAY);
+                ClearBackground(RGB(245, 235, 210));
+                DrawRectangleLines(100, 150, 600, 600, DARKGRAY); //placeholder da "cesta"
+
+                NodeFruta *atual = head;
+                while (atual != NULL) {
+                    cpVect pos = cpBodyGetPosition(atual->fruta.body);
+                    float raio = LISTA_FRUTAS[atual->fruta.nivel].raio;
+                    DrawCircle((int)pos.x, (int)pos.y, raio, RED);
+                    DrawText(LISTA_FRUTAS[atual->fruta.nivel].nome,
+                             (int)pos.x - 10, (int)pos.y - 5, 10, WHITE);
+                    atual = atual->next;
+                }
+
             }
         EndDrawing();
     }
 
 fechar:
+    while (head != NULL) {
+        NodeFruta *tmp = head;
+        head = head->next;
+        cpSpaceRemoveShape(espaco, tmp->fruta.shape);
+        cpShapeFree(tmp->fruta.shape);
+        cpSpaceRemoveBody(espaco, tmp->fruta.body);
+        cpBodyFree(tmp->fruta.body);
+        free(tmp);
+    }
+
     UnloadTexture(bg_menu);
     UnloadTexture(tex_play);
     UnloadTexture(tex_settings);
