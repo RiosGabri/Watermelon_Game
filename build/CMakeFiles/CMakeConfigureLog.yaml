@@ -27,10 +27,10 @@ events:
     names:
       - "mingw32-make.exe"
     candidate_directories:
-      - "C:/msys64/ucrt64/bin/"
       - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "D:/Programs/Microsoft VS Code/"
+      - "C:/msys64/ucrt64/bin/"
       - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -55,11 +55,16 @@ events:
       - "/MinGW/bin/"
       - "/REGISTRY-NOTFOUND/MinGW/bin/"
     searched_directories:
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/mingw32-make.exe.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/mingw32-make.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/mingw32-make.exe.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/mingw32-make.exe"
+      - "D:/Programs/Microsoft VS Code/mingw32-make.exe.com"
+      - "D:/Programs/Microsoft VS Code/mingw32-make.exe"
       - "C:/msys64/ucrt64/bin/mingw32-make.exe.com"
     found: "C:/msys64/ucrt64/bin/mingw32-make.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -120,10 +125,10 @@ events:
       - "icx"
       - "clang"
     candidate_directories:
-      - "C:/msys64/ucrt64/bin/"
       - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "D:/Programs/Microsoft VS Code/"
+      - "C:/msys64/ucrt64/bin/"
       - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -144,11 +149,73 @@ events:
       - "C:/Program Files (x86)/Steam/ext/bin/"
       - "C:/Users/heito/AppData/Roaming/npm/"
     searched_directories:
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cc.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cc.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cc"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cl.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cl.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cl"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/bcc.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/bcc.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/bcc"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/xlc.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/xlc.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/xlc"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/icx.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/icx.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/icx"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/clang.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/clang.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/clang"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cc.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cc.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cc"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cl.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cl.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cl"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/bcc.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/bcc.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/bcc"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/xlc.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/xlc.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/xlc"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/icx.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/icx.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/icx"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/clang.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/clang.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/clang"
+      - "D:/Programs/Microsoft VS Code/cc.com"
+      - "D:/Programs/Microsoft VS Code/cc.exe"
+      - "D:/Programs/Microsoft VS Code/cc"
+      - "D:/Programs/Microsoft VS Code/gcc.com"
+      - "D:/Programs/Microsoft VS Code/gcc.exe"
+      - "D:/Programs/Microsoft VS Code/gcc"
+      - "D:/Programs/Microsoft VS Code/cl.com"
+      - "D:/Programs/Microsoft VS Code/cl.exe"
+      - "D:/Programs/Microsoft VS Code/cl"
+      - "D:/Programs/Microsoft VS Code/bcc.com"
+      - "D:/Programs/Microsoft VS Code/bcc.exe"
+      - "D:/Programs/Microsoft VS Code/bcc"
+      - "D:/Programs/Microsoft VS Code/xlc.com"
+      - "D:/Programs/Microsoft VS Code/xlc.exe"
+      - "D:/Programs/Microsoft VS Code/xlc"
+      - "D:/Programs/Microsoft VS Code/icx.com"
+      - "D:/Programs/Microsoft VS Code/icx.exe"
+      - "D:/Programs/Microsoft VS Code/icx"
+      - "D:/Programs/Microsoft VS Code/clang.com"
+      - "D:/Programs/Microsoft VS Code/clang.exe"
+      - "D:/Programs/Microsoft VS Code/clang"
       - "C:/msys64/ucrt64/bin/cc.com"
     found: "C:/msys64/ucrt64/bin/cc.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -210,7 +277,6 @@ events:
     found: "C:/msys64/ucrt64/share/cmake/Modules/CMakeCCompilerId.c.in"
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -315,7 +381,6 @@ events:
     found: "C:/msys64/ucrt64/bin/ar.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -398,7 +463,6 @@ events:
     found: "C:/msys64/ucrt64/bin/ranlib.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -481,7 +545,6 @@ events:
     found: "C:/msys64/ucrt64/bin/strip.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -564,7 +627,6 @@ events:
     found: "C:/msys64/ucrt64/bin/ld.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -647,7 +709,6 @@ events:
     found: "C:/msys64/ucrt64/bin/nm.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -730,7 +791,6 @@ events:
     found: "C:/msys64/ucrt64/bin/objdump.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -813,7 +873,6 @@ events:
     found: "C:/msys64/ucrt64/bin/objcopy.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -896,7 +955,6 @@ events:
     found: "C:/msys64/ucrt64/bin/readelf.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -979,7 +1037,6 @@ events:
     found: "C:/msys64/ucrt64/bin/dlltool.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -1062,7 +1119,6 @@ events:
     found: "C:/msys64/ucrt64/bin/addr2line.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -1213,7 +1269,6 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -1506,7 +1561,6 @@ events:
     found: "C:/msys64/ucrt64/bin/gcc-ar.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -1799,7 +1853,6 @@ events:
     found: "C:/msys64/ucrt64/bin/gcc-ranlib.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -1857,10 +1910,10 @@ events:
       - "windres"
       - "windres"
     candidate_directories:
-      - "C:/msys64/ucrt64/bin/"
       - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "D:/Programs/Microsoft VS Code/"
+      - "C:/msys64/ucrt64/bin/"
       - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -1893,11 +1946,19 @@ events:
       - "C:/Program Files (x86)/Watermelon_Game/sbin/"
       - "C:/Program Files (x86)/Watermelon_Game/"
     searched_directories:
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/windres.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/windres.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/windres"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/windres.com"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/windres.exe"
+      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/windres"
+      - "D:/Programs/Microsoft VS Code/windres.com"
+      - "D:/Programs/Microsoft VS Code/windres.exe"
+      - "D:/Programs/Microsoft VS Code/windres"
       - "C:/msys64/ucrt64/bin/windres.com"
     found: "C:/msys64/ucrt64/bin/windres.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\msys64\\ucrt64\\bin"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "D:\\Programs\\Microsoft VS Code"
@@ -1947,8 +2008,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-l4gekh"
-      binary: "C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-l4gekh"
+      source: "C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-bqqvi4"
+      binary: "C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-bqqvi4"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1957,13 +2018,13 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-l4gekh'
+        Change Dir: 'C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-bqqvi4'
         
-        Run Build Command(s): C:/msys64/ucrt64/bin/cmake.exe -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_d518c/fast
-        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_d518c.dir\\build.make CMakeFiles/cmTC_d518c.dir/build
-        mingw32-make[1]: Entering directory 'C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-l4gekh'
-        Building C object CMakeFiles/cmTC_d518c.dir/CMakeCCompilerABI.c.obj
-        C:\\msys64\\ucrt64\\bin\\cc.exe   -v -o CMakeFiles\\cmTC_d518c.dir\\CMakeCCompilerABI.c.obj -c C:\\msys64\\ucrt64\\share\\cmake\\Modules\\CMakeCCompilerABI.c
+        Run Build Command(s): C:/msys64/ucrt64/bin/cmake.exe -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_5407c/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_5407c.dir\\build.make CMakeFiles/cmTC_5407c.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-bqqvi4'
+        Building C object CMakeFiles/cmTC_5407c.dir/CMakeCCompilerABI.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe   -v -o CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj -c C:\\msys64\\ucrt64\\share\\cmake\\Modules\\CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe
         Target: x86_64-w64-mingw32
@@ -1971,8 +2032,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.0 (Rev13, Built by MSYS2 project) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_d518c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_d518c.dir\\'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:\\msys64\\ucrt64\\share\\cmake\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_d518c.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\heito\\AppData\\Local\\Temp\\ccLUXULG.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5407c.dir\\'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:\\msys64\\ucrt64\\share\\cmake\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_5407c.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\heito\\AppData\\Local\\Temp\\ccVVD9Fh.s
         GNU C23 (Rev13, Built by MSYS2 project) version 15.2.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -1990,14 +2051,14 @@ events:
          C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed
         End of search list.
         Compiler executable checksum: 2dc0d4d9031850250705d7103cc24ced
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_d518c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_d518c.dir\\'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_d518c.dir\\CMakeCCompilerABI.c.obj C:\\Users\\heito\\AppData\\Local\\Temp\\ccLUXULG.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5407c.dir\\'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj C:\\Users\\heito\\AppData\\Local\\Temp\\ccVVD9Fh.s
         GNU assembler version 2.46 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.46
         COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_d518c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_d518c.dir\\CMakeCCompilerABI.c.'
-        Linking C executable cmTC_d518c.exe
-        C:\\msys64\\ucrt64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_d518c.dir\\link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.'
+        Linking C executable cmTC_5407c.exe
+        C:\\msys64\\ucrt64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_5407c.dir\\link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe
         COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe
@@ -2008,16 +2069,16 @@ events:
         gcc version 15.2.0 (Rev13, Built by MSYS2 project) 
         COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d518c.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_d518c.'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\heito\\AppData\\Local\\Temp\\ccVFQZnQ.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_d518c.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_d518c.dir/objects.a --no-whole-archive --out-implib libcmTC_d518c.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5407c.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_5407c.'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\heito\\AppData\\Local\\Temp\\ccE2KrUm.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_5407c.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_5407c.dir/objects.a --no-whole-archive --out-implib libcmTC_5407c.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
         collect2 version 15.2.0
-        C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\heito\\AppData\\Local\\Temp\\ccVFQZnQ.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_d518c.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_d518c.dir/objects.a --no-whole-archive --out-implib libcmTC_d518c.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\heito\\AppData\\Local\\Temp\\ccE2KrUm.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_5407c.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_5407c.dir/objects.a --no-whole-archive --out-implib libcmTC_5407c.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
         GNU ld (GNU Binutils) 2.46
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d518c.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_d518c.'
-        C:\\msys64\\ucrt64\\bin\\cmake.exe -E rm -f CMakeFiles\\cmTC_d518c.dir/objects.a
-        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_d518c.dir/objects.a @CMakeFiles\\cmTC_d518c.dir\\objects1.rsp
-        C:\\msys64\\ucrt64\\bin\\cc.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_d518c.dir/objects.a -Wl,--no-whole-archive -o cmTC_d518c.exe -Wl,--out-implib,libcmTC_d518c.dll.a -Wl,--major-image-version,0,--minor-image-version,0
-        mingw32-make[1]: Leaving directory 'C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-l4gekh'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5407c.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_5407c.'
+        C:\\msys64\\ucrt64\\bin\\cmake.exe -E rm -f CMakeFiles\\cmTC_5407c.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_5407c.dir/objects.a @CMakeFiles\\cmTC_5407c.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_5407c.dir/objects.a -Wl,--no-whole-archive -o cmTC_5407c.exe -Wl,--out-implib,libcmTC_5407c.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        mingw32-make[1]: Leaving directory 'C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-bqqvi4'
         
       exitCode: 0
   -
@@ -2050,13 +2111,13 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-l4gekh']
+        ignore line: [Change Dir: 'C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-bqqvi4']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/msys64/ucrt64/bin/cmake.exe -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_d518c/fast]
-        ignore line: [C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_d518c.dir\\build.make CMakeFiles/cmTC_d518c.dir/build]
-        ignore line: [mingw32-make[1]: Entering directory 'C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-l4gekh']
-        ignore line: [Building C object CMakeFiles/cmTC_d518c.dir/CMakeCCompilerABI.c.obj]
-        ignore line: [C:\\msys64\\ucrt64\\bin\\cc.exe   -v -o CMakeFiles\\cmTC_d518c.dir\\CMakeCCompilerABI.c.obj -c C:\\msys64\\ucrt64\\share\\cmake\\Modules\\CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): C:/msys64/ucrt64/bin/cmake.exe -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_5407c/fast]
+        ignore line: [C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_5407c.dir\\build.make CMakeFiles/cmTC_5407c.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-bqqvi4']
+        ignore line: [Building C object CMakeFiles/cmTC_5407c.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [C:\\msys64\\ucrt64\\bin\\cc.exe   -v -o CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj -c C:\\msys64\\ucrt64\\share\\cmake\\Modules\\CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe]
         ignore line: [Target: x86_64-w64-mingw32]
@@ -2064,8 +2125,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.0 (Rev13  Built by MSYS2 project) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_d518c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_d518c.dir\\']
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:\\msys64\\ucrt64\\share\\cmake\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_d518c.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\heito\\AppData\\Local\\Temp\\ccLUXULG.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5407c.dir\\']
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:\\msys64\\ucrt64\\share\\cmake\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_5407c.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\heito\\AppData\\Local\\Temp\\ccVVD9Fh.s]
         ignore line: [GNU C23 (Rev13  Built by MSYS2 project) version 15.2.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -2083,8 +2144,8 @@ events:
         ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 2dc0d4d9031850250705d7103cc24ced]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_d518c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_d518c.dir\\']
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_d518c.dir\\CMakeCCompilerABI.c.obj C:\\Users\\heito\\AppData\\Local\\Temp\\ccLUXULG.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5407c.dir\\']
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj C:\\Users\\heito\\AppData\\Local\\Temp\\ccVVD9Fh.s]
         ignore line: [GNU assembler version 2.46 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.46]
         ignore line: [COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
@@ -2095,9 +2156,9 @@ events:
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_d518c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_d518c.dir\\CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_d518c.exe]
-        ignore line: [C:\\msys64\\ucrt64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_d518c.dir\\link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_5407c.exe]
+        ignore line: [C:\\msys64\\ucrt64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_5407c.dir\\link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe]
@@ -2115,13 +2176,13 @@ events:
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d518c.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_d518c.']
-        link line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\heito\\AppData\\Local\\Temp\\ccVFQZnQ.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_d518c.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_d518c.dir/objects.a --no-whole-archive --out-implib libcmTC_d518c.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5407c.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_5407c.']
+        link line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\heito\\AppData\\Local\\Temp\\ccE2KrUm.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_5407c.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_5407c.dir/objects.a --no-whole-archive --out-implib libcmTC_5407c.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\heito\\AppData\\Local\\Temp\\ccVFQZnQ.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\heito\\AppData\\Local\\Temp\\ccE2KrUm.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
@@ -2143,7 +2204,7 @@ events:
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_d518c.exe] ==> ignore
+          arg [cmTC_5407c.exe] ==> ignore
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o]
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o]
           arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0]
@@ -2154,10 +2215,10 @@ events:
           arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..]
           arg [-v] ==> ignore
           arg [--whole-archive] ==> ignore
-          arg [CMakeFiles\\cmTC_d518c.dir/objects.a] ==> ignore
+          arg [CMakeFiles\\cmTC_5407c.dir/objects.a] ==> ignore
           arg [--no-whole-archive] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_d518c.dll.a] ==> ignore
+          arg [libcmTC_5407c.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -2182,7 +2243,7 @@ events:
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o]
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
         ignore line: [collect2 version 15.2.0]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\heito\\AppData\\Local\\Temp\\ccVFQZnQ.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_d518c.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_d518c.dir/objects.a --no-whole-archive --out-implib libcmTC_d518c.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\heito\\AppData\\Local\\Temp\\ccE2KrUm.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_5407c.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_5407c.dir/objects.a --no-whole-archive --out-implib libcmTC_5407c.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
         linker tool for 'C': C:/msys64/ucrt64/x86_64-w64-mingw32/bin/ld.exe
         remove lib [gcc_eh]
         remove lib [msvcrt]

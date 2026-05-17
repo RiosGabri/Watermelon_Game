@@ -32,10 +32,12 @@ typedef struct NodeFruta { //struct node fruta para a lista encadeada
     Fruta fruta;
     struct NodeFruta *next;
 }NodeFruta;
- 
-#endif
+
+void removerFruta(cpSpace* espaco, cpShape *frutaRemover, NodeFruta** head);
 
 Fruta criarFruta(cpSpace *espaco, float x, float y, int tipo);
 NodeFruta* criarNodeFruta(Fruta fruta);
 void inserirFruta(cpSpace* espaco, float x, float y, int tipo, NodeFruta** head);
 void processarFusoes(cpSpace* espaco, NodeFruta **head);
+
+#endif

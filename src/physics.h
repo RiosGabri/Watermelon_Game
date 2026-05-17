@@ -2,6 +2,8 @@
 #define PHYSICS_H
 
 #include <chipmunk/chipmunk.h>
+#include "fruits.h"
+extern NodeFruta **g_head;
 
 cpSpace* initEspaco();
 void criarArea(cpSpace* espaco);

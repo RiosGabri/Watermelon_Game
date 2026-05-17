@@ -39,6 +39,7 @@ int main(void) {
     registrarFusoes(espaco);
 
     NodeFruta *head = NULL;
+    g_head = &head;
 
     Estado_Jogo estado = EST_MENU;
 
@@ -59,7 +60,6 @@ int main(void) {
                 inserirFruta(espaco, x, 160, 0, &head);
             }
             cpSpaceStep(espaco, 1.0f / 60.0f);
-            processarFusoes(espaco, &head);
             break;
         }
 
