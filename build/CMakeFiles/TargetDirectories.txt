@@ -1,3 +1,3 @@
-C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/Watermelon_Game.dir
-C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/edit_cache.dir
-C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/rebuild_cache.dir
+/home/torzin/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/Watermelon_Game.dir
+/home/torzin/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/edit_cache.dir
+/home/torzin/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/rebuild_cache.dir

@@ -2,16 +2,67 @@
 ---
 events:
   -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/uname"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/uname"
+      - "/usr/local/sbin/uname"
+      - "/usr/local/bin/uname"
+      - "/usr/sbin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+  -
     kind: "message-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:212 (message)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      The system is: Windows - 10.0.26200 - AMD64
+      The system is: Linux - 7.0.0-15-generic - x86_64
   -
     kind: "find-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeMinGWFindMake.cmake:5 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_MAKE_PROGRAM"
@@ -25,85 +76,47 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "mingw32-make.exe"
+      - "gmake"
+      - "make"
+      - "smake"
     candidate_directories:
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "D:/Programs/Microsoft VS Code/"
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/"
-      - "D:/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files (x86)/Steam/ext/bin/"
-      - "C:/Users/heito/AppData/Roaming/npm/"
-      - "/REGISTRY-NOTFOUND/bin/"
-      - "c:/MinGW/bin/"
-      - "/MinGW/bin/"
-      - "/REGISTRY-NOTFOUND/MinGW/bin/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
     searched_directories:
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/mingw32-make.exe.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/mingw32-make.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/mingw32-make.exe.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/mingw32-make.exe"
-      - "D:/Programs/Microsoft VS Code/mingw32-make.exe.com"
-      - "D:/Programs/Microsoft VS Code/mingw32-make.exe"
-      - "C:/msys64/ucrt64/bin/mingw32-make.exe.com"
-    found: "C:/msys64/ucrt64/bin/mingw32-make.exe"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gmake"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/gmake"
+      - "/usr/local/sbin/gmake"
+      - "/usr/local/bin/gmake"
+      - "/usr/sbin/gmake"
+    found: "/usr/bin/gmake"
     search_context:
       ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
   -
     kind: "find-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompiler.cmake:63 (find_program)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_C_COMPILER"
@@ -111,10 +124,10 @@ events:
     settings:
       SearchFramework: "NEVER"
       SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
       CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
       - "cc"
@@ -125,139 +138,46 @@ events:
       - "icx"
       - "clang"
     candidate_directories:
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "D:/Programs/Microsoft VS Code/"
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/"
-      - "D:/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files (x86)/Steam/ext/bin/"
-      - "C:/Users/heito/AppData/Roaming/npm/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
     searched_directories:
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cc.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cc.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cc"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cl.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cl.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cl"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/bcc.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/bcc.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/bcc"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/xlc.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/xlc.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/xlc"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/icx.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/icx.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/icx"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/clang.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/clang.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/clang"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cc.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cc.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cc"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cl.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cl.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cl"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/bcc.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/bcc.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/bcc"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/xlc.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/xlc.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/xlc"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/icx.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/icx.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/icx"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/clang.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/clang.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/clang"
-      - "D:/Programs/Microsoft VS Code/cc.com"
-      - "D:/Programs/Microsoft VS Code/cc.exe"
-      - "D:/Programs/Microsoft VS Code/cc"
-      - "D:/Programs/Microsoft VS Code/gcc.com"
-      - "D:/Programs/Microsoft VS Code/gcc.exe"
-      - "D:/Programs/Microsoft VS Code/gcc"
-      - "D:/Programs/Microsoft VS Code/cl.com"
-      - "D:/Programs/Microsoft VS Code/cl.exe"
-      - "D:/Programs/Microsoft VS Code/cl"
-      - "D:/Programs/Microsoft VS Code/bcc.com"
-      - "D:/Programs/Microsoft VS Code/bcc.exe"
-      - "D:/Programs/Microsoft VS Code/bcc"
-      - "D:/Programs/Microsoft VS Code/xlc.com"
-      - "D:/Programs/Microsoft VS Code/xlc.exe"
-      - "D:/Programs/Microsoft VS Code/xlc"
-      - "D:/Programs/Microsoft VS Code/icx.com"
-      - "D:/Programs/Microsoft VS Code/icx.exe"
-      - "D:/Programs/Microsoft VS Code/icx"
-      - "D:/Programs/Microsoft VS Code/clang.com"
-      - "D:/Programs/Microsoft VS Code/clang.exe"
-      - "D:/Programs/Microsoft VS Code/clang"
-      - "C:/msys64/ucrt64/bin/cc.com"
-    found: "C:/msys64/ucrt64/bin/cc.exe"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/cc"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/cc"
+      - "/usr/local/sbin/cc"
+      - "/usr/local/bin/cc"
+      - "/usr/sbin/cc"
+    found: "/usr/bin/cc"
     search_context:
       ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
   -
     kind: "find-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     mode: "file"
     variable: "src_in"
@@ -273,54 +193,32 @@ events:
     names:
       - "CMakeCCompilerId.c.in"
     candidate_directories:
-      - "C:/msys64/ucrt64/share/cmake/Modules/"
-    found: "C:/msys64/ucrt64/share/cmake/Modules/CMakeCCompilerId.c.in"
+      - "/usr/share/cmake-4.2/Modules/"
+    found: "/usr/share/cmake-4.2/Modules/CMakeCCompilerId.c.in"
     search_context:
       ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
   -
     kind: "message-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: C:/msys64/ucrt64/bin/cc.exe 
+      Compiler: /usr/bin/cc 
       Build flags: 
       Id flags:  
       
@@ -328,16 +226,16 @@ events:
       0
       
       
-      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
       The C compiler identification is GNU, found in:
-        C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/4.2.3/CompilerIdC/a.exe
+        /home/torzin/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/4.2.3/CompilerIdC/a.out
       
   -
     kind: "find-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_AR"
@@ -353,73 +251,37 @@ events:
     names:
       - "ar"
     candidate_directories:
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "D:/Programs/Microsoft VS Code/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/"
-      - "D:/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files (x86)/Steam/ext/bin/"
-      - "C:/Users/heito/AppData/Roaming/npm/"
-    searched_directories:
-      - "C:/msys64/ucrt64/bin/ar.com"
-    found: "C:/msys64/ucrt64/bin/ar.exe"
+      - "/usr/bin/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    found: "/usr/bin/ar"
     search_context:
       ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
   -
     kind: "find-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_RANLIB"
@@ -435,73 +297,37 @@ events:
     names:
       - "ranlib"
     candidate_directories:
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "D:/Programs/Microsoft VS Code/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/"
-      - "D:/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files (x86)/Steam/ext/bin/"
-      - "C:/Users/heito/AppData/Roaming/npm/"
-    searched_directories:
-      - "C:/msys64/ucrt64/bin/ranlib.com"
-    found: "C:/msys64/ucrt64/bin/ranlib.exe"
+      - "/usr/bin/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    found: "/usr/bin/ranlib"
     search_context:
       ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
   -
     kind: "find-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_STRIP"
@@ -517,73 +343,37 @@ events:
     names:
       - "strip"
     candidate_directories:
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "D:/Programs/Microsoft VS Code/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/"
-      - "D:/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files (x86)/Steam/ext/bin/"
-      - "C:/Users/heito/AppData/Roaming/npm/"
-    searched_directories:
-      - "C:/msys64/ucrt64/bin/strip.com"
-    found: "C:/msys64/ucrt64/bin/strip.exe"
+      - "/usr/bin/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    found: "/usr/bin/strip"
     search_context:
       ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
   -
     kind: "find-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_LINKER"
@@ -599,73 +389,37 @@ events:
     names:
       - "ld"
     candidate_directories:
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "D:/Programs/Microsoft VS Code/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/"
-      - "D:/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files (x86)/Steam/ext/bin/"
-      - "C:/Users/heito/AppData/Roaming/npm/"
-    searched_directories:
-      - "C:/msys64/ucrt64/bin/ld.com"
-    found: "C:/msys64/ucrt64/bin/ld.exe"
+      - "/usr/bin/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    found: "/usr/bin/ld"
     search_context:
       ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
   -
     kind: "find-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_NM"
@@ -681,73 +435,37 @@ events:
     names:
       - "nm"
     candidate_directories:
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "D:/Programs/Microsoft VS Code/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/"
-      - "D:/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files (x86)/Steam/ext/bin/"
-      - "C:/Users/heito/AppData/Roaming/npm/"
-    searched_directories:
-      - "C:/msys64/ucrt64/bin/nm.com"
-    found: "C:/msys64/ucrt64/bin/nm.exe"
+      - "/usr/bin/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    found: "/usr/bin/nm"
     search_context:
       ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
   -
     kind: "find-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_OBJDUMP"
@@ -763,73 +481,37 @@ events:
     names:
       - "objdump"
     candidate_directories:
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "D:/Programs/Microsoft VS Code/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/"
-      - "D:/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files (x86)/Steam/ext/bin/"
-      - "C:/Users/heito/AppData/Roaming/npm/"
-    searched_directories:
-      - "C:/msys64/ucrt64/bin/objdump.com"
-    found: "C:/msys64/ucrt64/bin/objdump.exe"
+      - "/usr/bin/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    found: "/usr/bin/objdump"
     search_context:
       ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
   -
     kind: "find-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_OBJCOPY"
@@ -845,73 +527,37 @@ events:
     names:
       - "objcopy"
     candidate_directories:
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "D:/Programs/Microsoft VS Code/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/"
-      - "D:/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files (x86)/Steam/ext/bin/"
-      - "C:/Users/heito/AppData/Roaming/npm/"
-    searched_directories:
-      - "C:/msys64/ucrt64/bin/objcopy.com"
-    found: "C:/msys64/ucrt64/bin/objcopy.exe"
+      - "/usr/bin/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    found: "/usr/bin/objcopy"
     search_context:
       ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
   -
     kind: "find-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_READELF"
@@ -927,73 +573,37 @@ events:
     names:
       - "readelf"
     candidate_directories:
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "D:/Programs/Microsoft VS Code/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/"
-      - "D:/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files (x86)/Steam/ext/bin/"
-      - "C:/Users/heito/AppData/Roaming/npm/"
-    searched_directories:
-      - "C:/msys64/ucrt64/bin/readelf.com"
-    found: "C:/msys64/ucrt64/bin/readelf.exe"
+      - "/usr/bin/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    found: "/usr/bin/readelf"
     search_context:
       ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
   -
     kind: "find-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_DLLTOOL"
@@ -1009,73 +619,49 @@ events:
     names:
       - "dlltool"
     candidate_directories:
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "D:/Programs/Microsoft VS Code/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/"
-      - "D:/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files (x86)/Steam/ext/bin/"
-      - "C:/Users/heito/AppData/Roaming/npm/"
+      - "/usr/bin/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
     searched_directories:
-      - "C:/msys64/ucrt64/bin/dlltool.com"
-    found: "C:/msys64/ucrt64/bin/dlltool.exe"
+      - "/usr/bin/dlltool"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/dlltool"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/dlltool"
+      - "/usr/local/sbin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/usr/sbin/dlltool"
+      - "/sbin/dlltool"
+      - "/bin/dlltool"
+      - "/usr/games/dlltool"
+      - "/usr/local/games/dlltool"
+      - "/snap/bin/dlltool"
+    found: false
     search_context:
       ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
   -
     kind: "find-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_ADDR2LINE"
@@ -1091,73 +677,37 @@ events:
     names:
       - "addr2line"
     candidate_directories:
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "D:/Programs/Microsoft VS Code/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/"
-      - "D:/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files (x86)/Steam/ext/bin/"
-      - "C:/Users/heito/AppData/Roaming/npm/"
-    searched_directories:
-      - "C:/msys64/ucrt64/bin/addr2line.com"
-    found: "C:/msys64/ucrt64/bin/addr2line.exe"
+      - "/usr/bin/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    found: "/usr/bin/addr2line"
     search_context:
       ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
   -
     kind: "find-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_TAPI"
@@ -1173,141 +723,49 @@ events:
     names:
       - "tapi"
     candidate_directories:
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "D:/Programs/Microsoft VS Code/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/"
-      - "D:/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files (x86)/Steam/ext/bin/"
-      - "C:/Users/heito/AppData/Roaming/npm/"
+      - "/usr/bin/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
     searched_directories:
-      - "C:/msys64/ucrt64/bin/tapi.com"
-      - "C:/msys64/ucrt64/bin/tapi.exe"
-      - "C:/msys64/ucrt64/bin/tapi"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/tapi.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/tapi.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/tapi"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/tapi.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/tapi.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/tapi"
-      - "D:/Programs/Microsoft VS Code/tapi.com"
-      - "D:/Programs/Microsoft VS Code/tapi.exe"
-      - "D:/Programs/Microsoft VS Code/tapi"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/tapi.com"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/tapi.exe"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/tapi"
-      - "C:/Windows/System32/tapi.com"
-      - "C:/Windows/System32/tapi.exe"
-      - "C:/Windows/System32/tapi"
-      - "C:/Windows/tapi.com"
-      - "C:/Windows/tapi.exe"
-      - "C:/Windows/tapi"
-      - "C:/Windows/System32/wbem/tapi.com"
-      - "C:/Windows/System32/wbem/tapi.exe"
-      - "C:/Windows/System32/wbem/tapi"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/tapi.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/tapi.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/tapi"
-      - "C:/Windows/System32/OpenSSH/tapi.com"
-      - "C:/Windows/System32/OpenSSH/tapi.exe"
-      - "C:/Windows/System32/OpenSSH/tapi"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/tapi.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/tapi.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/tapi"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/tapi.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/tapi.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/tapi"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/tapi.com"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/tapi.exe"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/tapi"
-      - "C:/Program Files/Git/cmd/tapi.com"
-      - "C:/Program Files/Git/cmd/tapi.exe"
-      - "C:/Program Files/Git/cmd/tapi"
-      - "C:/Program Files/dotnet/tapi.com"
-      - "C:/Program Files/dotnet/tapi.exe"
-      - "C:/Program Files/dotnet/tapi"
-      - "C:/Program Files/nodejs/tapi.com"
-      - "C:/Program Files/nodejs/tapi.exe"
-      - "C:/Program Files/nodejs/tapi"
-      - "C:/Program Files/CMake/bin/tapi.com"
-      - "C:/Program Files/CMake/bin/tapi.exe"
-      - "C:/Program Files/CMake/bin/tapi"
-      - "C:/Program Files/Docker/Docker/resources/bin/tapi.com"
-      - "C:/Program Files/Docker/Docker/resources/bin/tapi.exe"
-      - "C:/Program Files/Docker/Docker/resources/bin/tapi"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/tapi.com"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/tapi.exe"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/tapi"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/tapi.com"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/tapi.exe"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/tapi"
-      - "D:/Programs/Microsoft VS Code/bin/tapi.com"
-      - "D:/Programs/Microsoft VS Code/bin/tapi.exe"
-      - "D:/Programs/Microsoft VS Code/bin/tapi"
-      - "C:/Program Files (x86)/Steam/ext/bin/tapi.com"
-      - "C:/Program Files (x86)/Steam/ext/bin/tapi.exe"
-      - "C:/Program Files (x86)/Steam/ext/bin/tapi"
-      - "C:/Users/heito/AppData/Roaming/npm/tapi.com"
-      - "C:/Users/heito/AppData/Roaming/npm/tapi.exe"
-      - "C:/Users/heito/AppData/Roaming/npm/tapi"
+      - "/usr/bin/tapi"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/tapi"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/usr/sbin/tapi"
+      - "/sbin/tapi"
+      - "/bin/tapi"
+      - "/usr/games/tapi"
+      - "/usr/local/games/tapi"
+      - "/snap/bin/tapi"
     found: false
     search_context:
       ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
   -
     kind: "find-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "/usr/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_AR"
@@ -1326,280 +784,49 @@ events:
       - "gcc-ar15"
       - "gcc-ar"
     candidate_directories:
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "D:/Programs/Microsoft VS Code/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/"
-      - "D:/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files (x86)/Steam/ext/bin/"
-      - "C:/Users/heito/AppData/Roaming/npm/"
+      - "/usr/bin/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
     searched_directories:
-      - "C:/msys64/ucrt64/bin/gcc-ar-15.2.com"
-      - "C:/msys64/ucrt64/bin/gcc-ar-15.2.exe"
-      - "C:/msys64/ucrt64/bin/gcc-ar-15.2"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-15.2.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-15.2.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-15.2"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ar-15.2.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ar-15.2.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ar-15.2"
-      - "D:/Programs/Microsoft VS Code/gcc-ar-15.2.com"
-      - "D:/Programs/Microsoft VS Code/gcc-ar-15.2.exe"
-      - "D:/Programs/Microsoft VS Code/gcc-ar-15.2"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ar-15.2.com"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ar-15.2.exe"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ar-15.2"
-      - "C:/Windows/System32/gcc-ar-15.2.com"
-      - "C:/Windows/System32/gcc-ar-15.2.exe"
-      - "C:/Windows/System32/gcc-ar-15.2"
-      - "C:/Windows/gcc-ar-15.2.com"
-      - "C:/Windows/gcc-ar-15.2.exe"
-      - "C:/Windows/gcc-ar-15.2"
-      - "C:/Windows/System32/wbem/gcc-ar-15.2.com"
-      - "C:/Windows/System32/wbem/gcc-ar-15.2.exe"
-      - "C:/Windows/System32/wbem/gcc-ar-15.2"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-15.2.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-15.2.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-15.2"
-      - "C:/Windows/System32/OpenSSH/gcc-ar-15.2.com"
-      - "C:/Windows/System32/OpenSSH/gcc-ar-15.2.exe"
-      - "C:/Windows/System32/OpenSSH/gcc-ar-15.2"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ar-15.2.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ar-15.2.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ar-15.2"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ar-15.2.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ar-15.2.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ar-15.2"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ar-15.2.com"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ar-15.2.exe"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ar-15.2"
-      - "C:/Program Files/Git/cmd/gcc-ar-15.2.com"
-      - "C:/Program Files/Git/cmd/gcc-ar-15.2.exe"
-      - "C:/Program Files/Git/cmd/gcc-ar-15.2"
-      - "C:/Program Files/dotnet/gcc-ar-15.2.com"
-      - "C:/Program Files/dotnet/gcc-ar-15.2.exe"
-      - "C:/Program Files/dotnet/gcc-ar-15.2"
-      - "C:/Program Files/nodejs/gcc-ar-15.2.com"
-      - "C:/Program Files/nodejs/gcc-ar-15.2.exe"
-      - "C:/Program Files/nodejs/gcc-ar-15.2"
-      - "C:/Program Files/CMake/bin/gcc-ar-15.2.com"
-      - "C:/Program Files/CMake/bin/gcc-ar-15.2.exe"
-      - "C:/Program Files/CMake/bin/gcc-ar-15.2"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ar-15.2.com"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ar-15.2.exe"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ar-15.2"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ar-15.2.com"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ar-15.2.exe"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ar-15.2"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ar-15.2.com"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ar-15.2.exe"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ar-15.2"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ar-15.2.com"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ar-15.2.exe"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ar-15.2"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ar-15.2.com"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ar-15.2.exe"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ar-15.2"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ar-15.2.com"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ar-15.2.exe"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ar-15.2"
-      - "C:/msys64/ucrt64/bin/gcc-ar-15.com"
-      - "C:/msys64/ucrt64/bin/gcc-ar-15.exe"
-      - "C:/msys64/ucrt64/bin/gcc-ar-15"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-15.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-15.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-15"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ar-15.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ar-15.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ar-15"
-      - "D:/Programs/Microsoft VS Code/gcc-ar-15.com"
-      - "D:/Programs/Microsoft VS Code/gcc-ar-15.exe"
-      - "D:/Programs/Microsoft VS Code/gcc-ar-15"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ar-15.com"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ar-15.exe"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ar-15"
-      - "C:/Windows/System32/gcc-ar-15.com"
-      - "C:/Windows/System32/gcc-ar-15.exe"
-      - "C:/Windows/System32/gcc-ar-15"
-      - "C:/Windows/gcc-ar-15.com"
-      - "C:/Windows/gcc-ar-15.exe"
-      - "C:/Windows/gcc-ar-15"
-      - "C:/Windows/System32/wbem/gcc-ar-15.com"
-      - "C:/Windows/System32/wbem/gcc-ar-15.exe"
-      - "C:/Windows/System32/wbem/gcc-ar-15"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-15.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-15.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-15"
-      - "C:/Windows/System32/OpenSSH/gcc-ar-15.com"
-      - "C:/Windows/System32/OpenSSH/gcc-ar-15.exe"
-      - "C:/Windows/System32/OpenSSH/gcc-ar-15"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ar-15.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ar-15.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ar-15"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ar-15.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ar-15.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ar-15"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ar-15.com"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ar-15.exe"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ar-15"
-      - "C:/Program Files/Git/cmd/gcc-ar-15.com"
-      - "C:/Program Files/Git/cmd/gcc-ar-15.exe"
-      - "C:/Program Files/Git/cmd/gcc-ar-15"
-      - "C:/Program Files/dotnet/gcc-ar-15.com"
-      - "C:/Program Files/dotnet/gcc-ar-15.exe"
-      - "C:/Program Files/dotnet/gcc-ar-15"
-      - "C:/Program Files/nodejs/gcc-ar-15.com"
-      - "C:/Program Files/nodejs/gcc-ar-15.exe"
-      - "C:/Program Files/nodejs/gcc-ar-15"
-      - "C:/Program Files/CMake/bin/gcc-ar-15.com"
-      - "C:/Program Files/CMake/bin/gcc-ar-15.exe"
-      - "C:/Program Files/CMake/bin/gcc-ar-15"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ar-15.com"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ar-15.exe"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ar-15"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ar-15.com"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ar-15.exe"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ar-15"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ar-15.com"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ar-15.exe"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ar-15"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ar-15.com"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ar-15.exe"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ar-15"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ar-15.com"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ar-15.exe"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ar-15"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ar-15.com"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ar-15.exe"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ar-15"
-      - "C:/msys64/ucrt64/bin/gcc-ar15.com"
-      - "C:/msys64/ucrt64/bin/gcc-ar15.exe"
-      - "C:/msys64/ucrt64/bin/gcc-ar15"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar15.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar15.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar15"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ar15.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ar15.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ar15"
-      - "D:/Programs/Microsoft VS Code/gcc-ar15.com"
-      - "D:/Programs/Microsoft VS Code/gcc-ar15.exe"
-      - "D:/Programs/Microsoft VS Code/gcc-ar15"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ar15.com"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ar15.exe"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ar15"
-      - "C:/Windows/System32/gcc-ar15.com"
-      - "C:/Windows/System32/gcc-ar15.exe"
-      - "C:/Windows/System32/gcc-ar15"
-      - "C:/Windows/gcc-ar15.com"
-      - "C:/Windows/gcc-ar15.exe"
-      - "C:/Windows/gcc-ar15"
-      - "C:/Windows/System32/wbem/gcc-ar15.com"
-      - "C:/Windows/System32/wbem/gcc-ar15.exe"
-      - "C:/Windows/System32/wbem/gcc-ar15"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar15.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar15.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar15"
-      - "C:/Windows/System32/OpenSSH/gcc-ar15.com"
-      - "C:/Windows/System32/OpenSSH/gcc-ar15.exe"
-      - "C:/Windows/System32/OpenSSH/gcc-ar15"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ar15.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ar15.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ar15"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ar15.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ar15.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ar15"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ar15.com"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ar15.exe"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ar15"
-      - "C:/Program Files/Git/cmd/gcc-ar15.com"
-      - "C:/Program Files/Git/cmd/gcc-ar15.exe"
-      - "C:/Program Files/Git/cmd/gcc-ar15"
-      - "C:/Program Files/dotnet/gcc-ar15.com"
-      - "C:/Program Files/dotnet/gcc-ar15.exe"
-      - "C:/Program Files/dotnet/gcc-ar15"
-      - "C:/Program Files/nodejs/gcc-ar15.com"
-      - "C:/Program Files/nodejs/gcc-ar15.exe"
-      - "C:/Program Files/nodejs/gcc-ar15"
-      - "C:/Program Files/CMake/bin/gcc-ar15.com"
-      - "C:/Program Files/CMake/bin/gcc-ar15.exe"
-      - "C:/Program Files/CMake/bin/gcc-ar15"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ar15.com"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ar15.exe"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ar15"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ar15.com"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ar15.exe"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ar15"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ar15.com"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ar15.exe"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ar15"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ar15.com"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ar15.exe"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ar15"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ar15.com"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ar15.exe"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ar15"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ar15.com"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ar15.exe"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ar15"
-      - "C:/msys64/ucrt64/bin/gcc-ar.com"
-    found: "C:/msys64/ucrt64/bin/gcc-ar.exe"
+      - "/usr/bin/gcc-ar-15.2"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-15.2"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ar-15.2"
+      - "/usr/local/sbin/gcc-ar-15.2"
+      - "/usr/local/bin/gcc-ar-15.2"
+      - "/usr/sbin/gcc-ar-15.2"
+      - "/sbin/gcc-ar-15.2"
+      - "/bin/gcc-ar-15.2"
+      - "/usr/games/gcc-ar-15.2"
+      - "/usr/local/games/gcc-ar-15.2"
+      - "/snap/bin/gcc-ar-15.2"
+    found: "/usr/bin/gcc-ar-15"
     search_context:
       ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
   -
     kind: "find-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "/usr/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_RANLIB"
@@ -1618,398 +845,55 @@ events:
       - "gcc-ranlib15"
       - "gcc-ranlib"
     candidate_directories:
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "D:/Programs/Microsoft VS Code/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/"
-      - "D:/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files (x86)/Steam/ext/bin/"
-      - "C:/Users/heito/AppData/Roaming/npm/"
+      - "/usr/bin/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
     searched_directories:
-      - "C:/msys64/ucrt64/bin/gcc-ranlib-15.2.com"
-      - "C:/msys64/ucrt64/bin/gcc-ranlib-15.2.exe"
-      - "C:/msys64/ucrt64/bin/gcc-ranlib-15.2"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-15.2.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-15.2.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-15.2"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ranlib-15.2.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ranlib-15.2.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ranlib-15.2"
-      - "D:/Programs/Microsoft VS Code/gcc-ranlib-15.2.com"
-      - "D:/Programs/Microsoft VS Code/gcc-ranlib-15.2.exe"
-      - "D:/Programs/Microsoft VS Code/gcc-ranlib-15.2"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ranlib-15.2.com"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ranlib-15.2.exe"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ranlib-15.2"
-      - "C:/Windows/System32/gcc-ranlib-15.2.com"
-      - "C:/Windows/System32/gcc-ranlib-15.2.exe"
-      - "C:/Windows/System32/gcc-ranlib-15.2"
-      - "C:/Windows/gcc-ranlib-15.2.com"
-      - "C:/Windows/gcc-ranlib-15.2.exe"
-      - "C:/Windows/gcc-ranlib-15.2"
-      - "C:/Windows/System32/wbem/gcc-ranlib-15.2.com"
-      - "C:/Windows/System32/wbem/gcc-ranlib-15.2.exe"
-      - "C:/Windows/System32/wbem/gcc-ranlib-15.2"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-15.2.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-15.2.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-15.2"
-      - "C:/Windows/System32/OpenSSH/gcc-ranlib-15.2.com"
-      - "C:/Windows/System32/OpenSSH/gcc-ranlib-15.2.exe"
-      - "C:/Windows/System32/OpenSSH/gcc-ranlib-15.2"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ranlib-15.2.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ranlib-15.2.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ranlib-15.2"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ranlib-15.2.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ranlib-15.2.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ranlib-15.2"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ranlib-15.2.com"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ranlib-15.2.exe"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ranlib-15.2"
-      - "C:/Program Files/Git/cmd/gcc-ranlib-15.2.com"
-      - "C:/Program Files/Git/cmd/gcc-ranlib-15.2.exe"
-      - "C:/Program Files/Git/cmd/gcc-ranlib-15.2"
-      - "C:/Program Files/dotnet/gcc-ranlib-15.2.com"
-      - "C:/Program Files/dotnet/gcc-ranlib-15.2.exe"
-      - "C:/Program Files/dotnet/gcc-ranlib-15.2"
-      - "C:/Program Files/nodejs/gcc-ranlib-15.2.com"
-      - "C:/Program Files/nodejs/gcc-ranlib-15.2.exe"
-      - "C:/Program Files/nodejs/gcc-ranlib-15.2"
-      - "C:/Program Files/CMake/bin/gcc-ranlib-15.2.com"
-      - "C:/Program Files/CMake/bin/gcc-ranlib-15.2.exe"
-      - "C:/Program Files/CMake/bin/gcc-ranlib-15.2"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ranlib-15.2.com"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ranlib-15.2.exe"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ranlib-15.2"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ranlib-15.2.com"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ranlib-15.2.exe"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ranlib-15.2"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-15.2.com"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-15.2.exe"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-15.2"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ranlib-15.2.com"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ranlib-15.2.exe"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ranlib-15.2"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ranlib-15.2.com"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ranlib-15.2.exe"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ranlib-15.2"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ranlib-15.2.com"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ranlib-15.2.exe"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ranlib-15.2"
-      - "C:/msys64/ucrt64/bin/gcc-ranlib-15.com"
-      - "C:/msys64/ucrt64/bin/gcc-ranlib-15.exe"
-      - "C:/msys64/ucrt64/bin/gcc-ranlib-15"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-15.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-15.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-15"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ranlib-15.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ranlib-15.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ranlib-15"
-      - "D:/Programs/Microsoft VS Code/gcc-ranlib-15.com"
-      - "D:/Programs/Microsoft VS Code/gcc-ranlib-15.exe"
-      - "D:/Programs/Microsoft VS Code/gcc-ranlib-15"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ranlib-15.com"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ranlib-15.exe"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ranlib-15"
-      - "C:/Windows/System32/gcc-ranlib-15.com"
-      - "C:/Windows/System32/gcc-ranlib-15.exe"
-      - "C:/Windows/System32/gcc-ranlib-15"
-      - "C:/Windows/gcc-ranlib-15.com"
-      - "C:/Windows/gcc-ranlib-15.exe"
-      - "C:/Windows/gcc-ranlib-15"
-      - "C:/Windows/System32/wbem/gcc-ranlib-15.com"
-      - "C:/Windows/System32/wbem/gcc-ranlib-15.exe"
-      - "C:/Windows/System32/wbem/gcc-ranlib-15"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-15.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-15.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-15"
-      - "C:/Windows/System32/OpenSSH/gcc-ranlib-15.com"
-      - "C:/Windows/System32/OpenSSH/gcc-ranlib-15.exe"
-      - "C:/Windows/System32/OpenSSH/gcc-ranlib-15"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ranlib-15.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ranlib-15.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ranlib-15"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ranlib-15.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ranlib-15.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ranlib-15"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ranlib-15.com"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ranlib-15.exe"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ranlib-15"
-      - "C:/Program Files/Git/cmd/gcc-ranlib-15.com"
-      - "C:/Program Files/Git/cmd/gcc-ranlib-15.exe"
-      - "C:/Program Files/Git/cmd/gcc-ranlib-15"
-      - "C:/Program Files/dotnet/gcc-ranlib-15.com"
-      - "C:/Program Files/dotnet/gcc-ranlib-15.exe"
-      - "C:/Program Files/dotnet/gcc-ranlib-15"
-      - "C:/Program Files/nodejs/gcc-ranlib-15.com"
-      - "C:/Program Files/nodejs/gcc-ranlib-15.exe"
-      - "C:/Program Files/nodejs/gcc-ranlib-15"
-      - "C:/Program Files/CMake/bin/gcc-ranlib-15.com"
-      - "C:/Program Files/CMake/bin/gcc-ranlib-15.exe"
-      - "C:/Program Files/CMake/bin/gcc-ranlib-15"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ranlib-15.com"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ranlib-15.exe"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ranlib-15"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ranlib-15.com"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ranlib-15.exe"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ranlib-15"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-15.com"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-15.exe"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-15"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ranlib-15.com"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ranlib-15.exe"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ranlib-15"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ranlib-15.com"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ranlib-15.exe"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ranlib-15"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ranlib-15.com"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ranlib-15.exe"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ranlib-15"
-      - "C:/msys64/ucrt64/bin/gcc-ranlib15.com"
-      - "C:/msys64/ucrt64/bin/gcc-ranlib15.exe"
-      - "C:/msys64/ucrt64/bin/gcc-ranlib15"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib15.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib15.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib15"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ranlib15.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ranlib15.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ranlib15"
-      - "D:/Programs/Microsoft VS Code/gcc-ranlib15.com"
-      - "D:/Programs/Microsoft VS Code/gcc-ranlib15.exe"
-      - "D:/Programs/Microsoft VS Code/gcc-ranlib15"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ranlib15.com"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ranlib15.exe"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/gcc-ranlib15"
-      - "C:/Windows/System32/gcc-ranlib15.com"
-      - "C:/Windows/System32/gcc-ranlib15.exe"
-      - "C:/Windows/System32/gcc-ranlib15"
-      - "C:/Windows/gcc-ranlib15.com"
-      - "C:/Windows/gcc-ranlib15.exe"
-      - "C:/Windows/gcc-ranlib15"
-      - "C:/Windows/System32/wbem/gcc-ranlib15.com"
-      - "C:/Windows/System32/wbem/gcc-ranlib15.exe"
-      - "C:/Windows/System32/wbem/gcc-ranlib15"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib15.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib15.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib15"
-      - "C:/Windows/System32/OpenSSH/gcc-ranlib15.com"
-      - "C:/Windows/System32/OpenSSH/gcc-ranlib15.exe"
-      - "C:/Windows/System32/OpenSSH/gcc-ranlib15"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ranlib15.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ranlib15.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gcc-ranlib15"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ranlib15.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ranlib15.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ranlib15"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ranlib15.com"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ranlib15.exe"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/gcc-ranlib15"
-      - "C:/Program Files/Git/cmd/gcc-ranlib15.com"
-      - "C:/Program Files/Git/cmd/gcc-ranlib15.exe"
-      - "C:/Program Files/Git/cmd/gcc-ranlib15"
-      - "C:/Program Files/dotnet/gcc-ranlib15.com"
-      - "C:/Program Files/dotnet/gcc-ranlib15.exe"
-      - "C:/Program Files/dotnet/gcc-ranlib15"
-      - "C:/Program Files/nodejs/gcc-ranlib15.com"
-      - "C:/Program Files/nodejs/gcc-ranlib15.exe"
-      - "C:/Program Files/nodejs/gcc-ranlib15"
-      - "C:/Program Files/CMake/bin/gcc-ranlib15.com"
-      - "C:/Program Files/CMake/bin/gcc-ranlib15.exe"
-      - "C:/Program Files/CMake/bin/gcc-ranlib15"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ranlib15.com"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ranlib15.exe"
-      - "C:/Program Files/Docker/Docker/resources/bin/gcc-ranlib15"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ranlib15.com"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ranlib15.exe"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/gcc-ranlib15"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ranlib15.com"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ranlib15.exe"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/gcc-ranlib15"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ranlib15.com"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ranlib15.exe"
-      - "D:/Programs/Microsoft VS Code/bin/gcc-ranlib15"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ranlib15.com"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ranlib15.exe"
-      - "C:/Program Files (x86)/Steam/ext/bin/gcc-ranlib15"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ranlib15.com"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ranlib15.exe"
-      - "C:/Users/heito/AppData/Roaming/npm/gcc-ranlib15"
-      - "C:/msys64/ucrt64/bin/gcc-ranlib.com"
-    found: "C:/msys64/ucrt64/bin/gcc-ranlib.exe"
+      - "/usr/bin/gcc-ranlib-15.2"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-15.2"
+      - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc-ranlib-15.2"
+      - "/usr/local/sbin/gcc-ranlib-15.2"
+      - "/usr/local/bin/gcc-ranlib-15.2"
+      - "/usr/sbin/gcc-ranlib-15.2"
+      - "/sbin/gcc-ranlib-15.2"
+      - "/bin/gcc-ranlib-15.2"
+      - "/usr/games/gcc-ranlib-15.2"
+      - "/usr/local/games/gcc-ranlib-15.2"
+      - "/snap/bin/gcc-ranlib-15.2"
+    found: "/usr/bin/gcc-ranlib-15"
     search_context:
       ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineRCCompiler.cmake:40 (find_program)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake:169 (enable_language)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake:2 (__windows_compiler_gnu)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake:48 (include)"
-      - "CMakeLists.txt:2 (project)"
-    mode: "program"
-    variable: "CMAKE_RC_COMPILER"
-    description: "RC compiler"
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "windres"
-      - "windres"
-    candidate_directories:
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "D:/Programs/Microsoft VS Code/"
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/ProgramData/UNIVALI/Portugol Studio/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Users/heito/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/heito/AppData/Local/Microsoft/WindowsApps/"
-      - "D:/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files (x86)/Steam/ext/bin/"
-      - "C:/Users/heito/AppData/Roaming/npm/"
-      - "C:/Program Files/bin/"
-      - "C:/Program Files/sbin/"
-      - "C:/Program Files/"
-      - "C:/Program Files (x86)/bin/"
-      - "C:/Program Files (x86)/sbin/"
-      - "C:/Program Files (x86)/"
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/msys64/ucrt64/sbin/"
-      - "C:/msys64/ucrt64/"
-      - "C:/Program Files (x86)/Watermelon_Game/bin/"
-      - "C:/Program Files (x86)/Watermelon_Game/sbin/"
-      - "C:/Program Files (x86)/Watermelon_Game/"
-    searched_directories:
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/windres.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/windres.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/windres"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/windres.com"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/windres.exe"
-      - "C:/Users/heito/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/windres"
-      - "D:/Programs/Microsoft VS Code/windres.com"
-      - "D:/Programs/Microsoft VS Code/windres.exe"
-      - "D:/Programs/Microsoft VS Code/windres"
-      - "C:/msys64/ucrt64/bin/windres.com"
-    found: "C:/msys64/ucrt64/bin/windres.exe"
-    search_context:
-      ENV{PATH}:
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
-        - "c:\\Users\\heito\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
-        - "D:\\Programs\\Microsoft VS Code"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64_win\\compiler"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\ProgramData\\UNIVALI\\Portugol Studio"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\heito\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\heito\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "D:\\Programs\\Microsoft VS Code\\bin"
-        - "c:\\program files (x86)\\steam\\ext\\bin"
-        - "C:\\Users\\heito\\AppData\\Roaming\\npm"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Watermelon_Game"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "C:/Program Files"
-        - "C:/Program Files (x86)"
-        - "C:/msys64/ucrt64"
-        - "C:/Program Files (x86)/Watermelon_Game"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/home/torzin/.config/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
   -
     kind: "try_compile-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-bqqvi4"
-      binary: "C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-bqqvi4"
+      source: "/home/torzin/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-1uwE2y"
+      binary: "/home/torzin/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-1uwE2y"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -2018,261 +902,239 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-bqqvi4'
+        Change Dir: '/home/torzin/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-1uwE2y'
         
-        Run Build Command(s): C:/msys64/ucrt64/bin/cmake.exe -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_5407c/fast
-        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_5407c.dir\\build.make CMakeFiles/cmTC_5407c.dir/build
-        mingw32-make[1]: Entering directory 'C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-bqqvi4'
-        Building C object CMakeFiles/cmTC_5407c.dir/CMakeCCompilerABI.c.obj
-        C:\\msys64\\ucrt64\\bin\\cc.exe   -v -o CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj -c C:\\msys64\\ucrt64\\share\\cmake\\Modules\\CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ee88c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ee88c.dir/build.make CMakeFiles/cmTC_ee88c.dir/build
+        gmake[1]: Entering directory '/home/torzin/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-1uwE2y'
+        Building C object CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c
         Using built-in specs.
-        COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe
-        Target: x86_64-w64-mingw32
-        Configured with: ../gcc-15.2.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-mingw-wildcard --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-backtrace=yes --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev13, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --with-libstdcxx-zoneinfo=yes --disable-libstdcxx-debug --enable-plugin --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++
+        COLLECT_GCC=/usr/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 15.2.0-16ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-15/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust,cobol,algol68 --prefix=/usr --with-gcc-major-version-only --program-suffix=-15 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-15-j35TAX/gcc-15-15.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-15-j35TAX/gcc-15-15.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
-        gcc version 15.2.0 (Rev13, Built by MSYS2 project) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5407c.dir\\'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:\\msys64\\ucrt64\\share\\cmake\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_5407c.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\heito\\AppData\\Local\\Temp\\ccVVD9Fh.s
-        GNU C23 (Rev13, Built by MSYS2 project) version 15.2.0 (x86_64-w64-mingw32)
+        gcc version 15.2.0 (Ubuntu 15.2.0-16ubuntu1) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ee88c.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/15/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_ee88c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -fzero-init-padding-bits=all -Wbidi-chars=any -o /tmp/ccvBIGRR.s
+        GNU C23 (Ubuntu 15.2.0-16ubuntu1) version 15.2.0 (x86_64-linux-gnu)
         	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-        ignoring nonexistent directory "C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include"
-        ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/include"
-        ignoring nonexistent directory "D:/M/msys64/ucrt64/include"
-        ignoring nonexistent directory "/ucrt64/include"
-        ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed"
-        ignoring nonexistent directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/15/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/15/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include"
         #include "..." search starts here:
         #include <...> search starts here:
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed
+         /usr/lib/gcc/x86_64-linux-gnu/15/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
         End of search list.
-        Compiler executable checksum: 2dc0d4d9031850250705d7103cc24ced
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5407c.dir\\'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj C:\\Users\\heito\\AppData\\Local\\Temp\\ccVVD9Fh.s
-        GNU assembler version 2.46 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.46
-        COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
-        LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.'
-        Linking C executable cmTC_5407c.exe
-        C:\\msys64\\ucrt64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_5407c.dir\\link.txt --verbose=1
+        Compiler executable checksum: edd70396dcc669433a92073f97309866
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ee88c.dir/'
+         /usr/bin/x86_64-linux-gnu-as -v --64 -o CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o /tmp/ccvBIGRR.s
+        GNU assembler version 2.46 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.46
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_ee88c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ee88c.dir/link.txt --verbose=1
         Using built-in specs.
-        COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe
-        COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe
-        Target: x86_64-w64-mingw32
-        Configured with: ../gcc-15.2.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-mingw-wildcard --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-backtrace=yes --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev13, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --with-libstdcxx-zoneinfo=yes --disable-libstdcxx-debug --enable-plugin --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 15.2.0-16ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-15/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust,cobol,algol68 --prefix=/usr --with-gcc-major-version-only --program-suffix=-15 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-15-j35TAX/gcc-15-15.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-15-j35TAX/gcc-15-15.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
-        gcc version 15.2.0 (Rev13, Built by MSYS2 project) 
-        COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
-        LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5407c.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_5407c.'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\heito\\AppData\\Local\\Temp\\ccE2KrUm.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_5407c.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_5407c.dir/objects.a --no-whole-archive --out-implib libcmTC_5407c.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        gcc version 15.2.0 (Ubuntu 15.2.0-16ubuntu1) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ee88c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ee88c.'
+         /usr/libexec/gcc/x86_64-linux-gnu/15/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAWn293.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ee88c /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o
         collect2 version 15.2.0
-        C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\heito\\AppData\\Local\\Temp\\ccE2KrUm.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_5407c.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_5407c.dir/objects.a --no-whole-archive --out-implib libcmTC_5407c.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
-        GNU ld (GNU Binutils) 2.46
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5407c.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_5407c.'
-        C:\\msys64\\ucrt64\\bin\\cmake.exe -E rm -f CMakeFiles\\cmTC_5407c.dir/objects.a
-        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_5407c.dir/objects.a @CMakeFiles\\cmTC_5407c.dir\\objects1.rsp
-        C:\\msys64\\ucrt64\\bin\\cc.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_5407c.dir/objects.a -Wl,--no-whole-archive -o cmTC_5407c.exe -Wl,--out-implib,libcmTC_5407c.dll.a -Wl,--major-image-version,0,--minor-image-version,0
-        mingw32-make[1]: Leaving directory 'C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-bqqvi4'
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAWn293.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ee88c /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Ubuntu) 2.46
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ee88c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ee88c.'
+        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o -o cmTC_ee88c
+        gmake[1]: Leaving directory '/home/torzin/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-1uwE2y'
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed C implicit include dir info: rv=done
         found start of include info
         found start of implicit include info
-          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include]
-          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include]
-          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/15/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
         end of search list found
-        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include]
-        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include] ==> [C:/msys64/ucrt64/include]
-        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
-        implicit include dirs: [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include;C:/msys64/ucrt64/include;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/15/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/15/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/15/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
       
       
   -
     kind: "message-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-bqqvi4']
+        ignore line: [Change Dir: '/home/torzin/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-1uwE2y']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/msys64/ucrt64/bin/cmake.exe -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_5407c/fast]
-        ignore line: [C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_5407c.dir\\build.make CMakeFiles/cmTC_5407c.dir/build]
-        ignore line: [mingw32-make[1]: Entering directory 'C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-bqqvi4']
-        ignore line: [Building C object CMakeFiles/cmTC_5407c.dir/CMakeCCompilerABI.c.obj]
-        ignore line: [C:\\msys64\\ucrt64\\bin\\cc.exe   -v -o CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj -c C:\\msys64\\ucrt64\\share\\cmake\\Modules\\CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ee88c/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_ee88c.dir/build.make CMakeFiles/cmTC_ee88c.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/torzin/Downloads/WatermelonGame/Watermelon_Game/build/CMakeFiles/CMakeScratch/TryCompile-1uwE2y']
+        ignore line: [Building C object CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe]
-        ignore line: [Target: x86_64-w64-mingw32]
-        ignore line: [Configured with: ../gcc-15.2.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-mingw-wildcard --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-backtrace=yes --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev13, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --with-libstdcxx-zoneinfo=yes --disable-libstdcxx-debug --enable-plugin --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 15.2.0-16ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-15/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust cobol algol68 --prefix=/usr --with-gcc-major-version-only --program-suffix=-15 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-15-j35TAX/gcc-15-15.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-15-j35TAX/gcc-15-15.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 15.2.0 (Rev13  Built by MSYS2 project) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5407c.dir\\']
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:\\msys64\\ucrt64\\share\\cmake\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_5407c.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\heito\\AppData\\Local\\Temp\\ccVVD9Fh.s]
-        ignore line: [GNU C23 (Rev13  Built by MSYS2 project) version 15.2.0 (x86_64-w64-mingw32)]
+        ignore line: [gcc version 15.2.0 (Ubuntu 15.2.0-16ubuntu1) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ee88c.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/15/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_ee88c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -fzero-init-padding-bits=all -Wbidi-chars=any -o /tmp/ccvBIGRR.s]
+        ignore line: [GNU C23 (Ubuntu 15.2.0-16ubuntu1) version 15.2.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-        ignore line: [ignoring nonexistent directory "C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include"]
-        ignore line: [ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/include"]
-        ignore line: [ignoring nonexistent directory "D:/M/msys64/ucrt64/include"]
-        ignore line: [ignoring nonexistent directory "/ucrt64/include"]
-        ignore line: [ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed"]
-        ignore line: [ignoring nonexistent directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/15/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/15/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include"]
         ignore line: [#include "..." search starts here:]
         ignore line: [#include <...> search starts here:]
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include]
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../include]
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/15/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
         ignore line: [End of search list.]
-        ignore line: [Compiler executable checksum: 2dc0d4d9031850250705d7103cc24ced]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5407c.dir\\']
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj C:\\Users\\heito\\AppData\\Local\\Temp\\ccVVD9Fh.s]
-        ignore line: [GNU assembler version 2.46 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.46]
-        ignore line: [COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/]
-        ignore line: [LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5407c.dir\\CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_5407c.exe]
-        ignore line: [C:\\msys64\\ucrt64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_5407c.dir\\link.txt --verbose=1]
+        ignore line: [Compiler executable checksum: edd70396dcc669433a92073f97309866]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ee88c.dir/']
+        ignore line: [ /usr/bin/x86_64-linux-gnu-as -v --64 -o CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o /tmp/ccvBIGRR.s]
+        ignore line: [GNU assembler version 2.46 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.46]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_ee88c]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ee88c.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe]
-        ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe]
-        ignore line: [Target: x86_64-w64-mingw32]
-        ignore line: [Configured with: ../gcc-15.2.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-mingw-wildcard --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-backtrace=yes --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev13, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --with-libstdcxx-zoneinfo=yes --disable-libstdcxx-debug --enable-plugin --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 15.2.0-16ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-15/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust cobol algol68 --prefix=/usr --with-gcc-major-version-only --program-suffix=-15 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-15-j35TAX/gcc-15-15.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-15-j35TAX/gcc-15-15.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 15.2.0 (Rev13  Built by MSYS2 project) ]
-        ignore line: [COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/]
-        ignore line: [LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5407c.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_5407c.']
-        link line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\heito\\AppData\\Local\\Temp\\ccE2KrUm.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_5407c.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_5407c.dir/objects.a --no-whole-archive --out-implib libcmTC_5407c.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe] ==> ignore
+        ignore line: [gcc version 15.2.0 (Ubuntu 15.2.0-16ubuntu1) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ee88c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ee88c.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/15/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAWn293.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ee88c /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/15/collect2] ==> ignore
           arg [-plugin] ==> ignore
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll] ==> ignore
-          arg [-plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\heito\\AppData\\Local\\Temp\\ccE2KrUm.res] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccAWn293.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-          arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
-          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
-          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
-          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
-          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
-          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
-          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-          arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
-          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
           arg [-m] ==> ignore
-          arg [i386pep] ==> ignore
-          arg [-Bdynamic] ==> search dynamic
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_5407c.exe] ==> ignore
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o]
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..]
+          arg [cmTC_ee88c] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/15] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/15]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/15/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../..]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [--whole-archive] ==> ignore
-          arg [CMakeFiles\\cmTC_5407c.dir/objects.a] ==> ignore
-          arg [--no-whole-archive] ==> ignore
-          arg [--out-implib] ==> ignore
-          arg [libcmTC_5407c.dll.a] ==> ignore
-          arg [--major-image-version] ==> ignore
-          arg [0] ==> ignore
-          arg [--minor-image-version] ==> ignore
-          arg [0] ==> ignore
-          arg [-lmingw32] ==> lib [mingw32]
+          arg [CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
-          arg [-lgcc_eh] ==> lib [gcc_eh]
-          arg [-lmingwex] ==> lib [mingwex]
-          arg [-lmsvcrt] ==> lib [msvcrt]
-          arg [-lkernel32] ==> lib [kernel32]
-          arg [-lpthread] ==> lib [pthread]
-          arg [-ladvapi32] ==> lib [advapi32]
-          arg [-lshell32] ==> lib [shell32]
-          arg [-luser32] ==> lib [user32]
-          arg [-lkernel32] ==> lib [kernel32]
-          arg [-lmingw32] ==> lib [mingw32]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
           arg [-lgcc] ==> lib [gcc]
-          arg [-lgcc_eh] ==> lib [gcc_eh]
-          arg [-lmingwex] ==> lib [mingwex]
-          arg [-lmsvcrt] ==> lib [msvcrt]
-          arg [-lkernel32] ==> lib [kernel32]
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o]
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o]
         ignore line: [collect2 version 15.2.0]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\heito\\AppData\\Local\\Temp\\ccE2KrUm.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_5407c.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_5407c.dir/objects.a --no-whole-archive --out-implib libcmTC_5407c.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
-        linker tool for 'C': C:/msys64/ucrt64/x86_64-w64-mingw32/bin/ld.exe
-        remove lib [gcc_eh]
-        remove lib [msvcrt]
-        remove lib [gcc_eh]
-        remove lib [msvcrt]
-        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o] ==> [C:/msys64/ucrt64/lib/crt2.o]
-        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o]
-        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o] ==> [C:/msys64/ucrt64/lib/default-manifest.o]
-        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc] ==> [C:/msys64/ucrt64/lib/gcc]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [C:/msys64/ucrt64/x86_64-w64-mingw32/lib]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib] ==> [C:/msys64/ucrt64/lib]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib] ==> [C:/msys64/ucrt64/x86_64-w64-mingw32/lib]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..] ==> [C:/msys64/ucrt64/lib]
-        implicit libs: [mingw32;gcc;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;mingwex;kernel32]
-        implicit objs: [C:/msys64/ucrt64/lib/crt2.o;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o;C:/msys64/ucrt64/lib/default-manifest.o;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
-        implicit dirs: [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0;C:/msys64/ucrt64/lib/gcc;C:/msys64/ucrt64/x86_64-w64-mingw32/lib;C:/msys64/ucrt64/lib]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAWn293.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ee88c /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_ee88c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/15] ==> [/usr/lib/gcc/x86_64-linux-gnu/15]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../..] ==> [/usr/lib]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/15;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
         implicit fwks: []
       
       
   -
     kind: "message-v1"
     backtrace:
-      - "C:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
-      - "C:/msys64/ucrt64/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/usr/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      Running the C compiler's linker: "C:/msys64/ucrt64/x86_64-w64-mingw32/bin/ld.exe" "-v"
-      GNU ld (GNU Binutils) 2.46
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Ubuntu) 2.46
 ...
