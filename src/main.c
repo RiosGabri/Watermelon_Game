@@ -57,7 +57,8 @@ int main(void) {
                 float x = mouse.x;
                 if (x < 115) x = 115;   //só spawna dentro da "cesta"
                 if (x > 685) x = 685;
-                inserirFruta(espaco, x, 160, 0, &head);
+                int id = GetRandomValue(0, 2);
+                inserirFruta(espaco, x, 160, id, &head);
             }
             cpSpaceStep(espaco, 1.0f / 60.0f);
             break;
