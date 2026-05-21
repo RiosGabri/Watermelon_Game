@@ -19,7 +19,7 @@ int main(void) {
     SetExitKey(KEY_NULL);
     SetTargetFPS(60);
 
-    /* Texturas do menu  */
+    /* Texturas do jogo  */
     Texture2D bg_menu            = LoadTexture("Resources/menu_background.png");
     Texture2D tex_play           = LoadTexture("Resources/button_play.png");
     Texture2D tex_exit           = LoadTexture("Resources/button_exit.png");
@@ -29,6 +29,17 @@ int main(void) {
     Texture2D tex_exit_hover     = LoadTexture("Resources/button_exit_hover.png");
     Texture2D tex_settings_hover = LoadTexture("Resources/button_settings_hover.png");
     Texture2D tex_music_hover    = LoadTexture("Resources/button_music_hover.png");
+    
+    Texture2D tex_frutas[NIVEIS_FRUTA];
+    Texture2D uva = LoadTexture("Resources/uva.png");
+    tex_frutas[0] = LoadTexture("Resources/uva.png");
+    tex_frutas[1] = LoadTexture("Resources/cereja.png");
+    tex_frutas[2] = LoadTexture("Resources/morango.png");
+    tex_frutas[3] = LoadTexture("Resources/maca.png");
+    tex_frutas[4] = LoadTexture("Resources/pera.png");
+    tex_frutas[5] = LoadTexture("Resources/laranja.png");
+    tex_frutas[6] = LoadTexture("Resources/abacaxi.png");
+    tex_frutas[7] = LoadTexture("Resources/melancia.png");
 
     Botao btnPlay     = { {(Largura/2.0f - 145), 300, 290, 78}, tex_play,     tex_play_hover };
     Botao btnMusic    = { {(Largura/2.0f - 145), 398, 290, 78}, tex_music,    tex_music_hover };
@@ -113,9 +124,16 @@ int main(void) {
 
                 /* Fruta suspensa seguindo o mouse */
                 float raio_atual = LISTA_FRUTAS[tipo_atual].raio;
-                DrawCircle((int)pos_x, 160, (int)raio_atual, RED);
-                DrawText(LISTA_FRUTAS[tipo_atual].nome,
-                         (int)(pos_x - 10), 155, 10, WHITE);
+                float diametro_atual = raio_atual * 2;
+                Texture2D tex_atual = tex_frutas[tipo_atual];
+                DrawTexturePro(
+                    tex_atual,
+                    (Rectangle){0, 0, (float)tex_atual.width, (float)tex_atual.height},
+                    (Rectangle){pos_x, 160, diametro_atual, diametro_atual},  //por enquanto vou manter usando o mesmo raio dos placeholders,
+                    (Vector2){raio_atual, raio_atual},                        //pois mantendo as proporções originais das imagens, as hitbox ficam estranhas
+                    0.0f,
+                    WHITE
+                );
 
                 /* Linha guia vertical (pontilhada) */
                 for (int y = 160 + (int)raio_atual; y < 750; y += 12)
@@ -124,22 +142,37 @@ int main(void) {
                 /* Prévia da próxima fruta (canto superior direito) */
                 DrawText("Proxima:", 710, 160, 14, DARKGRAY);
                 float raio_prox = LISTA_FRUTAS[tipo_prox].raio;
-                DrawCircle(735, 200, (int)raio_prox, BLUE);
-                DrawText(LISTA_FRUTAS[tipo_prox].nome,
-                         710, 215, 10, DARKGRAY);
+                
+                Texture2D tex_prox = tex_frutas[tipo_prox];
+                float diametro_prox = raio_prox * 2;
+                DrawTexturePro(
+                    tex_prox,
+                    (Rectangle){0, 0, tex_prox.width, tex_prox.height},
+                    (Rectangle){735, 200, diametro_prox, diametro_prox},
+                    (Vector2){raio_prox, raio_prox},
+                    0.0f,
+                    WHITE
+                );
 
                 /* Frutas no tabuleiro */
                 NodeFruta *atual = head;
                 while (atual != NULL) {
                     cpVect pos  = cpBodyGetPosition(atual->fruta.body);
                     float  raio = LISTA_FRUTAS[atual->fruta.nivel].raio;
-                    DrawCircle((int)pos.x, (int)pos.y, (int)raio, RED);
-                    DrawText(LISTA_FRUTAS[atual->fruta.nivel].nome,
-                             (int)pos.x - 10, (int)pos.y - 5, 10, WHITE);
+                    
+                    float diametro = raio * 2;
+                    Texture2D tex = tex_frutas[atual->fruta.nivel];
+                    DrawTexturePro(
+                        tex,
+                        (Rectangle){0, 0, tex.width, tex.height},
+                        (Rectangle){pos.x, pos.y, diametro, diametro},
+                        (Vector2){raio, raio},
+                        0.0f,
+                    WHITE
+                );
                     atual = atual->next;
                 }
             }
-
         EndDrawing();
     }
 
@@ -163,6 +196,9 @@ fechar:
     UnloadTexture(tex_exit_hover);
     UnloadTexture(tex_settings_hover);
     UnloadTexture(tex_music_hover);
+    for (int i = 0; i < NIVEIS_FRUTA; i++){  //loop pra liberar a textura de cada uma das frutas
+    UnloadTexture(tex_frutas[i]);
+    }
     cpSpaceFree(espaco);
     CloseWindow();
     return 0;
