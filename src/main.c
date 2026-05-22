@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include "physics.h"
 #include "fruits.h"
+#include "obstaculos.h"
 
 #define Largura 800
 #define Altura  800
@@ -19,7 +20,6 @@ int main(void) {
     SetExitKey(KEY_NULL);
     SetTargetFPS(60);
 
-    /* Texturas do jogo  */
     Texture2D bg_menu            = LoadTexture("Resources/menu_background.png");
     Texture2D tex_play           = LoadTexture("Resources/button_play.png");
     Texture2D tex_exit           = LoadTexture("Resources/button_exit.png");
@@ -31,7 +31,6 @@ int main(void) {
     Texture2D tex_music_hover    = LoadTexture("Resources/button_music_hover.png");
     
     Texture2D tex_frutas[NIVEIS_FRUTA];
-    Texture2D uva = LoadTexture("Resources/uva.png");
     tex_frutas[0] = LoadTexture("Resources/uva.png");
     tex_frutas[1] = LoadTexture("Resources/cereja.png");
     tex_frutas[2] = LoadTexture("Resources/morango.png");
@@ -46,26 +45,26 @@ int main(void) {
     Botao btnSettings = { {(Largura/2.0f - 145), 496, 290, 78}, tex_settings, tex_settings_hover };
     Botao btnExit     = { {(Largura/2.0f - 145), 594, 290, 78}, tex_exit,     tex_exit_hover };
 
-    /*  Física  */
     cpSpace *espaco = initEspaco();
     criarArea(espaco);
     registrarFusoes(espaco);
 
+    inicializarObstaculos();
+    configurarCallbacksObstaculos(espaco);
+
     NodeFruta *head = NULL;
     g_head = &head;
 
-    /*  Estado do jogo  */
     Estado_Jogo estado = EST_MENU;
 
-    /* Fruta suspensa (aguardando o clique do jogador)  */
-    int   tipo_atual = GetRandomValue(0, 3); /* nível da fruta atual         */
-    int   tipo_prox  = GetRandomValue(0, 3); /* nível da próxima fruta       */
-    float pos_x      = Largura / 2.0f;       /* posição horizontal da fruta  */
-    int   pode_soltar = 1;                   /* impede spam de cliques       */
+    int   tipo_atual = GetRandomValue(0, 3); 
+    int   tipo_prox  = GetRandomValue(0, 3); 
+    float pos_x      = Largura / 2.0f;       
+    int   pode_soltar = 1;                   
+    int   contadorCliques = 0;
 
     while (!WindowShouldClose()) {
 
-        /*  Input  */
         switch (estado) {
             case EST_MENU:
                 if (foi_clicado(btnPlay)) {
@@ -74,6 +73,8 @@ int main(void) {
                     tipo_prox  = GetRandomValue(0, 3);
                     pos_x      = Largura / 2.0f;
                     pode_soltar = 1;
+                    contadorCliques = 0;
+                    inicializarObstaculos();
                 }
                 if (foi_clicado(btnExit)) goto fechar;
                 break;
@@ -81,22 +82,26 @@ int main(void) {
             case EST_JOGO:
                 if (IsKeyPressed(KEY_ESCAPE)) estado = EST_MENU;
 
-                /* Fruta segue o mouse horizontalmente */
                 pos_x = GetMousePosition().x;
                 if (pos_x < 115) pos_x = 115;
                 if (pos_x > 685) pos_x = 685;
 
-                /* Clique solta a fruta e sorteia a próxima */
                 if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && pode_soltar) {
                     inserirFruta(espaco, pos_x, 160, tipo_atual, &head);
                     tipo_atual  = tipo_prox;
                     tipo_prox   = GetRandomValue(0, 3);
-                    pode_soltar = 0; /* bloqueia até a fruta pousar */
+                    pode_soltar = 0; 
+
+                    contadorCliques++;
+                    if (contadorCliques >= 10) {
+                        spawnBlocoFixo(espaco, &head); 
+                        contadorCliques = 0;
+                    } else {
+                        testarSpawnEspecial(espaco, &head); 
+                    }
                 }
 
-                /* Libera o próximo clique após a fruta cair um pouco */
                 if (!pode_soltar) {
-                    /* Verifica se a última fruta inserida já passou da linha de soltura */
                     if (head != NULL) {
                         cpVect pos = cpBodyGetPosition(head->fruta.body);
                         if (pos.y > 200) pode_soltar = 1;
@@ -104,10 +109,11 @@ int main(void) {
                 }
 
                 cpSpaceStep(espaco, 1.0f / 60.0f);
+                atualizarELimparObstaculos(espaco, &head); 
+                processarFusoes(espaco, &head);           
                 break;
         }
 
-        /*  Desenho  */
         BeginDrawing();
             ClearBackground(RAYWHITE);
 
@@ -120,58 +126,56 @@ int main(void) {
 
             } else {
                 ClearBackground(RGB(245, 235, 210));
-                DrawRectangleLines(100, 150, 600, 600, DARKGRAY); /* placeholder da cesta */
+                DrawRectangleLines(100, 150, 600, 600, DARKGRAY); 
 
-                /* Fruta suspensa seguindo o mouse */
                 float raio_atual = LISTA_FRUTAS[tipo_atual].raio;
                 float diametro_atual = raio_atual * 2;
                 Texture2D tex_atual = tex_frutas[tipo_atual];
                 DrawTexturePro(
                     tex_atual,
                     (Rectangle){0, 0, (float)tex_atual.width, (float)tex_atual.height},
-                    (Rectangle){pos_x, 160, diametro_atual, diametro_atual},  //por enquanto vou manter usando o mesmo raio dos placeholders,
-                    (Vector2){raio_atual, raio_atual},                        //pois mantendo as proporções originais das imagens, as hitbox ficam estranhas
+                    (Rectangle){pos_x, 160, diametro_atual, diametro_atual},
+                    (Vector2){raio_atual, raio_atual},
                     0.0f,
                     WHITE
                 );
 
-                /* Linha guia vertical (pontilhada) */
                 for (int y = 160 + (int)raio_atual; y < 750; y += 12)
                     DrawPixel((int)pos_x, y, GRAY);
-
-                /* Prévia da próxima fruta (canto superior direito) */
                 DrawText("Proxima:", 710, 160, 14, DARKGRAY);
                 float raio_prox = LISTA_FRUTAS[tipo_prox].raio;
-                
                 Texture2D tex_prox = tex_frutas[tipo_prox];
                 float diametro_prox = raio_prox * 2;
                 DrawTexturePro(
                     tex_prox,
-                    (Rectangle){0, 0, tex_prox.width, tex_prox.height},
+                    (Rectangle){0, 0, (float)tex_prox.width, (float)tex_prox.height},
                     (Rectangle){735, 200, diametro_prox, diametro_prox},
                     (Vector2){raio_prox, raio_prox},
                     0.0f,
                     WHITE
                 );
-
-                /* Frutas no tabuleiro */
                 NodeFruta *atual = head;
                 while (atual != NULL) {
                     cpVect pos  = cpBodyGetPosition(atual->fruta.body);
                     float  raio = LISTA_FRUTAS[atual->fruta.nivel].raio;
-                    
-                    float diametro = raio * 2;
+                    float  angulo = (float)cpBodyGetAngle(atual->fruta.body) * RAD2DEG; 
+                    float  diametro = raio * 2;
                     Texture2D tex = tex_frutas[atual->fruta.nivel];
+                    
                     DrawTexturePro(
                         tex,
-                        (Rectangle){0, 0, tex.width, tex.height},
-                        (Rectangle){pos.x, pos.y, diametro, diametro},
+                        (Rectangle){0, 0, (float)tex.width, (float)tex.height},
+                        (Rectangle){(float)pos.x, (float)pos.y, diametro, diametro},
                         (Vector2){raio, raio},
-                        0.0f,
-                    WHITE
-                );
+                        angulo,
+                        WHITE
+                    );
+                    if (atual->fruta.estaPodre) {
+                        DrawCircleLines((int)pos.x, (int)pos.y, (int)raio, DARKGREEN);
+                    } 
                     atual = atual->next;
                 }
+                desenharObstaculos();
             }
         EndDrawing();
     }
@@ -186,6 +190,16 @@ fechar:
         cpBodyFree(tmp->fruta.body);
         free(tmp);
     }
+    for (int i = 0; i < qtdObstaculos; i++) {
+        if (listaObstaculos[i].ativo) {
+            cpSpaceRemoveShape(espaco, listaObstaculos[i].shape);
+            cpShapeFree(listaObstaculos[i].shape);
+            if (listaObstaculos[i].tipo != OBJ_BLOCO) {
+                cpSpaceRemoveBody(espaco, listaObstaculos[i].body);
+                cpBodyFree(listaObstaculos[i].body);
+            }
+        }
+    }
 
     UnloadTexture(bg_menu);
     UnloadTexture(tex_play);
@@ -196,8 +210,8 @@ fechar:
     UnloadTexture(tex_exit_hover);
     UnloadTexture(tex_settings_hover);
     UnloadTexture(tex_music_hover);
-    for (int i = 0; i < NIVEIS_FRUTA; i++){  //loop pra liberar a textura de cada uma das frutas
-    UnloadTexture(tex_frutas[i]);
+    for (int i = 0; i < NIVEIS_FRUTA; i++) {
+        UnloadTexture(tex_frutas[i]);
     }
     cpSpaceFree(espaco);
     CloseWindow();

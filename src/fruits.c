@@ -3,93 +3,100 @@
 #include "physics.h"
 #include <stdlib.h>
 
-//#define RGB(r, g, b) (Color){r, g, b, 255}
-
 const Fruta_Def LISTA_FRUTAS[NIVEIS_FRUTA] = {
-    {"Uva",  15.0f,    1 },  //tipo da uva = 0
-    {"Cereja", 20.0f,    2 },  //tipo da cereja = 1
-    {"Morango", 27.0f,    4 },  //tipo do morango = 2 ..
-    {"Maçã",   35.0f,    8 },
-    {"Pera",    43.0f,   16 },
-    {"Laranja",   52.0f,   32 },
-    {"Abacaxi",  62.0f,   64 },
-    {"Melancia",73.0f,  128 },
+    {"Uva",      15.0f,  1},
+    {"Cereja",   20.0f,  2},
+    {"Morango",  27.0f,  4},
+    {"Maçã",     35.0f,  8},
+    {"Pera",     43.0f,  16},
+    {"Laranja",  52.0f,  32},
+    {"Abacaxi",  62.0f,  64},
+    {"Melancia", 73.0f,  128}
 };
 
 Fruta criarFruta(cpSpace *espaco, float x, float y, int tipo) {
-    float raio = LISTA_FRUTAS[tipo].raio;
-    cpShape* formatoFruta = criarCorpoFruta(espaco, x, y, raio, tipo); //criando o corpo da fruta de acrodo com o tipo dela
-    cpBody* corpoFruta = cpShapeGetBody(formatoFruta);
-
-    //criando a fruta
     Fruta fruta;
-    fruta.shape = formatoFruta;
-    fruta.body = corpoFruta;
-    fruta.fundindo = 0; //nao esta fundindo
-    fruta.nivel = tipo; //tipo da fruta
+    float raio = LISTA_FRUTAS[tipo].raio;
+    float massa = 1.0f * (tipo + 1);
+    fruta.body = cpSpaceAddBody(espaco, cpBodyNew(massa, cpMomentForCircle(massa, 0, raio, cpvzero)));
+    cpBodySetPosition(fruta.body, cpv(x, y));
+    fruta.shape = cpSpaceAddShape(espaco, cpCircleShapeNew(fruta.body, raio, cpvzero));
+    cpShapeSetFriction(fruta.shape, 0.4f);
+    cpShapeSetElasticity(fruta.shape, 0.2f);
+    cpShapeSetCollisionType(fruta.shape, tipo);
+
+    fruta.nivel = tipo;
+    fruta.fundindo = 0;
+    fruta.estaPodre = 0;
     return fruta;
 }
-//funcoes da lista encadeada da fruta:
 
 NodeFruta* criarNodeFruta(Fruta fruta) {
-    NodeFruta* novoNode = (NodeFruta*)malloc(sizeof(NodeFruta));
-    novoNode->fruta = fruta;
-    novoNode->next = NULL;
-    return novoNode;
+    NodeFruta *novo = (NodeFruta*)malloc(sizeof(NodeFruta));
+    if (novo != NULL) {
+        novo->fruta = fruta;
+        novo->next = NULL;
+    }
+    return novo;
 }
 
 void inserirFruta(cpSpace* espaco, float x, float y, int tipo, NodeFruta** head) {
     Fruta novaFruta = criarFruta(espaco, x, y, tipo);
-    NodeFruta* fruta = criarNodeFruta(novaFruta);
-    cpShapeSetUserData(fruta->fruta.shape, &fruta->fruta); //linka o "objeto" fruta com o shape/formato dela
-
-    //inserir a fruta no começo da lista
-    fruta->next = *head; //novo node aponta para o head q foi recebido
-    *head = fruta; //o novo node agora é o head
+    NodeFruta *novoNode = criarNodeFruta(novaFruta);
+    cpShapeSetUserData(novaFruta.shape, &(novoNode->fruta));
+    if (*head == NULL) {
+        *head = novoNode;
+    } else {
+        novoNode->next = *head;
+        *head = novoNode;
+    }
 }
 
 void removerFruta(cpSpace* espaco, cpShape *frutaRemover, NodeFruta** head) {
-    if(*head == NULL) {
-        return;
-    }else {
-        NodeFruta* aux = *head;
-        NodeFruta* anterior = NULL;
-        while(aux != NULL && aux->fruta.shape != frutaRemover) { //enquanto nao achar a fruta para remover
-            anterior = aux;
-            aux = aux->next;
+    if (frutaRemover == NULL || *head == NULL) return;
+    NodeFruta *atual = *head;
+    NodeFruta *anterior = NULL;
+
+    while (atual != NULL) {
+        if (atual->fruta.shape == frutaRemover) {
+            if (anterior == NULL) {
+                *head = atual->next;
+            } else {
+                anterior->next = atual->next;
+            }
+            cpSpaceRemoveShape(espaco, atual->fruta.shape);
+            cpShapeFree(atual->fruta.shape);
+            cpSpaceRemoveBody(espaco, atual->fruta.body);
+            cpBodyFree(atual->fruta.body);
+
+            free(atual);
+            return;
         }
-        if (aux==NULL) return; //se nao achar
-
-        if (aux == *head)*head = aux->next; //dança de ponteiros para ajustar os ponteiros
-        else anterior->next = aux->next;
-
-        //remover do espaço da fisica
-        cpSpaceRemoveShape(espaco, aux->fruta.shape);
-        cpShapeFree(aux->fruta.shape);
-        cpSpaceRemoveBody(espaco, aux->fruta.body);
-        cpBodyFree(aux->fruta.body);
-
-        free(aux);
-
+        anterior = atual;
+        atual = atual->next;
     }
 }
-//fim das funcoes da lista encadeada
 
-//processar as fusoes (fazer a lista das pendencias andarem):
 void processarFusoes(cpSpace* espaco, NodeFruta **head) {
-    //percorrendo cada funcao agendada na lista:
     for (int i = 0; i < numFusoesPendentes; i++) {
-
-        FusaoPendente *f = &filaFusoes[i]; //guarda a funcao pendente
-
-        // remove as duas frutas da lista encadeada e do chipmunk
+        FusaoPendente *f = &filaFusoes[i];
+        Fruta *frutaA = (Fruta*)cpShapeGetUserData(f->formatoA);
+        Fruta *frutaB = (Fruta*)cpShapeGetUserData(f->formatoB);
+        
+        int fusaoCorrompida = 0;
+        if ((frutaA && frutaA->estaPodre) || (frutaB && frutaB->estaPodre)) {
+            fusaoCorrompida = 1; 
+        }
         removerFruta(espaco, f->formatoA, head);
         removerFruta(espaco, f->formatoB, head);
 
-        // so cria a fruta maior se nao ultrapassar o nivel maximo (8)
         if (f->nivelResultante < NIVEIS_FRUTA) {
-            inserirFruta(espaco, f->posicaoMedia.x, f->posicaoMedia.y, f->nivelResultante, head);
+            if (fusaoCorrompida) {
+                inserirFruta(espaco, f->posicaoMedia.x, f->posicaoMedia.y, 0, head);
+            } else {
+                inserirFruta(espaco, f->posicaoMedia.x, f->posicaoMedia.y, f->nivelResultante, head);
+            }
         }
     }
-    numFusoesPendentes = 0; //limpa a fila
+    numFusoesPendentes = 0;
 }
