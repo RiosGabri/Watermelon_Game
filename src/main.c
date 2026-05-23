@@ -80,12 +80,18 @@ int main(void) {
                 }
                 if (foi_clicado(btnExit)) goto fechar;
                 if (foi_clicado(btnMusic)) estado = EST_MUSICA;
+                if (foi_clicado(btnSettings)) estado = EST_CONFIGURACAO;
                 break;
             case EST_MUSICA:
                 if (IsKeyPressed(KEY_ESCAPE)) {
                     estado = EST_MENU; // se apertar esc, volta para menu
                 }
-
+                break;
+            case EST_CONFIGURACAO:
+                if (IsKeyPressed(KEY_ESCAPE)) {
+                    estado = EST_MENU; // se apertar esc, volta para menu
+                }
+                break;
             case EST_JOGO:
                 if (IsKeyPressed(KEY_ESCAPE)) estado = EST_MENU;
 
@@ -158,7 +164,25 @@ int main(void) {
 
                 // Instrução para voltar
                 DrawText("Pressione ESC para voltar", 230, 450, 18, LIGHTGRAY);
-            } else {
+            } else if (estado == EST_CONFIGURACAO) {
+                DrawTexture(bg_menu, 0, 0, WHITE);
+
+                // Painel central
+                DrawRectangleRounded((Rectangle){200, 200, 400, 300}, 0.2f, 8, (Color){0, 0, 0, 160});
+                DrawRectangleRoundedLines((Rectangle){200, 200, 400, 300}, 0.2f, 8, WHITE);
+
+                // Título do painel
+                DrawText("CONFIGURAÇAO", 250, 230, 40, WHITE);
+
+                // Linha separadora
+                DrawLine(220, 285, 580, 285, WHITE);
+
+                // Texto em breve
+                DrawText("Em breve...", 295, 320, 28, YELLOW);
+
+                // Instrução para voltar
+                DrawText("Pressione ESC para voltar", 230, 450, 18, LIGHTGRAY);
+            }else {
                 ClearBackground(RGB(245, 235, 210));
                 DrawRectangleLines(100, 150, 600, 600, DARKGRAY); 
 
