@@ -968,6 +968,30 @@ src/menu.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Watermelon_Game.dir\build.make CMakeFiles/Watermelon_Game.dir/src/menu.c.s
 .PHONY : src/menu.c.s
 
+src/obstaculos.obj: src/obstaculos.c.obj
+.PHONY : src/obstaculos.obj
+
+# target to build an object file
+src/obstaculos.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Watermelon_Game.dir\build.make CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.obj
+.PHONY : src/obstaculos.c.obj
+
+src/obstaculos.i: src/obstaculos.c.i
+.PHONY : src/obstaculos.i
+
+# target to preprocess a source file
+src/obstaculos.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Watermelon_Game.dir\build.make CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.i
+.PHONY : src/obstaculos.c.i
+
+src/obstaculos.s: src/obstaculos.c.s
+.PHONY : src/obstaculos.s
+
+# target to generate assembly for a file
+src/obstaculos.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Watermelon_Game.dir\build.make CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.s
+.PHONY : src/obstaculos.c.s
+
 src/physics.obj: src/physics.c.obj
 .PHONY : src/physics.obj
 
@@ -1106,6 +1130,9 @@ help:
 	@echo ... src/menu.obj
 	@echo ... src/menu.i
 	@echo ... src/menu.s
+	@echo ... src/obstaculos.obj
+	@echo ... src/obstaculos.i
+	@echo ... src/obstaculos.s
 	@echo ... src/physics.obj
 	@echo ... src/physics.i
 	@echo ... src/physics.s

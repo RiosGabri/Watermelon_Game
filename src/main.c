@@ -41,6 +41,17 @@ int main(void) {
     tex_frutas[5] = LoadTexture("Resources/laranja.png");
     tex_frutas[6] = LoadTexture("Resources/abacaxi.png");
     tex_frutas[7] = LoadTexture("Resources/melancia.png");
+    
+    Texture2D tex_frutas_podres[NIVEIS_FRUTA];
+    tex_frutas_podres[0] = LoadTexture("Resources/bad_uva.png");
+    printf("bad_uva id=%d\n", tex_frutas_podres[0].id);
+    tex_frutas_podres[1] = LoadTexture("Resources/bad_cereja.png");
+    tex_frutas_podres[2] = LoadTexture("Resources/bad_morango.png");
+    tex_frutas_podres[3] = LoadTexture("Resources/bad_maca.png");
+    tex_frutas_podres[4] = LoadTexture("Resources/bad_pera.png");
+    tex_frutas_podres[5] = LoadTexture("Resources/bad_laranja.png");
+    tex_frutas_podres[6] = LoadTexture("Resources/bad_abacaxi.png");
+    tex_frutas_podres[7] = LoadTexture("Resources/bad_melancia.png");
 
     Botao btnPlay     = { {(Largura/2.0f - 145), 300, 290, 78}, tex_play,     tex_play_hover };
     Botao btnMusic    = { {(Largura/2.0f - 145), 398, 290, 78}, tex_music,    tex_music_hover };
@@ -218,7 +229,12 @@ int main(void) {
                     float  raio = LISTA_FRUTAS[atual->fruta.nivel].raio;
                     float  angulo = (float)cpBodyGetAngle(atual->fruta.body) * RAD2DEG; 
                     float  diametro = raio * 2;
-                    Texture2D tex = tex_frutas[atual->fruta.nivel];
+                    Texture2D tex;
+                        if (atual->fruta.estaPodre) {
+                            tex = tex_frutas_podres[atual->fruta.nivel];
+                        } else {
+                            tex = tex_frutas[atual->fruta.nivel];
+                        }
                     
                     DrawTexturePro(
                         tex,
@@ -228,9 +244,6 @@ int main(void) {
                         angulo,
                         WHITE
                     );
-                    if (atual->fruta.estaPodre) {
-                        DrawCircleLines((int)pos.x, (int)pos.y, (int)raio, DARKGREEN);
-                    } 
                     atual = atual->next;
                 }
                 desenharObstaculos();
@@ -271,6 +284,9 @@ fechar:
     UnloadTexture(tex_music_hover);
     for (int i = 0; i < NIVEIS_FRUTA; i++) {
         UnloadTexture(tex_frutas[i]);
+    }
+    for (int i = 0; i < NIVEIS_FRUTA; i++) {
+    UnloadTexture(tex_frutas_podres[i]);
     }
     cpSpaceFree(espaco);
     CloseWindow();

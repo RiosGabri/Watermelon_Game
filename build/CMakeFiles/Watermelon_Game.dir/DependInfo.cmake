@@ -43,6 +43,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/fruits.c" "CMakeFiles/Watermelon_Game.dir/src/fruits.c.obj" "gcc" "CMakeFiles/Watermelon_Game.dir/src/fruits.c.obj.d"
   "C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/main.c" "CMakeFiles/Watermelon_Game.dir/src/main.c.obj" "gcc" "CMakeFiles/Watermelon_Game.dir/src/main.c.obj.d"
   "C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/menu.c" "CMakeFiles/Watermelon_Game.dir/src/menu.c.obj" "gcc" "CMakeFiles/Watermelon_Game.dir/src/menu.c.obj.d"
+  "C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/obstaculos.c" "CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.obj" "gcc" "CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.obj.d"
   "C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/physics.c" "CMakeFiles/Watermelon_Game.dir/src/physics.c.obj" "gcc" "CMakeFiles/Watermelon_Game.dir/src/physics.c.obj.d"
   )
 

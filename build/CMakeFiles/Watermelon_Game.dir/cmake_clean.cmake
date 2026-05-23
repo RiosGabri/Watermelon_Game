@@ -69,6 +69,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Watermelon_Game.dir/src/main.c.obj.d"
   "CMakeFiles/Watermelon_Game.dir/src/menu.c.obj"
   "CMakeFiles/Watermelon_Game.dir/src/menu.c.obj.d"
+  "CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.obj"
+  "CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.obj.d"
   "CMakeFiles/Watermelon_Game.dir/src/physics.c.obj"
   "CMakeFiles/Watermelon_Game.dir/src/physics.c.obj.d"
   "Watermelon_Game.exe"
