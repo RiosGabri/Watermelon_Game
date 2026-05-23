@@ -79,7 +79,12 @@ int main(void) {
                     inicializarObstaculos();
                 }
                 if (foi_clicado(btnExit)) goto fechar;
+                if (foi_clicado(btnMusic)) estado = EST_MUSICA;
                 break;
+            case EST_MUSICA:
+                if (IsKeyPressed(KEY_ESCAPE)) {
+                    estado = EST_MENU; // se apertar esc, volta para menu
+                }
 
             case EST_JOGO:
                 if (IsKeyPressed(KEY_ESCAPE)) estado = EST_MENU;
@@ -135,6 +140,24 @@ int main(void) {
                 desenha_botao(btnSettings);
                 desenha_botao(btnExit);
 
+            } else if (estado == EST_MUSICA) {
+                DrawTexture(bg_menu, 0, 0, WHITE);
+
+                // Painel central
+                DrawRectangleRounded((Rectangle){200, 200, 400, 300}, 0.2f, 8, (Color){0, 0, 0, 160});
+                DrawRectangleRoundedLines((Rectangle){200, 200, 400, 300}, 0.2f, 8, WHITE);
+
+                // Título do painel
+                DrawText("MUSICAS", 290, 230, 40, WHITE);
+
+                // Linha separadora
+                DrawLine(220, 285, 580, 285, WHITE);
+
+                // Texto em breve
+                DrawText("Em breve...", 295, 320, 28, YELLOW);
+
+                // Instrução para voltar
+                DrawText("Pressione ESC para voltar", 230, 450, 18, LIGHTGRAY);
             } else {
                 ClearBackground(RGB(245, 235, 210));
                 DrawRectangleLines(100, 150, 600, 600, DARKGRAY); 

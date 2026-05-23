@@ -6,6 +6,7 @@
 
 typedef enum jogo {
     EST_MENU,
+    EST_MUSICA,
     EST_JOGO
 } Estado_Jogo;
 
