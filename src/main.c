@@ -30,7 +30,7 @@ int main(void) {
     Texture2D tex_exit_hover     = LoadTexture("Resources/button_exit_hover.png");
     Texture2D tex_settings_hover = LoadTexture("Resources/button_settings_hover.png");
     Texture2D tex_music_hover    = LoadTexture("Resources/button_music_hover.png");
-    Texture2D title_menu          = LoadTexture("Resources/title.png");
+    Texture2D title_menu         = LoadTexture("Resources/title.png");
     
     Texture2D tex_frutas[NIVEIS_FRUTA];
     tex_frutas[0] = LoadTexture("Resources/uva.png");
@@ -44,7 +44,6 @@ int main(void) {
     
     Texture2D tex_frutas_podres[NIVEIS_FRUTA];
     tex_frutas_podres[0] = LoadTexture("Resources/bad_uva.png");
-    printf("bad_uva id=%d\n", tex_frutas_podres[0].id);
     tex_frutas_podres[1] = LoadTexture("Resources/bad_cereja.png");
     tex_frutas_podres[2] = LoadTexture("Resources/bad_morango.png");
     tex_frutas_podres[3] = LoadTexture("Resources/bad_maca.png");
@@ -61,31 +60,28 @@ int main(void) {
     cpSpace *espaco = initEspaco();
     criarArea(espaco);
     registrarFusoes(espaco);
-
     inicializarObstaculos();
     configurarCallbacksObstaculos(espaco);
 
     NodeFruta *head = NULL;
     g_head = &head;
 
-    Estado_Jogo estado = EST_MENU;
-
-    int   tipo_atual = GetRandomValue(0, 3); 
-    int   tipo_prox  = GetRandomValue(0, 3); 
-    float pos_x      = Largura / 2.0f;       
-    int   pode_soltar = 1;                   
-    int   contadorCliques = 0;
+    Estado_Jogo estado       = EST_MENU;
+    int   tipo_atual         = GetRandomValue(0, 3);
+    int   tipo_prox          = GetRandomValue(0, 3);
+    float pos_x              = Largura / 2.0f;
+    int   pode_soltar        = 1;
+    int   contadorCliques    = 0;
 
     while (!WindowShouldClose()) {
-
         switch (estado) {
             case EST_MENU:
                 if (foi_clicado(btnPlay)) {
-                    estado = EST_JOGO;
-                    tipo_atual = GetRandomValue(0, 3);
-                    tipo_prox  = GetRandomValue(0, 3);
-                    pos_x      = Largura / 2.0f;
-                    pode_soltar = 1;
+                    estado         = EST_JOGO;
+                    tipo_atual     = GetRandomValue(0, 3);
+                    tipo_prox      = GetRandomValue(0, 3);
+                    pos_x          = Largura / 2.0f;
+                    pode_soltar    = 1;
                     contadorCliques = 0;
                     inicializarObstaculos();
                 }
@@ -93,16 +89,19 @@ int main(void) {
                 if (foi_clicado(btnMusic)) estado = EST_MUSICA;
                 if (foi_clicado(btnSettings)) estado = EST_CONFIGURACAO;
                 break;
+
             case EST_MUSICA:
                 if (IsKeyPressed(KEY_ESCAPE)) {
-                    estado = EST_MENU; // se apertar esc, volta para menu
+                    estado = EST_MENU; 
                 }
                 break;
+
             case EST_CONFIGURACAO:
                 if (IsKeyPressed(KEY_ESCAPE)) {
-                    estado = EST_MENU; // se apertar esc, volta para menu
+                    estado = EST_MENU; 
                 }
                 break;
+
             case EST_JOGO:
                 if (IsKeyPressed(KEY_ESCAPE)) estado = EST_MENU;
 
@@ -114,30 +113,26 @@ int main(void) {
                     inserirFruta(espaco, pos_x, 160, tipo_atual, &head);
                     tipo_atual  = tipo_prox;
                     tipo_prox   = GetRandomValue(0, 3);
-                    pode_soltar = 0; 
-
+                    pode_soltar = 0;
+                    atualizarFrutasPodres(head);
                     contadorCliques++;
+
                     if (contadorCliques >= 10) {
-                        spawnBlocoFixo(espaco, &head); 
+                        spawnBlocoFixo(espaco, &head);
                         contadorCliques = 0;
                     } else {
-                        testarSpawnEspecial(espaco, &head); 
+                        testarSpawnEspecial(espaco, &head);
                     }
                 }
-
-                if (!pode_soltar) {
-                    if (head != NULL) {
-                        cpVect pos = cpBodyGetPosition(head->fruta.body);
-                        if (pos.y > 200) pode_soltar = 1;
-                    }
+                if (!pode_soltar && head != NULL) {
+                    cpVect pos = cpBodyGetPosition(head->fruta.body);
+                    if (pos.y > 200) pode_soltar = 1;
                 }
-
                 cpSpaceStep(espaco, 1.0f / 60.0f);
-                atualizarELimparObstaculos(espaco, &head); 
-                processarFusoes(espaco, &head);           
+                atualizarELimparObstaculos(espaco, &head);
+                processarFusoes(espaco, &head);
                 break;
         }
-
         BeginDrawing();
             ClearBackground(RAYWHITE);
 
@@ -145,13 +140,14 @@ int main(void) {
                 DrawTexture(bg_menu, 0, 0, WHITE);
                 float largura_titulo = 500;
                 float altura_titulo = 160;
-                DrawTexturePro( //ajustar tamanho do titulo
+                DrawTexturePro(
                     title_menu,
                     (Rectangle){0, 0, (float)title_menu.width, (float)title_menu.height},
                     (Rectangle){(Largura/2.0f) - (largura_titulo/2.0f), 60, largura_titulo, altura_titulo},
                     (Vector2){0, 0},
                     0.0f,
                     WHITE);
+
                 desenha_botao(btnPlay);
                 desenha_botao(btnMusic);
                 desenha_botao(btnSettings);
@@ -159,70 +155,46 @@ int main(void) {
 
             } else if (estado == EST_MUSICA) {
                 DrawTexture(bg_menu, 0, 0, WHITE);
-
-                // Painel central
                 DrawRectangleRounded((Rectangle){200, 200, 400, 300}, 0.2f, 8, (Color){0, 0, 0, 160});
                 DrawRectangleRoundedLines((Rectangle){200, 200, 400, 300}, 0.2f, 8, WHITE);
-
-                // Título do painel
                 DrawText("MUSICAS", 290, 230, 40, WHITE);
-
-                // Linha separadora
                 DrawLine(220, 285, 580, 285, WHITE);
-
-                // Texto em breve
                 DrawText("Em breve...", 295, 320, 28, YELLOW);
-
-                // Instrução para voltar
                 DrawText("Pressione ESC para voltar", 230, 450, 18, LIGHTGRAY);
+
             } else if (estado == EST_CONFIGURACAO) {
                 DrawTexture(bg_menu, 0, 0, WHITE);
-
-                // Painel central
                 DrawRectangleRounded((Rectangle){200, 200, 400, 300}, 0.2f, 8, (Color){0, 0, 0, 160});
                 DrawRectangleRoundedLines((Rectangle){200, 200, 400, 300}, 0.2f, 8, WHITE);
-
-                // Título do painel
                 DrawText("CONFIGURAÇAO", 250, 230, 40, WHITE);
-
-                // Linha separadora
                 DrawLine(220, 285, 580, 285, WHITE);
-
-                // Texto em breve
                 DrawText("Em breve...", 295, 320, 28, YELLOW);
-
-                // Instrução para voltar
                 DrawText("Pressione ESC para voltar", 230, 450, 18, LIGHTGRAY);
-            }else {
-                ClearBackground(RGB(245, 235, 210));
-                DrawRectangleLines(100, 150, 600, 600, DARKGRAY); 
 
-                float raio_atual = LISTA_FRUTAS[tipo_atual].raio;
-                float diametro_atual = raio_atual * 2;
-                Texture2D tex_atual = tex_frutas[tipo_atual];
-                DrawTexturePro(
-                    tex_atual,
+            } else {
+                ClearBackground(RGB(245, 235, 210));
+                DrawRectangleLines(100, 150, 600, 600, DARKGRAY);
+
+                float     raio_atual    = LISTA_FRUTAS[tipo_atual].raio;
+                float     diam_atual    = raio_atual * 2;
+                Texture2D tex_atual     = tex_frutas[tipo_atual];
+                DrawTexturePro(tex_atual,
                     (Rectangle){0, 0, (float)tex_atual.width, (float)tex_atual.height},
-                    (Rectangle){pos_x, 160, diametro_atual, diametro_atual},
-                    (Vector2){raio_atual, raio_atual},
-                    0.0f,
-                    WHITE
-                );
+                    (Rectangle){pos_x, 160, diam_atual, diam_atual},
+                    (Vector2){raio_atual, raio_atual}, 0.0f, WHITE);
 
                 for (int y = 160 + (int)raio_atual; y < 750; y += 12)
                     DrawPixel((int)pos_x, y, GRAY);
+
                 DrawText("Proxima:", 710, 160, 14, DARKGRAY);
-                float raio_prox = LISTA_FRUTAS[tipo_prox].raio;
-                Texture2D tex_prox = tex_frutas[tipo_prox];
-                float diametro_prox = raio_prox * 2;
-                DrawTexturePro(
-                    tex_prox,
+                float     raio_prox = LISTA_FRUTAS[tipo_prox].raio;
+                float     diam_prox = raio_prox * 2;
+                Texture2D tex_prox  = tex_frutas[tipo_prox];
+                DrawTexturePro(tex_prox,
                     (Rectangle){0, 0, (float)tex_prox.width, (float)tex_prox.height},
-                    (Rectangle){735, 200, diametro_prox, diametro_prox},
-                    (Vector2){raio_prox, raio_prox},
-                    0.0f,
-                    WHITE
-                );
+                    (Rectangle){735, 200, diam_prox, diam_prox},
+                    (Vector2){raio_prox, raio_prox}, 0.0f, WHITE);
+
                 NodeFruta *atual = head;
                 while (atual != NULL) {
                     cpVect pos  = cpBodyGetPosition(atual->fruta.body);
@@ -236,18 +208,21 @@ int main(void) {
                             tex = tex_frutas[atual->fruta.nivel];
                         }
                     
-                    DrawTexturePro(
-                        tex,
-                        (Rectangle){0, 0, (float)tex.width, (float)tex.height},
-                        (Rectangle){(float)pos.x, (float)pos.y, diametro, diametro},
-                        (Vector2){raio, raio},
-                        angulo,
-                        WHITE
-                    );
+                        DrawTexturePro(tex,
+                            (Rectangle){0, 0, (float)tex.width, (float)tex.height},
+                            (Rectangle){(float)pos.x, (float)pos.y, diametro, diametro},
+                            (Vector2){raio, raio}, angulo, WHITE);
+
+                        if (atual->fruta.estaPodre) {
+                            char txt[4];
+                            snprintf(txt, sizeof(txt), "%d", atual->fruta.cliquesRestantes);
+                            DrawText(txt, (int)pos.x - 4, (int)pos.y - 5, 10, DARKGREEN);
+                        }
                     atual = atual->next;
                 }
                 desenharObstaculos();
             }
+
         EndDrawing();
     }
 
@@ -262,13 +237,12 @@ fechar:
         free(tmp);
     }
     for (int i = 0; i < qtdObstaculos; i++) {
-        if (listaObstaculos[i].ativo) {
-            cpSpaceRemoveShape(espaco, listaObstaculos[i].shape);
-            cpShapeFree(listaObstaculos[i].shape);
-            if (listaObstaculos[i].tipo != OBJ_BLOCO) {
-                cpSpaceRemoveBody(espaco, listaObstaculos[i].body);
-                cpBodyFree(listaObstaculos[i].body);
-            }
+        if (!listaObstaculos[i].ativo) continue;
+        cpSpaceRemoveShape(espaco, listaObstaculos[i].shape);
+        cpShapeFree(listaObstaculos[i].shape);
+        if (listaObstaculos[i].tipo != OBJ_BLOCO) {
+            cpSpaceRemoveBody(espaco, listaObstaculos[i].body);
+            cpBodyFree(listaObstaculos[i].body);
         }
     }
 
@@ -282,12 +256,11 @@ fechar:
     UnloadTexture(tex_exit_hover);
     UnloadTexture(tex_settings_hover);
     UnloadTexture(tex_music_hover);
-    for (int i = 0; i < NIVEIS_FRUTA; i++) {
+    for (int i = 0; i < NIVEIS_FRUTA; i++)
         UnloadTexture(tex_frutas[i]);
-    }
-    for (int i = 0; i < NIVEIS_FRUTA; i++) {
+    for (int i = 0; i < NIVEIS_FRUTA; i++)
     UnloadTexture(tex_frutas_podres[i]);
-    }
+    
     cpSpaceFree(espaco);
     CloseWindow();
     return 0;
