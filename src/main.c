@@ -17,6 +17,7 @@ int stat64i32(const char *path, struct _stat *buffer) { return _stat(path, buffe
 
 int main(void) {
     InitWindow(Largura, Altura, "Watermelon Game");
+    InitAudioDevice();
     SetWindowPosition(50, 50);
     SetExitKey(KEY_NULL);
     SetTargetFPS(60);
@@ -47,6 +48,14 @@ int main(void) {
     Botao btnSettings = { {(Largura/2.0f - 145), 496, 290, 78}, tex_settings, tex_settings_hover };
     Botao btnExit     = { {(Largura/2.0f - 145), 594, 290, 78}, tex_exit,     tex_exit_hover };
 
+    Music bossaMelon = LoadMusicStream("Resources/music/BossaMelon.mp3");
+    Music violoncia = LoadMusicStream("Resources/music/Violoncia.mp3");
+    Music frutinhas = LoadMusicStream("Resources/music/Frutinhas.mp3");
+    SetMusicVolume(bossaMelon, 1.5f); //volume da musica
+    SetMusicVolume(violoncia, 1.5f); //volume da musica
+    SetMusicVolume(frutinhas, 1.5f); //volume da musica
+    PlayMusicStream(bossaMelon);
+
     cpSpace *espaco = initEspaco();
     criarArea(espaco);
     registrarFusoes(espaco);
@@ -59,14 +68,16 @@ int main(void) {
 
     Estado_Jogo estado = EST_MENU;
 
-    int   tipo_atual = GetRandomValue(0, 3); 
-    int   tipo_prox  = GetRandomValue(0, 3); 
-    float pos_x      = Largura / 2.0f;       
-    int   pode_soltar = 1;                   
+    int   tipo_atual = GetRandomValue(0, 3);
+    int   tipo_prox  = GetRandomValue(0, 3);
+    float pos_x      = Largura / 2.0f;
+    int   pode_soltar = 1;
     int   contadorCliques = 0;
 
     while (!WindowShouldClose()) {
-
+    UpdateMusicStream(bossaMelon); //atualiza a musica a cada frame
+    UpdateMusicStream(violoncia); //atualiza a musica a cada frame
+    UpdateMusicStream(frutinhas); //atualiza a musica a cada frame
         switch (estado) {
             case EST_MENU:
                 if (foi_clicado(btnPlay)) {
@@ -77,6 +88,8 @@ int main(void) {
                     pode_soltar = 1;
                     contadorCliques = 0;
                     inicializarObstaculos();
+                    StopMusicStream(bossaMelon);
+                    PlayMusicStream(violoncia);
                 }
                 if (foi_clicado(btnExit)) goto fechar;
                 if (foi_clicado(btnMusic)) estado = EST_MUSICA;
@@ -85,11 +98,15 @@ int main(void) {
             case EST_MUSICA:
                 if (IsKeyPressed(KEY_ESCAPE)) {
                     estado = EST_MENU; // se apertar esc, volta para menu
+                    StopMusicStream(violoncia);
+                    PlayMusicStream(bossaMelon);
                 }
                 break;
             case EST_CONFIGURACAO:
                 if (IsKeyPressed(KEY_ESCAPE)) {
                     estado = EST_MENU; // se apertar esc, volta para menu
+                    StopMusicStream(violoncia);
+                    PlayMusicStream(bossaMelon);
                 }
                 break;
             case EST_JOGO:
@@ -272,6 +289,9 @@ fechar:
     for (int i = 0; i < NIVEIS_FRUTA; i++) {
         UnloadTexture(tex_frutas[i]);
     }
+    UnloadMusicStream(bossaMelon);
+    UnloadMusicStream(violoncia);
+    CloseAudioDevice();
     cpSpaceFree(espaco);
     CloseWindow();
     return 0;
