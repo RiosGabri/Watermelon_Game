@@ -1,6 +1,10 @@
-# Watermelon game
+<img src="Resources/title.png">
+<center>
+
 ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
 ![RayLib](https://img.shields.io/badge/RAYLIB-FFFFFF?style=for-the-badge&logo=raylib&logoColor=black)
+
+</center>
 
 Um jogo onde o objetivo é juntar as frutas para formar uma maior e ganhar pontos.
 
