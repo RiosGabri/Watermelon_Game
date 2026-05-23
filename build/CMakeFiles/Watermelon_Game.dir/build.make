@@ -116,11 +116,26 @@ CMakeFiles/Watermelon_Game.dir/src/menu.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Watermelon_Game.dir/src/menu.c.s"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\menu.c -o CMakeFiles\Watermelon_Game.dir\src\menu.c.s
 
+CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.obj: CMakeFiles/Watermelon_Game.dir/flags.make
+CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
+CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/obstaculos.c
+CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.obj"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\obstaculos.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\obstaculos.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\obstaculos.c
+
+CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.i"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\obstaculos.c > CMakeFiles\Watermelon_Game.dir\src\obstaculos.c.i
+
+CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.s"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\obstaculos.c -o CMakeFiles\Watermelon_Game.dir\src\obstaculos.c.s
+
 CMakeFiles/Watermelon_Game.dir/src/physics.c.obj: CMakeFiles/Watermelon_Game.dir/flags.make
 CMakeFiles/Watermelon_Game.dir/src/physics.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/physics.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/physics.c
 CMakeFiles/Watermelon_Game.dir/src/physics.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Watermelon_Game.dir/src/physics.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Watermelon_Game.dir/src/physics.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/physics.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\physics.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\physics.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\physics.c
 
 CMakeFiles/Watermelon_Game.dir/src/physics.c.i: cmake_force
@@ -135,7 +150,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/chipmunk.c.obj: CMakeFiles/Watermelo
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/chipmunk.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/chipmunk.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/chipmunk.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/chipmunk.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/chipmunk.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/chipmunk.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/chipmunk.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\chipmunk.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\chipmunk.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\chipmunk.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/chipmunk.c.i: cmake_force
@@ -150,7 +165,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArbiter.c.obj: CMakeFiles/Watermel
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArbiter.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArbiter.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpArbiter.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArbiter.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArbiter.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArbiter.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArbiter.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpArbiter.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpArbiter.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpArbiter.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArbiter.c.i: cmake_force
@@ -165,7 +180,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArray.c.obj: CMakeFiles/Watermelon
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArray.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArray.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpArray.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArray.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArray.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArray.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArray.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpArray.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpArray.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpArray.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArray.c.i: cmake_force
@@ -180,7 +195,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpBBTree.c.obj: CMakeFiles/Watermelo
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpBBTree.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpBBTree.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpBBTree.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpBBTree.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpBBTree.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpBBTree.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpBBTree.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpBBTree.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpBBTree.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpBBTree.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpBBTree.c.i: cmake_force
@@ -195,7 +210,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpBody.c.obj: CMakeFiles/Watermelon_
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpBody.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpBody.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpBody.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpBody.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpBody.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpBody.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpBody.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpBody.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpBody.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpBody.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpBody.c.i: cmake_force
@@ -210,7 +225,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpCollision.c.obj: CMakeFiles/Waterm
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpCollision.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpCollision.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpCollision.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpCollision.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpCollision.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpCollision.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpCollision.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpCollision.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpCollision.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpCollision.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpCollision.c.i: cmake_force
@@ -225,7 +240,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpConstraint.c.obj: CMakeFiles/Water
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpConstraint.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpConstraint.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpConstraint.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpConstraint.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpConstraint.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpConstraint.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpConstraint.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpConstraint.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpConstraint.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpConstraint.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpConstraint.c.i: cmake_force
@@ -240,7 +255,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpDampedRotarySpring.c.obj: CMakeFil
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpDampedRotarySpring.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpDampedRotarySpring.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpDampedRotarySpring.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpDampedRotarySpring.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpDampedRotarySpring.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpDampedRotarySpring.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpDampedRotarySpring.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpDampedRotarySpring.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpDampedRotarySpring.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpDampedRotarySpring.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpDampedRotarySpring.c.i: cmake_force
@@ -255,7 +270,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpDampedSpring.c.obj: CMakeFiles/Wat
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpDampedSpring.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpDampedSpring.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpDampedSpring.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpDampedSpring.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpDampedSpring.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpDampedSpring.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpDampedSpring.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpDampedSpring.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpDampedSpring.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpDampedSpring.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpDampedSpring.c.i: cmake_force
@@ -270,7 +285,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpGearJoint.c.obj: CMakeFiles/Waterm
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpGearJoint.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpGearJoint.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpGearJoint.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpGearJoint.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpGearJoint.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpGearJoint.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpGearJoint.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpGearJoint.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpGearJoint.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpGearJoint.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpGearJoint.c.i: cmake_force
@@ -285,7 +300,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpGrooveJoint.c.obj: CMakeFiles/Wate
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpGrooveJoint.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpGrooveJoint.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpGrooveJoint.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpGrooveJoint.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpGrooveJoint.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpGrooveJoint.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpGrooveJoint.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpGrooveJoint.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpGrooveJoint.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpGrooveJoint.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpGrooveJoint.c.i: cmake_force
@@ -300,7 +315,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpHashSet.c.obj: CMakeFiles/Watermel
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpHashSet.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpHashSet.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpHashSet.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpHashSet.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpHashSet.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpHashSet.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpHashSet.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpHashSet.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpHashSet.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpHashSet.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpHashSet.c.i: cmake_force
@@ -315,7 +330,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpHastySpace.c.obj: CMakeFiles/Water
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpHastySpace.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpHastySpace.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpHastySpace.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpHastySpace.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpHastySpace.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpHastySpace.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpHastySpace.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpHastySpace.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpHastySpace.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpHastySpace.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpHastySpace.c.i: cmake_force
@@ -330,7 +345,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpMarch.c.obj: CMakeFiles/Watermelon
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpMarch.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpMarch.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpMarch.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpMarch.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpMarch.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpMarch.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpMarch.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpMarch.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpMarch.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpMarch.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpMarch.c.i: cmake_force
@@ -345,7 +360,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPinJoint.c.obj: CMakeFiles/Waterme
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPinJoint.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPinJoint.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpPinJoint.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPinJoint.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPinJoint.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPinJoint.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPinJoint.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpPinJoint.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpPinJoint.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpPinJoint.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPinJoint.c.i: cmake_force
@@ -360,7 +375,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPivotJoint.c.obj: CMakeFiles/Water
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPivotJoint.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPivotJoint.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpPivotJoint.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPivotJoint.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPivotJoint.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPivotJoint.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPivotJoint.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpPivotJoint.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpPivotJoint.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpPivotJoint.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPivotJoint.c.i: cmake_force
@@ -375,7 +390,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPolyShape.c.obj: CMakeFiles/Waterm
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPolyShape.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPolyShape.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpPolyShape.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPolyShape.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPolyShape.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPolyShape.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPolyShape.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpPolyShape.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpPolyShape.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpPolyShape.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPolyShape.c.i: cmake_force
@@ -390,7 +405,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPolyline.c.obj: CMakeFiles/Waterme
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPolyline.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPolyline.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpPolyline.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPolyline.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPolyline.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPolyline.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPolyline.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpPolyline.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpPolyline.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpPolyline.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpPolyline.c.i: cmake_force
@@ -405,7 +420,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRatchetJoint.c.obj: CMakeFiles/Wat
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRatchetJoint.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRatchetJoint.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpRatchetJoint.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRatchetJoint.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRatchetJoint.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRatchetJoint.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRatchetJoint.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpRatchetJoint.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpRatchetJoint.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpRatchetJoint.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRatchetJoint.c.i: cmake_force
@@ -420,7 +435,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRobust.c.obj: CMakeFiles/Watermelo
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRobust.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRobust.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpRobust.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRobust.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRobust.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRobust.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRobust.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpRobust.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpRobust.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpRobust.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRobust.c.i: cmake_force
@@ -435,7 +450,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRotaryLimitJoint.c.obj: CMakeFiles
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRotaryLimitJoint.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRotaryLimitJoint.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpRotaryLimitJoint.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRotaryLimitJoint.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRotaryLimitJoint.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRotaryLimitJoint.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRotaryLimitJoint.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpRotaryLimitJoint.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpRotaryLimitJoint.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpRotaryLimitJoint.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpRotaryLimitJoint.c.i: cmake_force
@@ -450,7 +465,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpShape.c.obj: CMakeFiles/Watermelon
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpShape.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpShape.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpShape.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpShape.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpShape.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpShape.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpShape.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpShape.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpShape.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpShape.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpShape.c.i: cmake_force
@@ -465,7 +480,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSimpleMotor.c.obj: CMakeFiles/Wate
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSimpleMotor.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSimpleMotor.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpSimpleMotor.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSimpleMotor.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSimpleMotor.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSimpleMotor.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSimpleMotor.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSimpleMotor.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSimpleMotor.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpSimpleMotor.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSimpleMotor.c.i: cmake_force
@@ -480,7 +495,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSlideJoint.c.obj: CMakeFiles/Water
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSlideJoint.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSlideJoint.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpSlideJoint.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSlideJoint.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSlideJoint.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSlideJoint.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSlideJoint.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSlideJoint.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSlideJoint.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpSlideJoint.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSlideJoint.c.i: cmake_force
@@ -495,7 +510,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpace.c.obj: CMakeFiles/Watermelon
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpace.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpace.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpSpace.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpace.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpace.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpace.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpace.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSpace.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSpace.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpSpace.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpace.c.i: cmake_force
@@ -510,7 +525,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceComponent.c.obj: CMakeFiles/W
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceComponent.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceComponent.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpSpaceComponent.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceComponent.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceComponent.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceComponent.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceComponent.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSpaceComponent.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSpaceComponent.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpSpaceComponent.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceComponent.c.i: cmake_force
@@ -525,7 +540,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceDebug.c.obj: CMakeFiles/Water
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceDebug.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceDebug.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpSpaceDebug.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceDebug.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceDebug.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceDebug.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceDebug.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSpaceDebug.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSpaceDebug.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpSpaceDebug.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceDebug.c.i: cmake_force
@@ -540,7 +555,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceHash.c.obj: CMakeFiles/Waterm
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceHash.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceHash.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpSpaceHash.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceHash.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceHash.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceHash.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceHash.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSpaceHash.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSpaceHash.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpSpaceHash.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceHash.c.i: cmake_force
@@ -555,7 +570,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceQuery.c.obj: CMakeFiles/Water
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceQuery.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceQuery.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpSpaceQuery.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceQuery.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceQuery.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceQuery.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceQuery.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSpaceQuery.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSpaceQuery.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpSpaceQuery.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceQuery.c.i: cmake_force
@@ -570,7 +585,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceStep.c.obj: CMakeFiles/Waterm
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceStep.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceStep.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpSpaceStep.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceStep.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceStep.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceStep.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceStep.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSpaceStep.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSpaceStep.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpSpaceStep.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpaceStep.c.i: cmake_force
@@ -585,7 +600,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpatialIndex.c.obj: CMakeFiles/Wat
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpatialIndex.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpatialIndex.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpSpatialIndex.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpatialIndex.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpatialIndex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpatialIndex.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpatialIndex.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSpatialIndex.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSpatialIndex.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpSpatialIndex.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSpatialIndex.c.i: cmake_force
@@ -600,7 +615,7 @@ CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSweep1D.c.obj: CMakeFiles/Watermel
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSweep1D.c.obj: CMakeFiles/Watermelon_Game.dir/includes_C.rsp
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSweep1D.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpSweep1D.c
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSweep1D.c.obj: CMakeFiles/Watermelon_Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSweep1D.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSweep1D.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSweep1D.c.obj -MF CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSweep1D.c.obj.d -o CMakeFiles\Watermelon_Game.dir\src\chipmunk\cpSweep1D.c.obj -c C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\src\chipmunk\cpSweep1D.c
 
 CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpSweep1D.c.i: cmake_force
@@ -616,6 +631,7 @@ Watermelon_Game_OBJECTS = \
 "CMakeFiles/Watermelon_Game.dir/src/fruits.c.obj" \
 "CMakeFiles/Watermelon_Game.dir/src/main.c.obj" \
 "CMakeFiles/Watermelon_Game.dir/src/menu.c.obj" \
+"CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.obj" \
 "CMakeFiles/Watermelon_Game.dir/src/physics.c.obj" \
 "CMakeFiles/Watermelon_Game.dir/src/chipmunk/chipmunk.c.obj" \
 "CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArbiter.c.obj" \
@@ -656,6 +672,7 @@ Watermelon_Game_EXTERNAL_OBJECTS =
 Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/src/fruits.c.obj
 Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/src/main.c.obj
 Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/src/menu.c.obj
+Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.obj
 Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/src/physics.c.obj
 Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/src/chipmunk/chipmunk.c.obj
 Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/src/chipmunk/cpArbiter.c.obj
@@ -695,7 +712,7 @@ Watermelon_Game.exe: C:/msys64/ucrt64/lib/libglfw3.dll.a
 Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/linkLibs.rsp
 Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/objects1.rsp
 Watermelon_Game.exe: CMakeFiles/Watermelon_Game.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Linking C executable Watermelon_Game.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Linking C executable Watermelon_Game.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Watermelon_Game.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

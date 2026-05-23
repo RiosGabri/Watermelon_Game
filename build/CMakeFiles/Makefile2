@@ -84,12 +84,12 @@ clean: CMakeFiles/Watermelon_Game.dir/clean
 CMakeFiles/Watermelon_Game.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Watermelon_Game.dir\build.make CMakeFiles/Watermelon_Game.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Watermelon_Game.dir\build.make CMakeFiles/Watermelon_Game.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37 "Built target Watermelon_Game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38 "Built target Watermelon_Game"
 .PHONY : CMakeFiles/Watermelon_Game.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Watermelon_Game.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles 37
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles 38
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Watermelon_Game.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles 0
 .PHONY : CMakeFiles/Watermelon_Game.dir/rule
@@ -101,7 +101,7 @@ Watermelon_Game: CMakeFiles/Watermelon_Game.dir/rule
 # codegen rule for target.
 CMakeFiles/Watermelon_Game.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Watermelon_Game.dir\build.make CMakeFiles/Watermelon_Game.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37 "Finished codegen for target Watermelon_Game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\heito\Downloads\WatermelonGame\Watermelon_Game\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38 "Finished codegen for target Watermelon_Game"
 .PHONY : CMakeFiles/Watermelon_Game.dir/codegen
 
 # clean rule for target.

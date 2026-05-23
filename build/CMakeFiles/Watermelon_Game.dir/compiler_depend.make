@@ -1888,6 +1888,7 @@ CMakeFiles/Watermelon_Game.dir/src/main.c.obj: C:/Users/heito/Downloads/Watermel
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h \
   C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/fruits.h \
   C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/menu.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/obstaculos.h \
   C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/physics.h
 
 CMakeFiles/Watermelon_Game.dir/src/menu.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/menu.c \
@@ -1901,6 +1902,59 @@ CMakeFiles/Watermelon_Game.dir/src/menu.c.obj: C:/Users/heito/Downloads/Watermel
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdbool.h \
   C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/menu.h
+
+CMakeFiles/Watermelon_Game.dir/src/obstaculos.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/obstaculos.c \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/chipmunk.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/chipmunk_types.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpArbiter.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpBB.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpBody.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpConstraint.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpDampedRotarySpring.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpDampedSpring.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpGearJoint.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpGrooveJoint.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpPinJoint.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpPivotJoint.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpPolyShape.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpRatchetJoint.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpRotaryLimitJoint.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpShape.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpSimpleMotor.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpSlideJoint.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpSpace.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpSpatialIndex.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpTransform.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/cpVect.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/raylib.h \
+  C:/msys64/ucrt64/include/_mingw.h \
+  C:/msys64/ucrt64/include/_mingw_mac.h \
+  C:/msys64/ucrt64/include/_mingw_secapi.h \
+  C:/msys64/ucrt64/include/_mingw_stdarg.h \
+  C:/msys64/ucrt64/include/corecrt.h \
+  C:/msys64/ucrt64/include/corecrt_wstdlib.h \
+  C:/msys64/ucrt64/include/crtdefs.h \
+  C:/msys64/ucrt64/include/errno.h \
+  C:/msys64/ucrt64/include/float.h \
+  C:/msys64/ucrt64/include/limits.h \
+  C:/msys64/ucrt64/include/malloc.h \
+  C:/msys64/ucrt64/include/math.h \
+  C:/msys64/ucrt64/include/sec_api/stdlib_s.h \
+  C:/msys64/ucrt64/include/stdarg.h \
+  C:/msys64/ucrt64/include/stddef.h \
+  C:/msys64/ucrt64/include/stdint.h \
+  C:/msys64/ucrt64/include/stdlib.h \
+  C:/msys64/ucrt64/include/vadefs.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/float.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mm_malloc.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdbool.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/fruits.h \
+  C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/obstaculos.h
 
 CMakeFiles/Watermelon_Game.dir/src/physics.c.obj: C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/physics.c \
   C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/chipmunk/chipmunk.h \
@@ -1928,11 +1982,9 @@ CMakeFiles/Watermelon_Game.dir/src/physics.c.obj: C:/Users/heito/Downloads/Water
   C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/include/raylib.h \
   C:/msys64/ucrt64/include/_mingw.h \
   C:/msys64/ucrt64/include/_mingw_mac.h \
-  C:/msys64/ucrt64/include/_mingw_off_t.h \
   C:/msys64/ucrt64/include/_mingw_secapi.h \
   C:/msys64/ucrt64/include/_mingw_stdarg.h \
   C:/msys64/ucrt64/include/corecrt.h \
-  C:/msys64/ucrt64/include/corecrt_stdio_config.h \
   C:/msys64/ucrt64/include/corecrt_wstdlib.h \
   C:/msys64/ucrt64/include/crtdefs.h \
   C:/msys64/ucrt64/include/errno.h \
@@ -1940,14 +1992,11 @@ CMakeFiles/Watermelon_Game.dir/src/physics.c.obj: C:/Users/heito/Downloads/Water
   C:/msys64/ucrt64/include/limits.h \
   C:/msys64/ucrt64/include/malloc.h \
   C:/msys64/ucrt64/include/math.h \
-  C:/msys64/ucrt64/include/sec_api/stdio_s.h \
   C:/msys64/ucrt64/include/sec_api/stdlib_s.h \
   C:/msys64/ucrt64/include/stdarg.h \
   C:/msys64/ucrt64/include/stddef.h \
   C:/msys64/ucrt64/include/stdint.h \
-  C:/msys64/ucrt64/include/stdio.h \
   C:/msys64/ucrt64/include/stdlib.h \
-  C:/msys64/ucrt64/include/swprintf.inl \
   C:/msys64/ucrt64/include/vadefs.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/float.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h \
@@ -2035,6 +2084,8 @@ C:/msys64/ucrt64/include/reason.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512vldqintrin.h:
 
+C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/obstaculos.h:
+
 C:/msys64/ucrt64/include/pshpack8.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avxifmaintrin.h:
@@ -2094,6 +2145,8 @@ C:/msys64/ucrt64/include/specstrings.h:
 C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpSpaceComponent.c:
 
 C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/chipmunk/cpGearJoint.c:
+
+C:/Users/heito/Downloads/WatermelonGame/Watermelon_Game/src/obstaculos.c:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/xsaveoptintrin.h:
 
