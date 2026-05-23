@@ -16,6 +16,7 @@ int stat64i32(const char *path, struct _stat *buffer) { return _stat(path, buffe
 
 int main(void) {
     InitWindow(Largura, Altura, "Watermelon Game");
+    SetWindowPosition(50, 50);
     SetExitKey(KEY_NULL);
     SetTargetFPS(60);
 
@@ -29,6 +30,7 @@ int main(void) {
     Texture2D tex_exit_hover     = LoadTexture("Resources/button_exit_hover.png");
     Texture2D tex_settings_hover = LoadTexture("Resources/button_settings_hover.png");
     Texture2D tex_music_hover    = LoadTexture("Resources/button_music_hover.png");
+    Texture2D title_menu          = LoadTexture("Resources/title.png");
     
     Texture2D tex_frutas[NIVEIS_FRUTA];
     Texture2D uva = LoadTexture("Resources/uva.png");
@@ -113,6 +115,15 @@ int main(void) {
 
             if (estado == EST_MENU) {
                 DrawTexture(bg_menu, 0, 0, WHITE);
+                float largura_titulo = 500;
+                float altura_titulo = 160;
+                DrawTexturePro( //ajustar tamanho do titulo
+                    title_menu,
+                    (Rectangle){0, 0, (float)title_menu.width, (float)title_menu.height},
+                    (Rectangle){(Largura/2.0f) - (largura_titulo/2.0f), 60, largura_titulo, altura_titulo},
+                    (Vector2){0, 0},
+                    0.0f,
+                    WHITE);
                 desenha_botao(btnPlay);
                 desenha_botao(btnMusic);
                 desenha_botao(btnSettings);
@@ -188,6 +199,7 @@ fechar:
     }
 
     UnloadTexture(bg_menu);
+    UnloadTexture(title_menu);
     UnloadTexture(tex_play);
     UnloadTexture(tex_settings);
     UnloadTexture(tex_music);
