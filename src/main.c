@@ -32,7 +32,7 @@ int main(void) {
     Texture2D tex_settings_hover = LoadTexture("Resources/button_settings_hover.png");
     Texture2D tex_music_hover    = LoadTexture("Resources/button_music_hover.png");
     Texture2D title_menu         = LoadTexture("Resources/title.png");
-    
+
     Texture2D tex_frutas[NIVEIS_FRUTA];
     tex_frutas[0] = LoadTexture("Resources/uva.png");
     tex_frutas[1] = LoadTexture("Resources/cereja.png");
@@ -122,7 +122,11 @@ int main(void) {
                 break;
 
             case EST_JOGO:
-                if (IsKeyPressed(KEY_ESCAPE)) estado = EST_MENU;
+                if (IsKeyPressed(KEY_ESCAPE)) {
+                    estado = EST_MENU;
+                    StopMusicStream(violoncia);
+                    PlayMusicStream(bossaMelon);
+                }
 
                 pos_x = GetMousePosition().x;
                 if (pos_x < 115) pos_x = 115;
@@ -218,7 +222,7 @@ int main(void) {
                 while (atual != NULL) {
                     cpVect pos  = cpBodyGetPosition(atual->fruta.body);
                     float  raio = LISTA_FRUTAS[atual->fruta.nivel].raio;
-                    float  angulo = (float)cpBodyGetAngle(atual->fruta.body) * RAD2DEG; 
+                    float  angulo = (float)cpBodyGetAngle(atual->fruta.body) * RAD2DEG;
                     float  diametro = raio * 2;
                     Texture2D tex;
                         if (atual->fruta.estaPodre) {
@@ -226,7 +230,7 @@ int main(void) {
                         } else {
                             tex = tex_frutas[atual->fruta.nivel];
                         }
-                    
+
                         DrawTexturePro(tex,
                             (Rectangle){0, 0, (float)tex.width, (float)tex.height},
                             (Rectangle){(float)pos.x, (float)pos.y, diametro, diametro},
