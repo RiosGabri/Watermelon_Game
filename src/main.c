@@ -115,6 +115,7 @@ int main(void) {
                 if (IsKeyPressed(KEY_ESCAPE)) {
                     estado = EST_MENU; // se apertar esc, volta para menu
                     StopMusicStream(violoncia);
+                    StopMusicStream(frutinhas);
                     PlayMusicStream(bossaMelon);
                 }
 
@@ -176,6 +177,7 @@ int main(void) {
                 if (IsKeyPressed(KEY_ESCAPE)) {
                     estado = EST_MENU; // se apertar esc, volta para menu
                     StopMusicStream(violoncia);
+                    StopMusicStream(frutinhas);
                     PlayMusicStream(bossaMelon);
                 }
                 break;
@@ -184,6 +186,7 @@ int main(void) {
                 if (IsKeyPressed(KEY_ESCAPE)) {
                     estado = EST_MENU;
                     StopMusicStream(violoncia);
+                    StopMusicStream(frutinhas);
                     PlayMusicStream(bossaMelon);
                 }
 
