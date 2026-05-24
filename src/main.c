@@ -85,11 +85,13 @@ int main(void) {
     float pos_x              = Largura / 2.0f;
     int   pode_soltar        = 1;
     int   contadorCliques    = 0;
+    int musica_selecionada = 0;
+    float volume_musica = 1.0f;
 
     while (!WindowShouldClose()) {
-    UpdateMusicStream(bossaMelon); //atualiza a musica a cada frame
-    UpdateMusicStream(violoncia); //atualiza a musica a cada frame
-    UpdateMusicStream(frutinhas); //atualiza a musica a cada frame
+    Music *musicas[3] = {&bossaMelon, &violoncia, &frutinhas};
+    UpdateMusicStream(*musicas[musica_selecionada]);
+    UpdateMusicStream(bossaMelon); //atuailza as musicas a cada frame
         switch (estado) {
             case EST_MENU:
                 if (foi_clicado(btnPlay)) {
@@ -101,7 +103,8 @@ int main(void) {
                     contadorCliques = 0;
                     inicializarObstaculos();
                     StopMusicStream(bossaMelon);
-                    PlayMusicStream(violoncia);
+                    Music *musicas[3] = {&bossaMelon, &violoncia, &frutinhas};
+                    PlayMusicStream(*musicas[musica_selecionada]);
                 }
                 if (foi_clicado(btnExit)) goto fechar;
                 if (foi_clicado(btnMusic)) estado = EST_MUSICA;
@@ -114,6 +117,59 @@ int main(void) {
                     StopMusicStream(violoncia);
                     PlayMusicStream(bossaMelon);
                 }
+
+                //escolher musica com setas esquerda/direita
+                if (IsKeyPressed(KEY_LEFT)) {
+                    musica_selecionada--;
+                    if (musica_selecionada < 0) musica_selecionada = 2;
+                }
+                if (IsKeyPressed(KEY_RIGHT)) {
+                    musica_selecionada++;
+                    if (musica_selecionada > 2) musica_selecionada = 0;
+                }
+
+                // Ajustar volume com setas cima/baixo
+                if (IsKeyPressed(KEY_UP)) {
+                    volume_musica += 0.1f;
+                    if (volume_musica > 1.0f) volume_musica = 1.0f;
+                }
+                if (IsKeyPressed(KEY_DOWN)) {
+                    volume_musica -= 0.1f;
+                    if (volume_musica < 0.0f) volume_musica = 0.0f;
+                }
+
+                // clicar nos botoes de setas e volume
+                if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                    Vector2 mouse = GetMousePosition();
+
+                // Seta esquerda do select (< em x=230, y=330)
+                    if (CheckCollisionPointRec(mouse, (Rectangle){225, 320, 40, 35})) {
+                        musica_selecionada--;
+                        if (musica_selecionada < 0) musica_selecionada = 2;
+                    
+                // Seta direita do select (> em x=530, y=330)
+                    if (CheckCollisionPointRec(mouse, (Rectangle){535, 320, 40, 35})) {
+                        musica_selecionada++;
+                        if (musica_selecionada > 2) musica_selecionada = 0;
+                    }
+                }
+
+                    // Botão - do volume
+                    if (CheckCollisionPointRec(mouse, (Rectangle){225, 400, 40, 35})) {
+                        volume_musica -= 0.1f;
+                        if (volume_musica < 0.0f) volume_musica = 0.0f;
+                    }
+                    // Botão + do volume
+                    if (CheckCollisionPointRec(mouse, (Rectangle){535, 400, 40, 35})) {
+                        volume_musica += 0.1f;
+                        if (volume_musica > 1.0f) volume_musica = 1.0f;
+                    }
+                }
+
+                // Aplica o volume nas músicas de jogo
+                SetMusicVolume(violoncia,  volume_musica);
+                SetMusicVolume(frutinhas,  volume_musica);
+                SetMusicVolume(bossaMelon, volume_musica);
                 break;
 
             case EST_CONFIGURACAO:
@@ -180,13 +236,46 @@ int main(void) {
                 desenha_botao(btnExit);
 
             } else if (estado == EST_MUSICA) {
+                const char *nomes_musicas[3] = {"BossaMelon", "Violoncia", "Frutinhas"};
+
                 DrawTexture(bg_menu, 0, 0, WHITE);
-                DrawRectangleRounded((Rectangle){200, 200, 400, 300}, 0.2f, 8, (Color){0, 0, 0, 160});
-                DrawRectangleRoundedLines((Rectangle){200, 200, 400, 300}, 0.2f, 8, WHITE);
-                DrawText("MUSICAS", 290, 230, 40, WHITE);
-                DrawLine(220, 285, 580, 285, WHITE);
-                DrawText("Em breve...", 295, 320, 28, YELLOW);
-                DrawText("Pressione ESC para voltar", 230, 450, 18, LIGHTGRAY);
+
+                // Painel
+                DrawRectangleRounded((Rectangle){200, 180, 400, 340}, 0.15f, 8, (Color){0, 0, 0, 180});
+                DrawRectangleRoundedLines((Rectangle){200, 180, 400, 340}, 0.15f, 8, WHITE);
+
+                // Título
+                DrawText("MUSICAS", 300, 200, 36, WHITE);
+                DrawLine(220, 248, 580, 248, WHITE);
+
+                // --- Select de música ---
+                DrawText("Musica da partida:", 240, 290, 18, LIGHTGRAY);
+
+                // Seta esquerda
+                DrawText("<", 238, 322, 28, YELLOW);
+                // Nome da música selecionada (centralizado)
+                int tw = MeasureText(nomes_musicas[musica_selecionada], 22);
+                DrawText(nomes_musicas[musica_selecionada], 400 - tw/2, 325, 22, WHITE);
+                // Seta direita
+                DrawText(">", 548, 322, 28, YELLOW);
+
+                DrawLine(220, 368, 580, 368, (Color){255,255,255,60});
+
+                // --- Controle de volume ---
+                DrawText("Volume da musica:", 240, 382, 18, LIGHTGRAY);
+
+                // Botão -
+                DrawText("-", 238, 408, 32, YELLOW);
+                // Barra de volume
+                DrawRectangle(270, 415, 260, 14, (Color){255,255,255,40});
+                DrawRectangle(270, 415, (int)(260 * volume_musica), 14, GREEN);
+                DrawRectangleLines(270, 415, 260, 14, WHITE);
+                
+                // Botão +
+                DrawText("+", 548, 406, 28, YELLOW);
+
+                // Dica
+                DrawText("< > para musica  |  ESC para voltar", 222, 490, 16, LIGHTGRAY);
 
             } else if (estado == EST_CONFIGURACAO) {
                 DrawTexture(bg_menu, 0, 0, WHITE);
@@ -287,6 +376,7 @@ fechar:
     }
     UnloadMusicStream(bossaMelon);
     UnloadMusicStream(violoncia);
+    UnloadMusicStream(frutinhas);
     CloseAudioDevice();
     cpSpaceFree(espaco);
     CloseWindow();
