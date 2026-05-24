@@ -182,12 +182,35 @@ int main(void) {
                 }
                 break;
 
+            case EST_PAUSE:
+                if (IsKeyPressed(KEY_ESCAPE) || IsKeyPressed(KEY_ENTER)) {
+                    estado = EST_JOGO;
+                    ResumeMusicStream(violoncia);
+                    ResumeMusicStream(frutinhas);
+                }
+                // botao de retomar (clique)
+                if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                    Vector2 mouse = GetMousePosition();
+                    if (CheckCollisionPointRec(mouse, (Rectangle){300, 330, 200, 50})) {
+                        estado = EST_JOGO;
+                        ResumeMusicStream(violoncia);
+                        ResumeMusicStream(frutinhas);
+                    }
+                    if (CheckCollisionPointRec(mouse, (Rectangle){300, 400, 200, 50})) {
+                        estado = EST_MENU;
+                        StopMusicStream(violoncia);
+                        StopMusicStream(frutinhas);
+                        PlayMusicStream(bossaMelon);
+                    }
+                }
+                break;
+
             case EST_JOGO:
                 if (IsKeyPressed(KEY_ESCAPE)) {
-                    estado = EST_MENU;
-                    StopMusicStream(violoncia);
-                    StopMusicStream(frutinhas);
-                    PlayMusicStream(bossaMelon);
+
+                    estado = EST_PAUSE;
+                    PauseMusicStream(violoncia);
+                    PauseMusicStream(frutinhas);
                 }
 
                 pos_x = GetMousePosition().x;
@@ -288,8 +311,58 @@ int main(void) {
                 DrawLine(220, 285, 580, 285, WHITE);
                 DrawText("Em breve...", 295, 320, 28, YELLOW);
                 DrawText("Pressione ESC para voltar", 230, 450, 18, LIGHTGRAY);
+ 
+            } else if (estado == EST_PAUSE) {
+            // Desenha o jogo por baixo (congelado)
+            ClearBackground(RGB(245, 235, 210));
+            DrawRectangleLines(100, 150, 600, 600, DARKGRAY);
 
-            } else {
+            NodeFruta *atual = head;
+            while (atual != NULL) {
+                cpVect pos     = cpBodyGetPosition(atual->fruta.body);
+                float  raio    = LISTA_FRUTAS[atual->fruta.nivel].raio;
+                float  angulo  = (float)cpBodyGetAngle(atual->fruta.body) * RAD2DEG;
+                float  diam    = raio * 2;
+                Texture2D tex  = atual->fruta.estaPodre ? tex_frutas_podres[atual->fruta.nivel]
+                                                        : tex_frutas[atual->fruta.nivel];
+                DrawTexturePro(tex,
+                    (Rectangle){0, 0, (float)tex.width, (float)tex.height},
+                    (Rectangle){(float)pos.x, (float)pos.y, diam, diam},
+                    (Vector2){raio, raio}, angulo, WHITE);
+                atual = atual->next;
+            }
+            desenharObstaculos();
+
+            // blur escuro
+            DrawRectangle(0, 0, Largura, Altura, (Color){0, 0, 0, 150});
+
+            // Painel central
+            DrawRectangleRounded((Rectangle){250, 260, 300, 230}, 0.15f, 8, (Color){0, 0, 0, 200});
+            DrawRectangleRoundedLines((Rectangle){250, 260, 300, 230}, 0.15f, 8, WHITE);
+
+            // Título
+            int tw = MeasureText("PAUSADO", 36);
+            DrawText("PAUSADO", 400 - tw/2, 280, 36, WHITE);
+            DrawLine(270, 330, 530, 330, WHITE);
+
+            // Botão Retomar
+            bool hover_retomar = CheckCollisionPointRec(GetMousePosition(), (Rectangle){300, 345, 200, 50});
+            DrawRectangleRounded((Rectangle){300, 345, 200, 50}, 0.3f, 8,
+                hover_retomar ? (Color){80, 200, 80, 255} : (Color){50, 150, 50, 255});
+            int tw2 = MeasureText("Retomar", 22);
+            DrawText("Retomar", 400 - tw2/2, 358, 22, WHITE);
+
+            // Botão Sair
+            bool hover_sair = CheckCollisionPointRec(GetMousePosition(), (Rectangle){300, 415, 200, 50});
+            DrawRectangleRounded((Rectangle){300, 415, 200, 50}, 0.3f, 8,
+                hover_sair ? (Color){200, 60, 60, 255} : (Color){150, 40, 40, 255});
+            int tw3 = MeasureText("Sair para o Menu", 18);
+            DrawText("Sair para o Menu", 400 - tw3/2, 428, 18, WHITE);
+
+            // Dica
+            DrawText("ESC ou ENTER para retomar", 272, 475, 15, LIGHTGRAY);
+
+            }else {
                 ClearBackground(RGB(245, 235, 210));
                 DrawRectangleLines(100, 150, 600, 600, DARKGRAY);
 
