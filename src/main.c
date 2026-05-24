@@ -17,6 +17,9 @@ int stat64i32(const char *path, struct _stat *buffer) { return _stat(path, buffe
 
 int main(void) {
     InitWindow(Largura, Altura, "Watermelon Game");
+    Image icon = LoadImage("Resources/icon.png");
+    SetWindowIcon(icon);
+    UnloadImage(icon);
     InitAudioDevice();
     SetWindowPosition(50, 50);
     SetExitKey(KEY_NULL);

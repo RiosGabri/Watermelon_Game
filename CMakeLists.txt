@@ -1,5 +1,11 @@
 cmake_minimum_required(VERSION 3.20)
-project(Watermelon_Game C)
+
+if(MINGW)
+    set(CMAKE_RC_COMPILER windres)
+    set(CMAKE_RC_FLAGS "")
+endif()
+
+project(Watermelon_Game C RC)
 
 set(CMAKE_C_STANDARD 11)
 add_definitions(-D__USE_MINGW_ANSI_STDIO=1)
