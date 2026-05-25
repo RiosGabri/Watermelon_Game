@@ -56,6 +56,11 @@ int main(void) {
     tex_frutas_podres[6] = LoadTexture("Resources/bad_abacaxi.png");
     tex_frutas_podres[7] = LoadTexture("Resources/bad_melancia.png");
 
+    Texture2D tex_podre = LoadTexture("Resources/podre.png");
+    Texture2D tex_bomba = LoadTexture("Resources/bomb.png");
+    Texture2D tex_pimenta = LoadTexture("Resources/pimenta.png");
+    Texture2D tex_bloco = LoadTexture("Resources/block.png");
+
     Botao btnPlay     = { {(Largura/2.0f - 145), 300, 290, 78}, tex_play,     tex_play_hover };
     Botao btnMusic    = { {(Largura/2.0f - 145), 398, 290, 78}, tex_music,    tex_music_hover };
     Botao btnSettings = { {(Largura/2.0f - 145), 496, 290, 78}, tex_settings, tex_settings_hover };
@@ -396,7 +401,7 @@ int main(void) {
                     (Vector2){raio, raio}, angulo, WHITE);
                 atual = atual->next;
             }
-            desenharObstaculos();
+            desenharObstaculos(tex_bomba, tex_podre, tex_pimenta, tex_bloco);
 
             // blur escuro
             DrawRectangle(0, 0, Largura, Altura, (Color){0, 0, 0, 150});
@@ -478,7 +483,8 @@ int main(void) {
             DrawText("Pressione ENTER ou ESC para voltar ao menu", 400 - tw4/2, 520, 18, DARKGRAY);
 
             }else {
-                ClearBackground(RGB(245, 235, 210));
+                ClearBackground(BLACK);
+                DrawTexture(bg_menu, 0, 0, (Color){255, 255, 255, 150});    //vai ficar com o mesmo fundo do menu
                 DrawRectangleLines(100, 150, 600, 600, DARKGRAY);
                 if (tempo_do_limite > 0.0f && (int)(GetTime() * 4) % 2 == 0)
                 DrawLine(100, 200, 700, 200, RED);
@@ -530,7 +536,7 @@ int main(void) {
                         }
                     atual = atual->next;
                 }
-                desenharObstaculos();
+                desenharObstaculos(tex_bomba, tex_podre, tex_pimenta, tex_bloco);
             }
 
         EndDrawing();

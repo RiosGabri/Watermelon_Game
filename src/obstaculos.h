@@ -36,6 +36,6 @@ void configurarCallbacksObstaculos(cpSpace *espaco);
 void testarSpawnEspecial(cpSpace *espaco, NodeFruta **head);
 void spawnBlocoFixo(cpSpace *espaco, NodeFruta **head);
 void atualizarELimparObstaculos(cpSpace *espaco, NodeFruta **head);
-void desenharObstaculos(void);
+void desenharObstaculos(Texture2D tex_bomba, Texture2D tex_podre, Texture2D tex_pimenta, Texture2D tex_bloco);
 
 #endif

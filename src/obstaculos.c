@@ -167,13 +167,19 @@ void atualizarELimparObstaculos(cpSpace *espaco, NodeFruta **head) {
     qtdRemoverShapes = 0;
 }
 
-void desenharObstaculos(void) {
+void desenharObstaculos(Texture2D tex_bomba, Texture2D tex_podre, Texture2D tex_pimenta, Texture2D tex_bloco) {
     for (int i = 0; i < qtdObstaculos; i++) {
         if (!listaObstaculos[i].ativo) continue;
 
         if (listaObstaculos[i].tipo == OBJ_BLOCO) {
-            DrawRectangleRec(listaObstaculos[i].areaBloco, DARKGRAY);
-            DrawRectangleLinesEx(listaObstaculos[i].areaBloco, 2, BLACK);
+            Rectangle area = listaObstaculos[i].areaBloco;
+            DrawTexturePro(tex_bloco,
+                (Rectangle){0, 0, (float)tex_bloco.width, (float)tex_bloco.height},
+                area,
+                (Vector2){0, 0},
+                0.0f,
+                WHITE);
+
         } else {
             cpVect pos = cpBodyGetPosition(listaObstaculos[i].body);
             Color  cor;
@@ -185,9 +191,25 @@ void desenharObstaculos(void) {
                 case OBJ_PODRE:   cor = DARKGREEN; txt = "PODR"; break;
                 default:          cor = GRAY;      txt = "???";  break;
             }
-            DrawCircle((int)pos.x, (int)pos.y, (int)listaObstaculos[i].raio, cor);
-            DrawCircleLines((int)pos.x, (int)pos.y, (int)listaObstaculos[i].raio, WHITE);
-            DrawText(txt, (int)pos.x - 11, (int)pos.y - 4, 9, WHITE);
+            float raio = listaObstaculos[i].raio;
+            float diametro = raio * 2;
+            Texture2D tex;
+
+            if (listaObstaculos[i].tipo == OBJ_BOMBA){
+            tex = tex_bomba;
+            } else if (listaObstaculos[i].tipo == OBJ_PODRE) {
+                tex = tex_podre;
+            } else {
+                tex = tex_pimenta;
+            }
+
+            DrawTexturePro(tex,
+                    (Rectangle){0, 0, (float)tex.width, (float)tex.height},
+                    (Rectangle){pos.x, pos.y, diametro, diametro},
+                    (Vector2){raio, raio},
+                    0.0f,
+                    WHITE
+                );
         }
     }
 }
