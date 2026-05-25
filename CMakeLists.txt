@@ -19,15 +19,20 @@ set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 add_subdirectory(raylib)
 
 # Chipmunk2D via submodule
-set(BUILD_DEMOS OFF CACHE BOOL "" FORCE)
+set(BUILD_DEMOS   OFF CACHE BOOL "" FORCE)
 set(INSTALL_DEMOS OFF CACHE BOOL "" FORCE)
-set(BUILD_SHARED OFF CACHE BOOL "" FORCE)
-set(BUILD_STATIC ON  CACHE BOOL "" FORCE)
+set(BUILD_SHARED  OFF CACHE BOOL "" FORCE)
+set(BUILD_STATIC  ON  CACHE BOOL "" FORCE)
 add_subdirectory(chipmunk)
+
+# Ícone apenas no Windows
+if(MINGW)
+    set(RC_FILE resources.rc)
+endif()
 
 add_executable(Watermelon_Game
     ${SRCS_JOGO}
-    resources.rc
+    ${RC_FILE}
 )
 
 target_include_directories(Watermelon_Game PRIVATE
