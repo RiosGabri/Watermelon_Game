@@ -12,11 +12,18 @@ Um jogo onde o objetivo é juntar as frutas para formar uma maior e ganhar ponto
 Em breve
 
 ## Como jogar
-Em breve
+O objetivo é juntar frutas até chegar em uma melancia:
+1. Mova o mouse para posicionar a fruta.
+2. Clique com o botão direito para soltar a fruta.
+3. As frutas do mesmo tipo se fundem ao colidir e se tornam em uma fruta maior:
+![Sequência das frutas](Resources/fruits.png)
+4. Se as frutas ultrapassarem o limite vermelho por mais de 3 segundos, você perde.
+
+OBS: Aperte ESC durante o jogo para abrir o menu de pause.
 
 ## Ferramentas usadas:
 - C (linguagem de programação)
-- RayLib (biblioteca de interface gráfica)
+- Raylib (biblioteca de interface gráfica)
 - Chimpunk2D (biblioteca para física do jogo)
 
 ## Equipe
