@@ -9,8 +9,61 @@
 Um jogo onde o objetivo é juntar as frutas para formar uma maior e ganhar pontos.
 
 ## Como executar
-Em breve
 
+1. Clone o repositório em sua máquina:
+
+    ``` bash
+    git clone --recurse-submodules https://github.com/RiosGabri/Watermelon_Game.git
+
+    cd Watermelon_Game
+    ```
+
+### No Windows
+2. Instale o MSYS2:
+
+    Baixe através do [site oficial](https://www.msys2.org/) e instale no caminho padrão (`C:\msys64`).
+
+    Após isso, abra a pasta onde foi instalado e abra o arquivo `ucrt64.exe`. Ao executá-lo, abrirá um terminal onde será necessário instalar as dependências (GCC e CMake) colocando esse comando:
+
+    ```bash
+    pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-cmake
+    ```
+3. Compilar:
+    ```bash
+    mkdir build && cd build
+    cmake .. -G "MinGW Makefiles"
+    mingw32-make
+    ```
+4. Executar:
+      ```bash
+      Watermelon_Game.exe
+      ```
+### Em Linux
+2. Instale as dependências (GCC e CMake):
+    - Debian/Ubuntu
+        ```bash
+        sudo apt update && sudo apt install gcc cmake
+        ```
+    - Arch Linux
+        ```bash
+        sudo pacman -S gcc cmake
+        ```
+
+    - Fedora
+        ```bash
+        sudo dnf install gcc cmake
+        ```
+3. Compilar:
+    ```bash
+    mkdir build && cd build
+    cmake ..
+    make
+    ```
+
+4. Executar:
+    ```bash
+    Watermelon_Game
+    ```
 ## Como jogar
 O objetivo é juntar frutas até chegar em uma melancia:
 1. Mova o mouse para posicionar a fruta.
