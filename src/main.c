@@ -87,6 +87,8 @@ int main(void) {
     int   contadorCliques    = 0;
     int musica_selecionada = 0;
     float volume_musica = 1.0f;
+    float tempo_do_limite = 3.0f;
+    int vitorias = 0;
 
     while (!WindowShouldClose()) {
     Music *musicas[3] = {&bossaMelon, &violoncia, &frutinhas};
@@ -204,6 +206,31 @@ int main(void) {
                     }
                 }
                 break;
+            case EST_GAMEOVER:
+            case EST_VITORIA:
+                if (IsKeyPressed(KEY_ENTER) || IsKeyPressed(KEY_ESCAPE)) {
+                    // Resetar o jogo
+                    while (head != NULL) {
+                        NodeFruta *tmp = head;
+                        head = head->next;
+                        cpSpaceRemoveShape(espaco, tmp->fruta.shape);
+                        cpShapeFree(tmp->fruta.shape);
+                        cpSpaceRemoveBody(espaco, tmp->fruta.body);
+                        cpBodyFree(tmp->fruta.body);
+                        free(tmp);
+                    }
+                    inicializarObstaculos();
+                    tipo_atual      = GetRandomValue(0, 3);
+                    tipo_prox       = GetRandomValue(0, 3);
+                    pos_x           = Largura / 2.0f;
+                    pode_soltar     = 1;
+                    contadorCliques = 0;
+                    tempo_do_limite    = 0.0f;
+                    vitorias = 0;
+                    estado          = EST_MENU;
+                    PlayMusicStream(bossaMelon);
+                }
+                break;
 
             case EST_JOGO:
                 if (IsKeyPressed(KEY_ESCAPE)) {
@@ -239,6 +266,44 @@ int main(void) {
                 cpSpaceStep(espaco, 1.0f / 60.0f);
                 atualizarELimparObstaculos(espaco, &head);
                 processarFusoes(espaco, &head);
+
+                //checar se as frutas chegaram no limite (game over)
+                int fruta_no_limite = 0;
+                NodeFruta *chk = head;
+                while (chk != NULL) {
+                    cpVect p = cpBodyGetPosition(chk->fruta.body);
+                    if ((float)p.y < 200.0f) {
+                        fruta_no_limite = 1;
+                        break;
+                    }
+                    chk = chk->next;
+                }
+                if (fruta_no_limite) {
+                    tempo_do_limite += GetFrameTime();
+                    if (tempo_do_limite >= 3.0f) {
+                        estado = EST_GAMEOVER;
+                        StopMusicStream(violoncia);
+                        StopMusicStream(frutinhas);
+                    }
+                } else {
+                    tempo_do_limite = 0.0f;
+                }
+
+                //checagem se venceu
+                if (!vitorias) {
+                    NodeFruta *v = head;
+                    while (v != NULL) {
+                        if (v->fruta.nivel == NIVEIS_FRUTA - 1) { // melancia = ultimo nível
+                            vitorias = 1;
+                            estado = EST_VITORIA;
+                            StopMusicStream(violoncia);
+                            StopMusicStream(frutinhas);
+                            break;
+                        }
+                        v = v->next;
+                    }
+                }
+
                 break;
         }
         BeginDrawing();
@@ -362,9 +427,63 @@ int main(void) {
             // Dica
             DrawText("ESC ou ENTER para retomar", 272, 475, 15, LIGHTGRAY);
 
+            } else if (estado == EST_GAMEOVER) {
+            // Fundo vermelho escuro
+            ClearBackground((Color){40, 0, 0, 255});
+
+            // Título
+            int tw = MeasureText("GAME OVER", 72);
+            DrawText("GAME OVER", 400 - tw/2, 220, 72, RED);
+
+            // Linha decorativa
+            DrawLine(150, 315, 650, 315, (Color){200, 50, 50, 255});
+
+            // Mensagem
+            int tw2 = MeasureText("Parabens! Você perdeu seu tempo!", 28);
+            DrawText("Parabens! Você perdeu seu tempo!", 400 - tw2/2, 340, 28, LIGHTGRAY);
+
+            // Instrução
+            int tw3 = MeasureText("Pressione ENTER ou ESC para voltar ao menu", 18);
+            DrawText("Pressione ENTER ou ESC para voltar ao menu", 400 - tw3/2, 520, 18, DARKGRAY);
+
+            // Indicador de perigo piscando
+            if ((int)(GetTime() * 2) % 2 == 0) {
+                int tw4 = MeasureText("[ LIMITE ULTRAPASSADO ]", 22);
+                DrawText("[ LIMITE ULTRAPASSADO ]", 400 - tw4/2, 430, 22, RED);
+            }
+
+        } else if (estado == EST_VITORIA) {
+            // Fundo verde escuro
+            ClearBackground((Color){0, 40, 0, 255});
+
+            // Título
+            int tw = MeasureText("VOCE VENCEU!", 68);
+            DrawText("VOCE VENCEU!", 400 - tw/2, 210, 68, GREEN);
+
+            // Linha decorativa
+            DrawLine(150, 305, 650, 305, (Color){50, 200, 50, 255});
+
+            // Mensagem
+            int tw2 = MeasureText("Voce formou uma melancia!", 28);
+            DrawText("Voce formou uma melancia!", 400 - tw2/2, 330, 28, LIGHTGRAY);
+
+            // Instrução piscando
+            if ((int)(GetTime() * 2) % 2 == 0) {
+                int tw3 = MeasureText("[ MELANCIA FORMADA! ]", 22);
+                DrawText("[ MELANCIA FORMADA! ]", 400 - tw3/2, 420, 22, GREEN);
+            }
+
+            // Instrução voltar
+            int tw4 = MeasureText("Pressione ENTER ou ESC para voltar ao menu", 18);
+            DrawText("Pressione ENTER ou ESC para voltar ao menu", 400 - tw4/2, 520, 18, DARKGRAY);
+
             }else {
                 ClearBackground(RGB(245, 235, 210));
                 DrawRectangleLines(100, 150, 600, 600, DARKGRAY);
+                if (tempo_do_limite > 0.0f && (int)(GetTime() * 4) % 2 == 0)
+                DrawLine(100, 200, 700, 200, RED);
+                else
+                DrawLine(100, 200, 700, 200, (Color){255, 50, 50, 180});
 
                 float     raio_atual    = LISTA_FRUTAS[tipo_atual].raio;
                 float     diam_atual    = raio_atual * 2;
