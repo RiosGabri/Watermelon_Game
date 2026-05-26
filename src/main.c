@@ -150,17 +150,16 @@ int main(void) {
                 if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
                     Vector2 mouse = GetMousePosition();
 
-                // Seta esquerda do select (< em x=230, y=330)
+                    // Seta esquerda do select (< em x=230, y=330)
                     if (CheckCollisionPointRec(mouse, (Rectangle){225, 320, 40, 35})) {
                         musica_selecionada--;
                         if (musica_selecionada < 0) musica_selecionada = 2;
-                    
-                // Seta direita do select (> em x=530, y=330)
+                    }                                                               
+                    // Seta direita do select (> em x=530, y=330)
                     if (CheckCollisionPointRec(mouse, (Rectangle){535, 320, 40, 35})) {
                         musica_selecionada++;
                         if (musica_selecionada > 2) musica_selecionada = 0;
                     }
-                }
 
                     // Botão - do volume
                     if (CheckCollisionPointRec(mouse, (Rectangle){225, 400, 40, 35})) {
@@ -337,8 +336,8 @@ int main(void) {
                 DrawTexture(bg_menu, 0, 0, WHITE);
 
                 // Painel
-                DrawRectangleRounded((Rectangle){200, 180, 400, 340}, 0.15f, 8, (Color){0, 0, 0, 180});
-                DrawRectangleRoundedLines((Rectangle){200, 180, 400, 340}, 0.15f, 8, WHITE);
+                DrawRectangle(200, 180, 400, 340, (Color){0, 0, 0, 180});
+                DrawRectangleLines(200, 180, 400, 340, WHITE);
 
                 // Título
                 DrawText("MUSICAS", 300, 200, 36, WHITE);
@@ -375,8 +374,8 @@ int main(void) {
 
             } else if (estado == EST_CONFIGURACAO) {
                 DrawTexture(bg_menu, 0, 0, WHITE);
-                DrawRectangleRounded((Rectangle){200, 200, 400, 300}, 0.2f, 8, (Color){0, 0, 0, 160});
-                DrawRectangleRoundedLines((Rectangle){200, 200, 400, 300}, 0.2f, 8, WHITE);
+                DrawRectangle(200, 200, 400, 300, (Color){0, 0, 0, 160});
+                DrawRectangleLines(200, 200, 400, 300, WHITE);
                 DrawText("CONFIGURAÇAO", 250, 230, 40, WHITE);
                 DrawLine(220, 285, 580, 285, WHITE);
                 DrawText("Em breve...", 295, 320, 28, YELLOW);
@@ -407,8 +406,8 @@ int main(void) {
             DrawRectangle(0, 0, Largura, Altura, (Color){0, 0, 0, 150});
 
             // Painel central
-            DrawRectangleRounded((Rectangle){250, 260, 300, 230}, 0.15f, 8, (Color){0, 0, 0, 200});
-            DrawRectangleRoundedLines((Rectangle){250, 260, 300, 230}, 0.15f, 8, WHITE);
+            DrawRectangle(250, 260, 300, 230, (Color){0, 0, 0, 200});
+            DrawRectangleLines(250, 260, 300, 230, WHITE);
 
             // Título
             int tw = MeasureText("PAUSADO", 36);
@@ -417,14 +416,14 @@ int main(void) {
 
             // Botão Retomar
             bool hover_retomar = CheckCollisionPointRec(GetMousePosition(), (Rectangle){300, 345, 200, 50});
-            DrawRectangleRounded((Rectangle){300, 345, 200, 50}, 0.3f, 8,
+            DrawRectangle(300, 345, 200, 50,
                 hover_retomar ? (Color){80, 200, 80, 255} : (Color){50, 150, 50, 255});
             int tw2 = MeasureText("Retomar", 22);
             DrawText("Retomar", 400 - tw2/2, 358, 22, WHITE);
 
             // Botão Sair
             bool hover_sair = CheckCollisionPointRec(GetMousePosition(), (Rectangle){300, 415, 200, 50});
-            DrawRectangleRounded((Rectangle){300, 415, 200, 50}, 0.3f, 8,
+            DrawRectangle(300, 415, 200, 50,
                 hover_sair ? (Color){200, 60, 60, 255} : (Color){150, 40, 40, 255});
             int tw3 = MeasureText("Sair para o Menu", 18);
             DrawText("Sair para o Menu", 400 - tw3/2, 428, 18, WHITE);
@@ -542,7 +541,7 @@ int main(void) {
         EndDrawing();
     }
 
-fechar:
+fechar:;
     while (head != NULL) {
         NodeFruta *tmp = head;
         head = head->next;
