@@ -23,6 +23,7 @@ set(BUILD_DEMOS   OFF CACHE BOOL "" FORCE)
 set(INSTALL_DEMOS OFF CACHE BOOL "" FORCE)
 set(BUILD_SHARED  OFF CACHE BOOL "" FORCE)
 set(BUILD_STATIC  ON  CACHE BOOL "" FORCE)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DCHIPMUNK_FFI")
 add_subdirectory(chipmunk)
 
 # Ícone apenas no Windows
