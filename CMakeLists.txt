@@ -3,9 +3,10 @@ cmake_minimum_required(VERSION 3.20)
 if(MINGW)
     set(CMAKE_RC_COMPILER windres)
     set(CMAKE_RC_FLAGS "")
+    project(Watermelon_Game C RC)
+else()
+    project(Watermelon_Game C)
 endif()
-
-project(Watermelon_Game C RC)
 
 set(CMAKE_C_STANDARD 11)
 
@@ -23,7 +24,6 @@ set(BUILD_DEMOS   OFF CACHE BOOL "" FORCE)
 set(INSTALL_DEMOS OFF CACHE BOOL "" FORCE)
 set(BUILD_SHARED  OFF CACHE BOOL "" FORCE)
 set(BUILD_STATIC  ON  CACHE BOOL "" FORCE)
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DCHIPMUNK_FFI")
 add_subdirectory(chipmunk)
 
 # Ícone apenas no Windows
