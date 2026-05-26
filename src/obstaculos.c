@@ -26,13 +26,16 @@ static void agendarRemocaoObstaculo(cpShape *shape) {
 
 static cpBool cbPimentaFruta(cpArbiter *arb, cpSpace *espaco, cpDataPointer data) {
     CP_ARBITER_GET_SHAPES(arb, shapePimenta, shapeFruta);
-    Fruta *f = (Fruta*)cpShapeGetUserData(shapeFruta);
-    if (f) {
-        cpBody *bodyFruta = cpShapeGetBody(shapeFruta);
-        cpVect  vel       = cpBodyGetVelocity(bodyFruta);
-        vel = cpvmult(vel, 3.5f);
-        vel = cpvadd(vel, cpv((rand() % 400) - 200, -300));
-        cpBodySetVelocity(bodyFruta, vel);
+    cpCollisionType tipo = cpShapeGetCollisionType(shapeFruta);
+    if (tipo < NIVEIS_FRUTA) {
+        Fruta *f = (Fruta*)cpShapeGetUserData(shapeFruta);
+        if (f) {
+            cpBody *bodyFruta = cpShapeGetBody(shapeFruta);
+            cpVect  vel       = cpBodyGetVelocity(bodyFruta);
+            vel = cpvmult(vel, 3.5f);
+            vel = cpvadd(vel, cpv((rand() % 400) - 200, -300));
+            cpBodySetVelocity(bodyFruta, vel);
+        }
     }
     agendarRemocaoObstaculo(shapePimenta);
     return cpTrue;
@@ -40,10 +43,13 @@ static cpBool cbPimentaFruta(cpArbiter *arb, cpSpace *espaco, cpDataPointer data
 
 static cpBool cbPodreFruta(cpArbiter *arb, cpSpace *espaco, cpDataPointer data) {
     CP_ARBITER_GET_SHAPES(arb, shapePodre, shapeFruta);
-    Fruta *f = (Fruta*)cpShapeGetUserData(shapeFruta);
-    if (f && !f->estaPodre) {
-        f->estaPodre        = 1;
-        f->cliquesRestantes = 10; 
+    cpCollisionType tipo = cpShapeGetCollisionType(shapeFruta);
+    if (tipo < NIVEIS_FRUTA) {
+        Fruta *f = (Fruta*)cpShapeGetUserData(shapeFruta);
+        if (f && !f->estaPodre) {
+            f->estaPodre        = 1;
+            f->cliquesRestantes = 10; 
+        }
     }
     agendarRemocaoObstaculo(shapePodre);
     return cpTrue;
@@ -134,22 +140,32 @@ void spawnBlocoFixo(cpSpace *espaco, NodeFruta **head) {
 
 void atualizarELimparObstaculos(cpSpace *espaco, NodeFruta **head) {
     float raioExplosao = 130.0f;
+    
+    // 1. Em vez de deletar direto, vamos apenas marcar quem deve sumir
+    // ou processar com extrema cautela.
     for (int b = 0; b < qtdBombasParaExplodir; b++) {
-        cpVect    bPos  = fusoesBombaPos[b];
+        cpVect bPos = fusoesBombaPos[b];
         NodeFruta *atual = *head;
+        
         while (atual != NULL) {
-            NodeFruta *prox = atual->next;
+            // Avançamos o ponteiro ANTES de qualquer remoção para não perder a referência
+            NodeFruta *prox = atual->next; 
             cpVect fPos = cpBodyGetPosition(atual->fruta.body);
-            if ((float)cpvdist(bPos, fPos) <= raioExplosao)
+            
+            if ((float)cpvdist(bPos, fPos) <= raioExplosao) {
+                // Remove com segurança do espaço e da lista
                 removerFruta(espaco, atual->fruta.shape, head);
+            }
             atual = prox;
         }
     }
     qtdBombasParaExplodir = 0;
 
+    // 2. Limpeza dos obstáculos agendados
     for (int i = 0; i < qtdRemoverShapes; i++) {
         cpShape *sh = shapesParaRemover[i];
         if (!sh) continue;
+        
         for (int j = 0; j < qtdObstaculos; j++) {
             if (listaObstaculos[j].shape == sh && listaObstaculos[j].ativo) {
                 listaObstaculos[j].ativo = 0;
