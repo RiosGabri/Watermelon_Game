@@ -2,7 +2,7 @@
 #define __FRUITS_H__
 
 #include "chipmunk/chipmunk.h"
-#include "raylib.h"
+//#include "raylib.h"
 
 #define MAX_FRUITS     128
 #define NIVEIS_FRUTA   8
