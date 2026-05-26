@@ -51,5 +51,55 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# debug information files
+# Debug information files
 *.dwo
+
+# =========================
+# Pasta de build
+# =========================
+build/
+cmake-build-debug/
+cmake-build-release/
+
+# =========================
+# Cache do CMake
+# =========================
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# =========================
+# IDEs
+# =========================
+
+# CLion
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+# =========================
+# Sistema operacional
+# =========================
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux/Mac
+.DS_Store
+*~
