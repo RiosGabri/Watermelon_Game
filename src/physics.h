@@ -1,4 +1,9 @@
-#include "chipmunk.h"
+#ifndef PHYSICS_H
+#define PHYSICS_H
+
+#include <chipmunk/chipmunk.h>
+#include "fruits.h"
+extern NodeFruta **g_head;
 
 cpSpace* initEspaco();
 void criarArea(cpSpace* espaco);
@@ -18,3 +23,5 @@ extern int           numFusoesPendentes;
 
 cpBool callbackFusao (cpArbiter* arbiter, cpSpace* espaco, cpDataPointer userData);
 void registrarFusoes(cpSpace* espaco);
+
+#endif

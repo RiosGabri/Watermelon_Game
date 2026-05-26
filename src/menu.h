@@ -1,24 +1,26 @@
-#ifndef __MENU_H__
-#define __MENU_H__
- 
+#ifndef MENU_H
+#define MENU_H
+
 #include "raylib.h"
+#include <stdbool.h>
 
-typedef enum menu{
-    Menu_Aguardando,
-    Menu_Jogar,
-    Menu_Sair
-} Estado_Menu;
+typedef enum jogo {
+    EST_MENU,
+    EST_MUSICA,
+    EST_CONFIGURACAO,
+    EST_PAUSE,
+    EST_JOGO,
+    EST_GAMEOVER,
+    EST_VITORIA
+} Estado_Jogo;
 
-typedef enum painel{
-    Painel_Nenhum,
-    Painel_Configuracoes,
-    Painel_Musicas
-} Painel_Ativo;
+typedef struct Botao {
+    Rectangle area;
+    Texture2D textura;
+    Texture2D textura_hover;
+} Botao;
 
-typedef struct configuracoes{
-    float Volume_Musica;     
-    int   Largura_Janela;
-    int   Altura_Janela;
-} Configuracoes;
+bool foi_clicado(Botao b);
+void desenha_botao(Botao b);
 
 #endif
