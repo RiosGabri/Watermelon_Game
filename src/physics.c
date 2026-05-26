@@ -49,37 +49,38 @@ static void postStepFusao(cpSpace *espaco, cpDataPointer key, cpDataPointer data
 
 cpBool callbackFusao(cpArbiter *arbiter, cpSpace *espaco, cpDataPointer userData) {
     CP_ARBITER_GET_SHAPES(arbiter, formatoA, formatoB);
-
-    cpVect posA = cpBodyGetPosition(cpShapeGetBody(formatoA));
-    cpVect posB = cpBodyGetPosition(cpShapeGetBody(formatoB));
-    if (posA.y > posB.y || (posA.y == posB.y && posA.x > posB.x))
-        return cpTrue;
+    if ((uintptr_t)formatoA > (uintptr_t)formatoB)
+        return cpTrue; 
 
     cpCollisionType tipoA = cpShapeGetCollisionType(formatoA);
     cpCollisionType tipoB = cpShapeGetCollisionType(formatoB);
-    if (tipoA >= NIVEIS_FRUTA || tipoB >= NIVEIS_FRUTA) return cpTrue;
+    if (tipoA != tipoB || tipoA >= NIVEIS_FRUTA) return cpTrue;
 
     Fruta *frutaA = (Fruta*)cpShapeGetUserData(formatoA);
     Fruta *frutaB = (Fruta*)cpShapeGetUserData(formatoB);
-    if (!frutaA || !frutaB)           return cpTrue;
+    if (!frutaA || !frutaB) return cpTrue;
     if (frutaA->fundindo || frutaB->fundindo) return cpTrue;
     if (frutaA->estaPodre || frutaB->estaPodre) return cpTrue;
 
     frutaA->fundindo = 1;
     frutaB->fundindo = 1;
 
-    FusaoPendente *f = (FusaoPendente*)malloc(sizeof(FusaoPendente));
-    f->formatoA = formatoA;
-    f->formatoB = formatoB;
-    f->posicaoMedia = cpvlerp(posA, posB, 0.5f);
-    f->nivelResultante = (int)tipoA + 1;
-    cpSpaceAddPostStepCallback(espaco, postStepFusao, f, NULL);
-    return cpTrue;
+    cpVect posA = cpBodyGetPosition(cpShapeGetBody(formatoA));
+    cpVect posB = cpBodyGetPosition(cpShapeGetBody(formatoB));
+    cpVect posMedia = cpvmult(cpvadd(posA, posB), 0.5f);
+
+    if (numFusoesPendentes < MAX_FUSOES) {
+        filaFusoes[numFusoesPendentes].formatoA        = formatoA;
+        filaFusoes[numFusoesPendentes].formatoB        = formatoB;
+        filaFusoes[numFusoesPendentes].posicaoMedia    = posMedia;
+        filaFusoes[numFusoesPendentes].nivelResultante = (int)tipoA + 1;
+        numFusoesPendentes++;
+    }
+    return cpFalse; 
 }
 
 void registrarFusoes(cpSpace *espaco) {
     for (int i = 0; i < NIVEIS_FRUTA; i++) {
-        cpCollisionHandler *h = cpSpaceAddCollisionHandler(espaco, i, i);
-        h->beginFunc = callbackFusao;
+        cpSpaceAddCollisionHandler(espaco, i, i)->preSolveFunc = callbackFusao;
     }
 }

@@ -79,12 +79,13 @@ void processarFusoes(cpSpace *espaco, NodeFruta **head) {
     for (int i = 0; i < numFusoesPendentes; i++) {
         FusaoPendente *f = &filaFusoes[i];
         removerFruta(espaco, f->formatoA, head);
-        removerFruta(espaco, f->formatoB, head);
-        if (f->nivelResultante < NIVEIS_FRUTA)
+        removerFruta(espaco, f->formatoB, head);  
+        if (f->nivelResultante < NIVEIS_FRUTA) {
             inserirFruta(espaco, f->posicaoMedia.x, f->posicaoMedia.y,
                          f->nivelResultante, head);
+        }
     }
-    numFusoesPendentes = 0;
+    numFusoesPendentes = 0; 
 }
 
 void atualizarFrutasPodres(NodeFruta *head) {
