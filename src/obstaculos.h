@@ -5,10 +5,10 @@
 #include "raylib.h"
 #include "fruits.h"
 
-#define COLLISION_BLOCO   10
-#define COLLISION_BOMBA   11
-#define COLLISION_PIMENTA 12
-#define COLLISION_PODRE   13
+#define COLLISION_BLOCO   20
+#define COLLISION_BOMBA   21
+#define COLLISION_PIMENTA 22
+#define COLLISION_PODRE   23
 
 typedef enum {
     OBJ_BOMBA,

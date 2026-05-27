@@ -25,7 +25,13 @@ static void agendarRemocaoObstaculo(cpShape *shape) {
 }
 
 static cpBool cbPimentaFruta(cpArbiter *arb, cpSpace *espaco, cpDataPointer data) {
-    CP_ARBITER_GET_SHAPES(arb, shapePimenta, shapeFruta);
+    cpShape *shapePimenta, *shapeFruta;
+    cpArbiterGetShapes(arb, &shapePimenta, &shapeFruta);
+    if (cpShapeGetCollisionType(shapePimenta) != COLLISION_PIMENTA) {
+        cpShape *temp = shapePimenta;
+        shapePimenta = shapeFruta;
+        shapeFruta = temp;
+    }
     cpCollisionType tipo = cpShapeGetCollisionType(shapeFruta);
     if (tipo < NIVEIS_FRUTA) {
         Fruta *f = (Fruta*)cpShapeGetUserData(shapeFruta);
@@ -42,7 +48,13 @@ static cpBool cbPimentaFruta(cpArbiter *arb, cpSpace *espaco, cpDataPointer data
 }
 
 static cpBool cbPodreFruta(cpArbiter *arb, cpSpace *espaco, cpDataPointer data) {
-    CP_ARBITER_GET_SHAPES(arb, shapePodre, shapeFruta);
+    cpShape *shapePodre, *shapeFruta;
+    cpArbiterGetShapes(arb, &shapePodre, &shapeFruta);
+    if (cpShapeGetCollisionType(shapePodre) != COLLISION_PODRE) {
+        cpShape *temp = shapePodre;
+        shapePodre = shapeFruta;
+        shapeFruta = temp;
+    }
     cpCollisionType tipo = cpShapeGetCollisionType(shapeFruta);
     if (tipo < NIVEIS_FRUTA) {
         Fruta *f = (Fruta*)cpShapeGetUserData(shapeFruta);
@@ -56,7 +68,13 @@ static cpBool cbPodreFruta(cpArbiter *arb, cpSpace *espaco, cpDataPointer data) 
 }
 
 static cpBool cbBombaAtiva(cpArbiter *arb, cpSpace *espaco, cpDataPointer data) {
-    CP_ARBITER_GET_SHAPES(arb, shapeBomba, shapeOutro);
+    cpShape *shapeBomba, *shapeOutro;
+    cpArbiterGetShapes(arb, &shapeBomba, &shapeOutro);
+    if (cpShapeGetCollisionType(shapeBomba) != COLLISION_BOMBA) {
+        cpShape *temp = shapeBomba;
+        shapeBomba = shapeOutro;
+        shapeOutro = temp;
+    }
     cpVect pos = cpBodyGetPosition(cpShapeGetBody(shapeBomba));
     fusoesBombaPos[qtdBombasParaExplodir++] = pos;
     agendarRemocaoObstaculo(shapeBomba);
@@ -140,15 +158,11 @@ void spawnBlocoFixo(cpSpace *espaco, NodeFruta **head) {
 
 void atualizarELimparObstaculos(cpSpace *espaco, NodeFruta **head) {
     float raioExplosao = 130.0f;
-    
-    // 1. Em vez de deletar direto, vamos apenas marcar quem deve sumir
-    // ou processar com extrema cautela.
     for (int b = 0; b < qtdBombasParaExplodir; b++) {
         cpVect bPos = fusoesBombaPos[b];
         NodeFruta *atual = *head;
         
         while (atual != NULL) {
-            // Avançamos o ponteiro ANTES de qualquer remoção para não perder a referência
             NodeFruta *prox = atual->next; 
             cpVect fPos = cpBodyGetPosition(atual->fruta.body);
             
@@ -161,7 +175,6 @@ void atualizarELimparObstaculos(cpSpace *espaco, NodeFruta **head) {
     }
     qtdBombasParaExplodir = 0;
 
-    // 2. Limpeza dos obstáculos agendados
     for (int i = 0; i < qtdRemoverShapes; i++) {
         cpShape *sh = shapesParaRemover[i];
         if (!sh) continue;
@@ -212,20 +225,19 @@ void desenharObstaculos(Texture2D tex_bomba, Texture2D tex_podre, Texture2D tex_
             Texture2D tex;
 
             if (listaObstaculos[i].tipo == OBJ_BOMBA){
-            tex = tex_bomba;
+                tex = tex_bomba;
             } else if (listaObstaculos[i].tipo == OBJ_PODRE) {
                 tex = tex_podre;
             } else {
                 tex = tex_pimenta;
             }
-
             DrawTexturePro(tex,
-                    (Rectangle){0, 0, (float)tex.width, (float)tex.height},
-                    (Rectangle){pos.x, pos.y, diametro, diametro},
-                    (Vector2){raio, raio},
-                    0.0f,
-                    WHITE
-                );
+                (Rectangle){0, 0, (float)tex.width, (float)tex.height},
+                (Rectangle){pos.x, pos.y, diametro, diametro},
+                (Vector2){raio, raio},
+                0.0f,
+                WHITE
+            );
         }
     }
 }

@@ -49,8 +49,6 @@ static void postStepFusao(cpSpace *espaco, cpDataPointer key, cpDataPointer data
 
 cpBool callbackFusao(cpArbiter *arbiter, cpSpace *espaco, cpDataPointer userData) {
     CP_ARBITER_GET_SHAPES(arbiter, formatoA, formatoB);
-    if ((uintptr_t)formatoA > (uintptr_t)formatoB)
-        return cpTrue; 
 
     cpCollisionType tipoA = cpShapeGetCollisionType(formatoA);
     cpCollisionType tipoB = cpShapeGetCollisionType(formatoB);
