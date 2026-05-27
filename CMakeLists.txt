@@ -15,18 +15,19 @@ set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
 
 file(GLOB SRCS_JOGO "${SRC_DIR}/*.c")
 
-# Raylib via submodule
 set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 add_subdirectory(raylib)
 
-# Chipmunk2D via submodule
 set(BUILD_DEMOS   OFF CACHE BOOL "" FORCE)
 set(INSTALL_DEMOS OFF CACHE BOOL "" FORCE)
 set(BUILD_SHARED  OFF CACHE BOOL "" FORCE)
 set(BUILD_STATIC  ON  CACHE BOOL "" FORCE)
 add_subdirectory(chipmunk)
 
-# Ícone apenas no Windows
+if(TARGET chipmunk_static AND NOT MSVC)
+    target_compile_options(chipmunk_static PRIVATE -fno-fast-math)
+endif()
+
 if(MINGW)
     set(RC_FILE resources.rc)
 endif()
