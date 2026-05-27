@@ -5,6 +5,7 @@
 #include "physics.h"
 #include "fruits.h"
 #include "obstaculos.h"
+#include <string.h>
 
 #define Largura 800
 #define Altura  800
@@ -14,6 +15,49 @@
 #include <sys/stat.h>
 int stat64i32(const char *path, struct _stat *buffer) { return _stat(path, buffer); }
 #endif
+
+void salvarPlacar(const char *nome, int pontos) {
+    FILE *f = fopen("leaderboard.txt", "a");
+    if (f) {
+        fprintf(f, "%s,%d\n", nome, pontos);
+        fclose(f);
+    }
+}
+
+void mostrarLeaderboard(char nomes[][11], int pontos[], int *qtd) {
+    FILE *f = fopen("leaderboard.txt", "r");
+
+    *qtd = 0;
+
+    if(f != NULL) {
+        while (
+            fscanf(f, "%10[^,],%d\n",
+            nomes[*qtd],
+            &pontos[*qtd]) == 2
+        ) {
+            (*qtd)++;
+
+            if (*qtd >= 100)
+                break;
+        }
+        fclose(f);
+
+        //pra deixar ordenado
+        for (int i = 0; i < *qtd - 1; i++) {
+            for (int j = i + 1; j < *qtd; j++) {
+                if (pontos[j] > pontos[i]) {
+                    int tempPontos = pontos[i];
+                    pontos[i] = pontos[j];
+                    pontos[j] = tempPontos;
+                    char tempNome[11];
+                    strcpy(tempNome, nomes[i]);
+                    strcpy(nomes[i], nomes[j]);
+                    strcpy(nomes[j], tempNome);
+                }
+            }
+        }
+    }
+}
 
 int main(void) {
     InitWindow(Largura, Altura, "Watermelon Game");
@@ -94,6 +138,13 @@ int main(void) {
     float volume_musica = 1.0f;
     float tempo_do_limite = 3.0f;
     int vitorias = 0;
+    char player[11] = {0};
+    int placar_salvo = 0;
+
+    char leaderboard_nomes[10][11];    //matrizes pra printar o leaderboard
+    int leaderboard_pontos[10];
+    int total_scores = 0;
+    Rectangle btnLeaderboard = {20, 760, 120, 30};
 
     while (!WindowShouldClose()) {
     Music *musicas[3] = {&bossaMelon, &violoncia, &frutinhas};
@@ -102,7 +153,7 @@ int main(void) {
         switch (estado) {
             case EST_MENU:
                 if (foi_clicado(btnPlay)) {
-                    estado         = EST_JOGO;
+                    estado         = EST_NOME;
                     tipo_atual     = GetRandomValue(0, 3);
                     tipo_prox      = GetRandomValue(0, 3);
                     pos_x          = Largura / 2.0f;
@@ -116,8 +167,20 @@ int main(void) {
                 if (foi_clicado(btnExit)) goto fechar;
                 if (foi_clicado(btnMusic)) estado = EST_MUSICA;
                 if (foi_clicado(btnSettings)) estado = EST_CONFIGURACAO;
-                break;
 
+                if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                    Vector2 mouse = GetMousePosition();
+                    if (CheckCollisionPointRec(mouse, btnLeaderboard)) {
+                        mostrarLeaderboard(
+                            leaderboard_nomes,
+                            leaderboard_pontos,
+                            &total_scores
+                        );
+                        estado = EST_LEADERBOARD;
+                    }
+                }
+                
+                break;
             case EST_MUSICA:
                 if (IsKeyPressed(KEY_ESCAPE)) {
                     estado = EST_MENU; // se apertar esc, volta para menu
@@ -212,6 +275,11 @@ int main(void) {
                 break;
             case EST_GAMEOVER:
             case EST_VITORIA:
+                if (!placar_salvo) {
+                    salvarPlacar(player, cont_pontos);
+                    placar_salvo = 1;
+                }
+
                 if (IsKeyPressed(KEY_ENTER) || IsKeyPressed(KEY_ESCAPE)) {
                     // Resetar o jogo
                     while (head != NULL) {
@@ -231,8 +299,54 @@ int main(void) {
                     contadorCliques = 0;
                     tempo_do_limite    = 0.0f;
                     vitorias = 0;
+                    cont_pontos = 0;
+                    placar_salvo = 0;
                     estado          = EST_MENU;
                     PlayMusicStream(bossaMelon);
+                }
+                break;
+            
+            case EST_NOME: 
+                int input = GetCharPressed();
+
+                while (input > 0) {
+                    if (strlen(player) < 10 && input >= ' ') {
+                        int len = strlen(player);
+                        player[len] = (char)input;
+                        player[len + 1] = '\0';
+                    }
+
+                    input = GetCharPressed();
+                }
+
+                int len = strlen(player);
+
+                if (IsKeyPressed(KEY_BACKSPACE) && len > 0) {
+                    player[len - 1] = '\0';
+                }
+
+                if (IsKeyPressed(KEY_ENTER) && strlen(player) > 0) {    //inicia o jogo
+                    estado = EST_JOGO;
+                    tipo_atual = GetRandomValue(0, 3);
+                    tipo_prox  = GetRandomValue(0, 3);
+                    pos_x = Largura / 2.0f;
+                    pode_soltar = 1;
+                    contadorCliques = 0;
+                    cont_pontos = 0;
+                    inicializarObstaculos();
+                    StopMusicStream(bossaMelon);
+                    PlayMusicStream(*musicas[musica_selecionada]);
+                }
+
+                if (IsKeyPressed(KEY_ESCAPE)) {
+                    estado = EST_MENU;
+                }
+
+                break;
+
+            case EST_LEADERBOARD:
+                if (IsKeyPressed(KEY_ESCAPE)) {
+                    estado = EST_MENU;
                 }
                 break;
 
@@ -330,6 +444,8 @@ int main(void) {
                 desenha_botao(btnSettings);
                 desenha_botao(btnExit);
 
+                DrawText("Leaderboard", 20, 760, 20, YELLOW);
+
             } else if (estado == EST_MUSICA) {
                 const char *nomes_musicas[3] = {"BossaMelon", "Violoncia", "Frutinhas"};
 
@@ -380,7 +496,15 @@ int main(void) {
                 DrawLine(220, 285, 580, 285, WHITE);
                 DrawText("Em breve...", 295, 320, 28, YELLOW);
                 DrawText("Pressione ESC para voltar", 230, 450, 18, LIGHTGRAY);
- 
+
+            } else if (estado == EST_NOME) {
+                DrawTexture(bg_menu, 0, 0, WHITE);
+                DrawRectangle(200, 250, 400, 200, (Color){0, 0, 0, 180});
+                DrawRectangleLines(200, 250, 400, 200, WHITE);
+                DrawText("Insira seu nome:", 240, 275, 24, WHITE);
+                DrawText(player, 240, 320, 28, YELLOW);
+                DrawRectangleLines(235, 315, 320, 40, WHITE);
+                DrawText("Pressione ENTER para confirmar", 240, 390, 16, LIGHTGRAY);
             } else if (estado == EST_PAUSE) {
             // Desenha o jogo por baixo (congelado)
             ClearBackground(RGB(245, 235, 210));
@@ -481,6 +605,29 @@ int main(void) {
             int tw4 = MeasureText("Pressione ENTER ou ESC para voltar ao menu", 18);
             DrawText("Pressione ENTER ou ESC para voltar ao menu", 400 - tw4/2, 520, 18, DARKGRAY);
 
+        } else if (estado == EST_LEADERBOARD) {
+
+            DrawTexture(bg_menu, 0, 0, WHITE);
+
+            DrawRectangle(150, 120, 500, 500, (Color){0,0,0,180});
+            DrawRectangleLines(150, 120, 500, 500, WHITE);
+
+            DrawText("LEADERBOARD", 260, 140, 35, YELLOW);
+
+            DrawText("NOME", 220, 200, 24, WHITE);
+            DrawText("PONTOS", 470, 200, 24, WHITE);
+
+            for (int i = 0; i < total_scores && i < 10; i++) {
+                DrawText(leaderboard_nomes[i], 220, 240 + i * 30, 20, WHITE);
+
+                char scoreText[20];
+                sprintf(scoreText, "%d", leaderboard_pontos[i]);
+
+                DrawText(scoreText, 470, 240 + i * 30, 20, WHITE);
+            }
+
+            DrawText("Pressione ESC para voltar", 280, 580, 18, LIGHTGRAY);
+
             }else {
                 ClearBackground(BLACK);
                 DrawTexture(bg_menu, 0, 0, (Color){255, 255, 255, 150});    //vai ficar com o mesmo fundo do menu
@@ -489,6 +636,10 @@ int main(void) {
                 DrawLine(100, 200, 700, 200, RED);
                 else
                 DrawLine(100, 200, 700, 200, (Color){255, 50, 50, 180});
+
+                char texto_pontos[9];
+                snprintf(texto_pontos, sizeof(texto_pontos), "%d", cont_pontos);
+                DrawText(texto_pontos, 110, 160, 20, WHITE);
 
                 float     raio_atual    = LISTA_FRUTAS[tipo_atual].raio;
                 float     diam_atual    = raio_atual * 2;

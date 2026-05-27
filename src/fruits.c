@@ -4,14 +4,14 @@
 #include <stdlib.h>
 
 const Fruta_Def LISTA_FRUTAS[NIVEIS_FRUTA] = {
-    {"Uva",      15.0f,   1},
-    {"Cereja",   20.0f,   2},
-    {"Morango",  27.0f,   4},
-    {"Maca",     35.0f,   8},
-    {"Pera",     43.0f,  16},
-    {"Laranja",  52.0f,  32},
-    {"Abacaxi",  62.0f,  64},
-    {"Melancia", 73.0f, 128}
+    {"Uva",      15.0f,   100},
+    {"Cereja",   20.0f,   150},
+    {"Morango",  27.0f,   200},
+    {"Maca",     35.0f,   250},
+    {"Pera",     43.0f,   500},
+    {"Laranja",  52.0f,   550},
+    {"Abacaxi",  62.0f,   600},
+    {"Melancia", 73.0f,   800}
 };
 
 Fruta criarFruta(cpSpace *espaco, float x, float y, int tipo) {
@@ -75,14 +75,16 @@ void removerFruta(cpSpace *espaco, cpShape *frutaRemover, NodeFruta **head) {
     }
 }
 
+int cont_pontos = 0;
+
 void processarFusoes(cpSpace *espaco, NodeFruta **head) {
     for (int i = 0; i < numFusoesPendentes; i++) {
         FusaoPendente *f = &filaFusoes[i];
         removerFruta(espaco, f->formatoA, head);
         removerFruta(espaco, f->formatoB, head);  
         if (f->nivelResultante < NIVEIS_FRUTA) {
-            inserirFruta(espaco, f->posicaoMedia.x, f->posicaoMedia.y,
-                         f->nivelResultante, head);
+            inserirFruta(espaco, f->posicaoMedia.x, f->posicaoMedia.y, f->nivelResultante, head);
+            cont_pontos += LISTA_FRUTAS[f->nivelResultante].pontos;
         }
     }
     numFusoesPendentes = 0; 

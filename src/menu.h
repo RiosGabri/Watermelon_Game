@@ -9,9 +9,11 @@ typedef enum jogo {
     EST_MUSICA,
     EST_CONFIGURACAO,
     EST_PAUSE,
+    EST_NOME,
     EST_JOGO,
     EST_GAMEOVER,
-    EST_VITORIA
+    EST_VITORIA,
+    EST_LEADERBOARD
 } Estado_Jogo;
 
 typedef struct Botao {

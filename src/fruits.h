@@ -17,6 +17,8 @@ typedef struct Def_Fruta {
 
 extern const Fruta_Def LISTA_FRUTAS[NIVEIS_FRUTA];
 
+extern int cont_pontos;
+
 typedef struct {
     cpBody  *body;            /* Posição e velocidade do objeto rígido        */
     cpShape *shape;           /* Colisão                                      */
