@@ -161,16 +161,30 @@ void atualizarELimparObstaculos(cpSpace *espaco, NodeFruta **head) {
     for (int b = 0; b < qtdBombasParaExplodir; b++) {
         cpVect bPos = fusoesBombaPos[b];
         NodeFruta *atual = *head;
-        
+
         while (atual != NULL) {
             NodeFruta *prox = atual->next; 
             cpVect fPos = cpBodyGetPosition(atual->fruta.body);
             
             if ((float)cpvdist(bPos, fPos) <= raioExplosao) {
-                // Remove com segurança do espaço e da lista
                 removerFruta(espaco, atual->fruta.shape, head);
             }
             atual = prox;
+        }
+        for (int i = 0; i < qtdObstaculos; i++) {
+            if (!listaObstaculos[i].ativo) continue;
+
+            if (listaObstaculos[i].tipo == OBJ_BLOCO) {
+                Vector2 centroBomba = { (float)bPos.x, (float)bPos.y };
+                if (CheckCollisionCircleRec(centroBomba, raioExplosao, listaObstaculos[i].areaBloco)) {
+                    agendarRemocaoObstaculo(listaObstaculos[i].shape);
+                }
+            } else {
+                cpVect oPos = cpBodyGetPosition(listaObstaculos[i].body);
+                if ((float)cpvdist(bPos, oPos) <= raioExplosao) {
+                    agendarRemocaoObstaculo(listaObstaculos[i].shape);
+                }
+            }
         }
     }
     qtdBombasParaExplodir = 0;
@@ -182,7 +196,7 @@ void atualizarELimparObstaculos(cpSpace *espaco, NodeFruta **head) {
         for (int j = 0; j < qtdObstaculos; j++) {
             if (listaObstaculos[j].shape == sh && listaObstaculos[j].ativo) {
                 listaObstaculos[j].ativo = 0;
-                cpSpaceRemoveShape(espaco, sh);
+                cpSpaceRemoveShape(espaco, sh);                
                 cpBody *b = cpShapeGetBody(sh);
                 if (b != cpSpaceGetStaticBody(espaco)) {
                     cpSpaceRemoveBody(espaco, b);
