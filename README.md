@@ -6,7 +6,21 @@
 
 </center>
 
-Um jogo onde o objetivo é juntar as frutas para formar uma maior e ganhar pontos.
+Um jogo onde o objetivo é juntar as frutas para formar uma melancia e ganhar pontos.
+
+## Como jogar
+O objetivo é juntar frutas até chegar em uma melancia:
+1. Mova o mouse para posicionar a fruta.
+2. Clique com o botão direito para soltar a fruta.
+3. As frutas do mesmo tipo se fundem ao colidir e se tornam em uma fruta maior:
+![Sequência das frutas](Resources/fruits.png)
+4. Fique atento, pois poderão aparecer alguns obstáculos:
+    - Bomba: Se ela tocar em uma fruta, ela explode e destroi as frutas que estão ao redor dela
+    - Cogumelo: Se ele tocar em uma fruta, ela fica podre e ela só volta à normalidade após jogar 10 frutas
+    - Pimenta: Ao tocar em uma fruta, a fruta "pula"     
+6. Se as frutas ultrapassarem o limite vermelho por mais de 3 segundos, você perde.
+
+OBS: Aperte ESC durante o jogo para abrir o menu de pause.
 
 ## Como executar
 
@@ -64,16 +78,6 @@ Um jogo onde o objetivo é juntar as frutas para formar uma maior e ganhar ponto
     ```bash
     Watermelon_Game
     ```
-## Como jogar
-O objetivo é juntar frutas até chegar em uma melancia:
-1. Mova o mouse para posicionar a fruta.
-2. Clique com o botão direito para soltar a fruta.
-3. As frutas do mesmo tipo se fundem ao colidir e se tornam em uma fruta maior:
-![Sequência das frutas](Resources/fruits.png)
-4. Se as frutas ultrapassarem o limite vermelho por mais de 3 segundos, você perde.
-
-OBS: Aperte ESC durante o jogo para abrir o menu de pause.
-
 ## Ferramentas usadas:
 - C (linguagem de programação)
 - Raylib (biblioteca de interface gráfica)
