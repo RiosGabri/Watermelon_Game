@@ -258,6 +258,28 @@ int main(void) {
                         ResumeMusicStream(frutinhas);
                     }
                     if (CheckCollisionPointRec(mouse, (Rectangle){300, 400, 200, 50})) {
+                        while (head != NULL) {
+                            NodeFruta *tmp = head;
+                            head = head->next;
+                            cpSpaceRemoveShape(espaco, tmp->fruta.shape);
+                            cpShapeFree(tmp->fruta.shape);
+                            cpSpaceRemoveBody(espaco, tmp->fruta.body);
+                            cpBodyFree(tmp->fruta.body);
+                            free(tmp);
+                        }
+
+                        inicializarObstaculos();
+                        tipo_atual      = GetRandomValue(0, 3);
+                        tipo_prox       = GetRandomValue(0, 3);
+                        pos_x           = Largura / 2.0f;
+                        pode_soltar     = 1;
+                        contadorCliques = 0;
+                        tempo_do_limite = 0.0f;
+                        vitorias        = 0;
+                        cont_pontos     = 0;
+                        placar_salvo    = 0;
+                        memset(player, 0, sizeof(player));
+
                         estado = EST_MENU;
                         StopMusicStream(violoncia);
                         StopMusicStream(frutinhas);
