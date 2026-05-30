@@ -489,7 +489,7 @@ int main(void) {
                 DrawText("Pressione ENTER para confirmar", 240, 390, 16, LIGHTGRAY);
             } else if (estado == EST_PAUSE) {
             // Desenha o jogo por baixo (congelado)
-            ClearBackground(RGB(245, 235, 210));
+            DrawTexture(bg_menu, 0, 0, WHITE);
             DrawRectangleLines(100, 150, 600, 600, DARKGRAY);
 
             NodeFruta *atual = head;
