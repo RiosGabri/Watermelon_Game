@@ -73,7 +73,6 @@ int main(void) {
     Texture2D tex_play           = LoadTexture("Resources/button_play.png");
     Texture2D tex_exit           = LoadTexture("Resources/button_exit.png");
     Texture2D tex_settings       = LoadTexture("Resources/button_settings.png");
-    Texture2D tex_music          = LoadTexture("Resources/button_music.png");
     Texture2D tex_play_hover     = LoadTexture("Resources/button_play_hover.png");
     Texture2D tex_exit_hover     = LoadTexture("Resources/button_exit_hover.png");
     Texture2D tex_settings_hover = LoadTexture("Resources/button_settings_hover.png");
@@ -106,9 +105,8 @@ int main(void) {
     Texture2D tex_bloco = LoadTexture("Resources/block.png");
 
     Botao btnPlay     = { {(Largura/2.0f - 145), 300, 290, 78}, tex_play,     tex_play_hover };
-    Botao btnMusic    = { {(Largura/2.0f - 145), 398, 290, 78}, tex_music,    tex_music_hover };
-    Botao btnSettings = { {(Largura/2.0f - 145), 496, 290, 78}, tex_settings, tex_settings_hover };
-    Botao btnExit     = { {(Largura/2.0f - 145), 594, 290, 78}, tex_exit,     tex_exit_hover };
+    Botao btnSettings = { {(Largura/2.0f - 145), 398, 290, 78}, tex_settings, tex_settings_hover };
+    Botao btnExit     = { {(Largura/2.0f - 145), 496, 290, 78}, tex_exit,     tex_exit_hover };
 
     Music bossaMelon = LoadMusicStream("Resources/music/BossaMelon.mp3");
     Music violoncia = LoadMusicStream("Resources/music/Violoncia.mp3");
@@ -165,7 +163,6 @@ int main(void) {
                     PlayMusicStream(*musicas[musica_selecionada]);
                 }
                 if (foi_clicado(btnExit)) goto fechar;
-                if (foi_clicado(btnMusic)) estado = EST_MUSICA;
                 if (foi_clicado(btnSettings)) estado = EST_CONFIGURACAO;
 
                 if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
@@ -181,7 +178,7 @@ int main(void) {
                 }
                 
                 break;
-            case EST_MUSICA:
+            case EST_CONFIGURACAO:
                 if (IsKeyPressed(KEY_ESCAPE)) {
                     estado = EST_MENU; // se apertar esc, volta para menu
                     StopMusicStream(violoncia);
@@ -240,15 +237,6 @@ int main(void) {
                 SetMusicVolume(violoncia,  volume_musica);
                 SetMusicVolume(frutinhas,  volume_musica);
                 SetMusicVolume(bossaMelon, volume_musica);
-                break;
-
-            case EST_CONFIGURACAO:
-                if (IsKeyPressed(KEY_ESCAPE)) {
-                    estado = EST_MENU; // se apertar esc, volta para menu
-                    StopMusicStream(violoncia);
-                    StopMusicStream(frutinhas);
-                    PlayMusicStream(bossaMelon);
-                }
                 break;
 
             case EST_PAUSE:
@@ -440,13 +428,12 @@ int main(void) {
                     WHITE);
 
                 desenha_botao(btnPlay);
-                desenha_botao(btnMusic);
                 desenha_botao(btnSettings);
                 desenha_botao(btnExit);
 
                 DrawText("Leaderboard", 20, 760, 20, YELLOW);
 
-            } else if (estado == EST_MUSICA) {
+            } else if (estado == EST_CONFIGURACAO) {
                 const char *nomes_musicas[3] = {"BossaMelon", "Violoncia", "Frutinhas"};
 
                 DrawTexture(bg_menu, 0, 0, WHITE);
@@ -487,15 +474,6 @@ int main(void) {
 
                 // Dica
                 DrawText("< > para musica  |  ESC para voltar", 222, 490, 16, LIGHTGRAY);
-
-            } else if (estado == EST_CONFIGURACAO) {
-                DrawTexture(bg_menu, 0, 0, WHITE);
-                DrawRectangle(200, 200, 400, 300, (Color){0, 0, 0, 160});
-                DrawRectangleLines(200, 200, 400, 300, WHITE);
-                DrawText("CONFIGURAÇAO", 250, 230, 40, WHITE);
-                DrawLine(220, 285, 580, 285, WHITE);
-                DrawText("Em breve...", 295, 320, 28, YELLOW);
-                DrawText("Pressione ESC para voltar", 230, 450, 18, LIGHTGRAY);
 
             } else if (estado == EST_NOME) {
                 DrawTexture(bg_menu, 0, 0, WHITE);
@@ -716,7 +694,6 @@ fechar:;
     UnloadTexture(title_menu);
     UnloadTexture(tex_play);
     UnloadTexture(tex_settings);
-    UnloadTexture(tex_music);
     UnloadTexture(tex_exit);
     UnloadTexture(tex_play_hover);
     UnloadTexture(tex_exit_hover);
