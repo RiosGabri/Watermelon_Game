@@ -634,13 +634,13 @@ int main(void) {
                 for (int y = 160 + (int)raio_atual; y < 750; y += 12)
                     DrawPixel((int)pos_x, y, GRAY);
 
-                DrawText("Proxima:", 710, 160, 14, DARKGRAY);
+                DrawText("Proxima:", 710, 160, 15, WHITE);
                 float     raio_prox = LISTA_FRUTAS[tipo_prox].raio;
                 float     diam_prox = raio_prox * 2;
                 Texture2D tex_prox  = tex_frutas[tipo_prox];
                 DrawTexturePro(tex_prox,
                     (Rectangle){0, 0, (float)tex_prox.width, (float)tex_prox.height},
-                    (Rectangle){735, 200, diam_prox, diam_prox},
+                    (Rectangle){735, 220, diam_prox, diam_prox},
                     (Vector2){raio_prox, raio_prox}, 0.0f, WHITE);
 
                 NodeFruta *atual = head;
