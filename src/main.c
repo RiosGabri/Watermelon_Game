@@ -615,9 +615,9 @@ int main(void) {
                 DrawTexture(bg_menu, 0, 0, (Color){255, 255, 255, 150});    //vai ficar com o mesmo fundo do menu
                 DrawRectangleLines(100, 150, 600, 600, DARKGRAY);
                 if (tempo_do_limite > 0.0f && (int)(GetTime() * 4) % 2 == 0)
-                DrawLine(100, 200, 700, 200, RED);
+                    DrawLineEx((Vector2){100, 200}, (Vector2){700, 200}, 6.0f, RED);
                 else
-                DrawLine(100, 200, 700, 200, (Color){255, 50, 50, 180});
+                    DrawLineEx((Vector2){100, 200}, (Vector2){700, 200}, 3.0f, (Color){255, 50, 50, 180});
 
                 char texto_pontos[9];
                 snprintf(texto_pontos, sizeof(texto_pontos), "%d", cont_pontos);
