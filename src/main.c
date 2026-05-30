@@ -209,26 +209,30 @@ int main(void) {
                 // clicar nos botoes de setas e volume
                 if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
                     Vector2 mouse = GetMousePosition();
-
+                    printf("Mouse clicado em: (%.1f, %.1f)\n", mouse.x, mouse.y);
                     // Seta esquerda do select (< em x=230, y=330)
                     if (CheckCollisionPointRec(mouse, (Rectangle){225, 320, 40, 35})) {
                         musica_selecionada--;
+                        printf("Clicado seta esquerda\n");
                         if (musica_selecionada < 0) musica_selecionada = 2;
                     }                                                               
                     // Seta direita do select (> em x=530, y=330)
                     if (CheckCollisionPointRec(mouse, (Rectangle){535, 320, 40, 35})) {
                         musica_selecionada++;
+                        printf("Clicado seta direita\n");
                         if (musica_selecionada > 2) musica_selecionada = 0;
                     }
 
                     // Botão - do volume
                     if (CheckCollisionPointRec(mouse, (Rectangle){225, 400, 40, 35})) {
                         volume_musica -= 0.1f;
+                        printf("clicado -\n");
                         if (volume_musica < 0.0f) volume_musica = 0.0f;
                     }
                     // Botão + do volume
                     if (CheckCollisionPointRec(mouse, (Rectangle){535, 400, 40, 35})) {
                         volume_musica += 0.1f;
+                        printf("clicado +\n");
                         if (volume_musica > 1.0f) volume_musica = 1.0f;
                     }
                 }
@@ -473,7 +477,7 @@ int main(void) {
                 DrawText("+", 548, 406, 28, YELLOW);
 
                 // Dica
-                DrawText("< > para musica  |  ESC para voltar", 222, 490, 16, LIGHTGRAY);
+                DrawText("< > para musica | ^ v para volume | ESC para voltar", 222, 490, 15, LIGHTGRAY);
 
             } else if (estado == EST_NOME) {
                 DrawTexture(bg_menu, 0, 0, WHITE);
