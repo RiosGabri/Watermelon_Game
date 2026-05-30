@@ -490,7 +490,7 @@ int main(void) {
             } else if (estado == EST_PAUSE) {
             // Desenha o jogo por baixo (congelado)
             DrawTexture(bg_menu, 0, 0, WHITE);
-            DrawRectangleLines(100, 150, 600, 600, DARKGRAY);
+            DrawRectangleLinesEx((Rectangle){100, 150, 600, 600}, 5, RGB(255, 170, 98));
 
             NodeFruta *atual = head;
             while (atual != NULL) {
@@ -613,7 +613,7 @@ int main(void) {
             }else {
                 ClearBackground(BLACK);
                 DrawTexture(bg_menu, 0, 0, (Color){255, 255, 255, 150});    //vai ficar com o mesmo fundo do menu
-                DrawRectangleLines(100, 150, 600, 600, DARKGRAY);
+                DrawRectangleLinesEx((Rectangle){100, 150, 600, 600}, 5, RGB(255, 170, 98));
                 if (tempo_do_limite > 0.0f && (int)(GetTime() * 4) % 2 == 0)
                     DrawLineEx((Vector2){100, 200}, (Vector2){700, 200}, 6.0f, RED);
                 else
