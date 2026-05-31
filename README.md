@@ -8,6 +8,8 @@
 
 Um jogo onde o objetivo é juntar as frutas para formar uma melancia e ganhar pontos.
 
+[Video demo](https://youtu.be/oLyEnuuRCmE)
+
 ## Como jogar
 O objetivo é juntar frutas até chegar em uma melancia:
 1. Mova o mouse para posicionar a fruta.
