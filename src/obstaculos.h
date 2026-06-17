@@ -31,7 +31,7 @@ typedef struct {
 extern ObjetoEspecial listaObstaculos[MAX_OBSTACULOS_TELA];
 extern int qtdObstaculos;
 
-void inicializarObstaculos(void);
+void inicializarObstaculos(cpSpace *espaco);
 void configurarCallbacksObstaculos(cpSpace *espaco);
 void testarSpawnEspecial(cpSpace *espaco, NodeFruta **head);
 void spawnBlocoFixo(cpSpace *espaco, NodeFruta **head);

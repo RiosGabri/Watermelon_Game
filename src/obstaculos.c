@@ -12,7 +12,20 @@ static cpVect fusoesBombaPos[MAX_OBSTACULOS_TELA];
 static int qtdBombasParaExplodir = 0;
 
 
-void inicializarObstaculos(void) {
+void inicializarObstaculos(cpSpace *espaco) {
+    for (int i = 0; i < qtdObstaculos; i++) {
+        if (!listaObstaculos[i].ativo) continue;
+
+        cpSpaceRemoveShape(espaco, listaObstaculos[i].shape);
+        cpShapeFree(listaObstaculos[i].shape);
+
+        if (listaObstaculos[i].tipo != OBJ_BLOCO) {
+            cpSpaceRemoveBody(espaco, listaObstaculos[i].body);
+            cpBodyFree(listaObstaculos[i].body);
+        }
+        listaObstaculos[i].ativo = 0;
+    }
+
     qtdObstaculos         = 0;
     qtdRemoverShapes      = 0;
     qtdBombasParaExplodir = 0;
