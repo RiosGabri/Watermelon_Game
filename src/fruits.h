@@ -33,11 +33,11 @@ typedef struct NodeFruta {
     struct NodeFruta *next;
 } NodeFruta;
 
-void       removerFruta(cpSpace *espaco, cpShape *frutaRemover, NodeFruta **head);
+int        removerFruta(cpSpace *espaco, cpShape *frutaRemover, NodeFruta **head);
 Fruta      criarFruta(cpSpace *espaco, float x, float y, int tipo);
 NodeFruta *criarNodeFruta(Fruta fruta);
 void       inserirFruta(cpSpace *espaco, float x, float y, int tipo, NodeFruta **head);
 void       processarFusoes(cpSpace *espaco, NodeFruta **head);
 void       atualizarFrutasPodres(NodeFruta *head);
 
-#endif 
+#endif
