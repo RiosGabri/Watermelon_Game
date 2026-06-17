@@ -120,7 +120,7 @@ int main(void) {
     criarArea(espaco);
     registrarFusoes(espaco);
 
-    inicializarObstaculos();
+    inicializarObstaculos(espaco);
     configurarCallbacksObstaculos(espaco);
 
     NodeFruta *head = NULL;
@@ -157,7 +157,7 @@ int main(void) {
                     pos_x          = Largura / 2.0f;
                     pode_soltar    = 1;
                     contadorCliques = 0;
-                    inicializarObstaculos();
+                    inicializarObstaculos(espaco);
                     StopMusicStream(bossaMelon);
                     Music *musicas[3] = {&bossaMelon, &violoncia, &frutinhas};
                     PlayMusicStream(*musicas[musica_selecionada]);
@@ -268,7 +268,7 @@ int main(void) {
                             free(tmp);
                         }
 
-                        inicializarObstaculos();
+                        inicializarObstaculos(espaco);
                         tipo_atual      = GetRandomValue(0, 3);
                         tipo_prox       = GetRandomValue(0, 3);
                         pos_x           = Largura / 2.0f;
@@ -305,7 +305,7 @@ int main(void) {
                         cpBodyFree(tmp->fruta.body);
                         free(tmp);
                     }
-                    inicializarObstaculos();
+                    inicializarObstaculos(espaco);
                     tipo_atual      = GetRandomValue(0, 3);
                     tipo_prox       = GetRandomValue(0, 3);
                     pos_x           = Largura / 2.0f;
@@ -347,7 +347,7 @@ int main(void) {
                     pode_soltar = 1;
                     contadorCliques = 0;
                     cont_pontos = 0;
-                    inicializarObstaculos();
+                    inicializarObstaculos(espaco);
                     StopMusicStream(bossaMelon);
                     PlayMusicStream(*musicas[musica_selecionada]);
                 }

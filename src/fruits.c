@@ -54,8 +54,8 @@ void inserirFruta(cpSpace *espaco, float x, float y, int tipo, NodeFruta **head)
     *head = novoNode;
 }
 
-void removerFruta(cpSpace *espaco, cpShape *frutaRemover, NodeFruta **head) {
-    if (frutaRemover == NULL || *head == NULL) return;
+int removerFruta(cpSpace *espaco, cpShape *frutaRemover, NodeFruta **head) {
+    if (frutaRemover == NULL || *head == NULL) return 0;
     NodeFruta *atual    = *head;
     NodeFruta *anterior = NULL;
 
@@ -68,11 +68,12 @@ void removerFruta(cpSpace *espaco, cpShape *frutaRemover, NodeFruta **head) {
             cpSpaceRemoveBody(espaco, atual->fruta.body);
             cpBodyFree(atual->fruta.body);
             free(atual);
-            return;
+            return 1;
         }
         anterior = atual;
         atual    = atual->next;
     }
+    return 0;
 }
 
 int cont_pontos = 0;
@@ -80,9 +81,10 @@ int cont_pontos = 0;
 void processarFusoes(cpSpace *espaco, NodeFruta **head) {
     for (int i = 0; i < numFusoesPendentes; i++) {
         FusaoPendente *f = &filaFusoes[i];
-        removerFruta(espaco, f->formatoA, head);
-        removerFruta(espaco, f->formatoB, head);  
-        if (f->nivelResultante < NIVEIS_FRUTA) {
+        int removidoA = removerFruta(espaco, f->formatoA, head);
+        int removidoB = removerFruta(espaco, f->formatoB, head);
+
+        if (removidoA && removidoB && f->nivelResultante < NIVEIS_FRUTA) {
             inserirFruta(espaco, f->posicaoMedia.x, f->posicaoMedia.y, f->nivelResultante, head);
             cont_pontos += LISTA_FRUTAS[f->nivelResultante].pontos;
         }
