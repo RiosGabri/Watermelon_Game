@@ -6,10 +6,12 @@
 #include "fruits.h"
 #include "obstaculos.h"
 #include <string.h>
+#include <math.h>
 
 #define Largura 800
 #define Altura  800
 #define RGB(r, g, b) (Color){r, g, b, 255}
+#define DELAY_MELANCIA 3.0f
 
 #ifdef _WIN32
 #include <sys/stat.h>
@@ -136,6 +138,7 @@ int main(void) {
     float volume_musica = 1.0f;
     float tempo_do_limite = 3.0f;
     int vitorias = 0;
+    float freezeMelancia = 0.0f;
     char player[11] = {0};
     int placar_salvo = 0;
 
@@ -276,6 +279,7 @@ int main(void) {
                         contadorCliques = 0;
                         tempo_do_limite = 0.0f;
                         vitorias        = 0;
+                        freezeMelancia  = 0.0f;
                         cont_pontos     = 0;
                         placar_salvo    = 0;
                         memset(player, 0, sizeof(player));
@@ -313,6 +317,7 @@ int main(void) {
                     contadorCliques = 0;
                     tempo_do_limite    = 0.0f;
                     vitorias = 0;
+                    freezeMelancia = 0.0f;
                     cont_pontos = 0;
                     placar_salvo = 0;
                     estado          = EST_MENU;
@@ -376,7 +381,7 @@ int main(void) {
                 if (pos_x < 115) pos_x = 115;
                 if (pos_x > 685) pos_x = 685;
 
-                if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && pode_soltar) {
+                if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && pode_soltar && freezeMelancia <= 0.0f) {
                     inserirFruta(espaco, pos_x, 160, tipo_atual, &head);
                     tipo_atual  = tipo_prox;
                     tipo_prox   = GetRandomValue(0, 3);
@@ -410,29 +415,38 @@ int main(void) {
                     }
                     chk = chk->next;
                 }
-                if (fruta_no_limite) {
-                    tempo_do_limite += GetFrameTime();
-                    if (tempo_do_limite >= 3.0f) {
-                        estado = EST_GAMEOVER;
-                        StopMusicStream(violoncia);
-                        StopMusicStream(frutinhas);
+                if (freezeMelancia <= 0.0f) {
+                    if (fruta_no_limite) {
+                        tempo_do_limite += GetFrameTime();
+                        if (tempo_do_limite >= 3.0f) {
+                            estado = EST_GAMEOVER;
+                            StopMusicStream(violoncia);
+                            StopMusicStream(frutinhas);
+                        }
+                    } else {
+                        tempo_do_limite = 0.0f;
                     }
-                } else {
-                    tempo_do_limite = 0.0f;
                 }
 
-                //checagem se venceu
                 if (!vitorias) {
                     NodeFruta *v = head;
                     while (v != NULL) {
                         if (v->fruta.nivel == NIVEIS_FRUTA - 1) { // melancia = ultimo nível
-                            vitorias = 1;
-                            estado = EST_VITORIA;
-                            StopMusicStream(violoncia);
-                            StopMusicStream(frutinhas);
+                            vitorias       = 1;
+                            freezeMelancia = DELAY_MELANCIA;
                             break;
                         }
                         v = v->next;
+                    }
+                }
+
+                if (freezeMelancia > 0.0f) {
+                    freezeMelancia -= GetFrameTime();
+                    if (freezeMelancia <= 0.0f) {
+                        freezeMelancia = 0.0f;
+                        estado = EST_VITORIA;
+                        StopMusicStream(violoncia);
+                        StopMusicStream(frutinhas);
                     }
                 }
 
@@ -691,6 +705,20 @@ int main(void) {
                     atual = atual->next;
                 }
                 desenharObstaculos(tex_bomba, tex_podre, tex_pimenta, tex_bloco);
+
+                if (freezeMelancia > 0.0f) {
+                    DrawRectangle(0, 0, Largura, Altura, (Color){0, 0, 0, 130});
+
+                    const char *msg = "MELANCIA FORMADA!";
+                    int twMsg = MeasureText(msg, 38);
+                    DrawText(msg, 400 - twMsg/2, 320, 38, YELLOW);
+
+                    int segsRestantes = (int)ceilf(freezeMelancia);
+                    char txtCount[8];
+                    snprintf(txtCount, sizeof(txtCount), "%d", segsRestantes);
+                    int twCount = MeasureText(txtCount, 60);
+                    DrawText(txtCount, 400 - twCount/2, 380, 60, WHITE);
+                }
             }
 
         EndDrawing();
