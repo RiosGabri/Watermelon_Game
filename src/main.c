@@ -50,16 +50,24 @@ void mostrarLeaderboard(char nomes[][11], int pontos[], float tempos[], int *qtd
         }
         fclose(f);
 
-        //pra deixar ordenado
+        float peso_eficiencia = 10.0f;
         for (int i = 0; i < *qtd - 1; i++) {
             for (int j = i + 1; j < *qtd; j++) {
-                int troca = 0;
-                if (pontos[j] > pontos[i]) {
-                    troca = 1;
-                } else if (pontos[j] == pontos[i]) {
-                    if (tempos[i] < 0.0f && tempos[j] >= 0.0f) troca = 1;
-                    else if (tempos[j] >= 0.0f && tempos[j] < tempos[i]) troca = 1;
+                
+                float scoreFinal_i = (float)pontos[i];
+                if (tempos[i] >= 0.0f) {
+                    float tempoCalc_i = (tempos[i] < 1.0f) ? 1.0f : tempos[i];
+                    scoreFinal_i += ((float)pontos[i] / tempoCalc_i) * peso_eficiencia;
                 }
+                float scoreFinal_j = (float)pontos[j];
+                if (tempos[j] >= 0.0f) {
+                    float tempoCalc_j = (tempos[j] < 1.0f) ? 1.0f : tempos[j];
+                    scoreFinal_j += ((float)pontos[j] / tempoCalc_j) * peso_eficiencia;
+                }
+                int troca = 0;
+                if (scoreFinal_j > scoreFinal_i) {
+                    troca = 1;
+                } 
 
                 if (troca) {
                     int tempPontos = pontos[i];
