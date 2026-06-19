@@ -12,45 +12,64 @@
 #define Altura  800
 #define RGB(r, g, b) (Color){r, g, b, 255}
 #define DELAY_MELANCIA 3.0f
+#define BONUS_TEMPO_JANELA   60.0f
+#define BONUS_PONTOS_SEGUNDO 5
 
 #ifdef _WIN32
 #include <sys/stat.h>
 int stat64i32(const char *path, struct _stat *buffer) { return _stat(path, buffer); }
 #endif
 
-void salvarPlacar(const char *nome, int pontos) {
+void salvarPlacar(const char *nome, int pontos, float tempo) {
     FILE *f = fopen("leaderboard.txt", "a");
     if (f) {
-        fprintf(f, "%s,%d\n", nome, pontos);
+        fprintf(f, "%s,%d,%.2f\n", nome, pontos, tempo);
         fclose(f);
     }
 }
 
-void mostrarLeaderboard(char nomes[][11], int pontos[], int *qtd) {
+void mostrarLeaderboard(char nomes[][11], int pontos[], float tempos[], int *qtd) {
     FILE *f = fopen("leaderboard.txt", "r");
 
     *qtd = 0;
 
-    if(f != NULL) {
-        while (
-            fscanf(f, "%10[^,],%d\n",
-            nomes[*qtd],
-            &pontos[*qtd]) == 2
-        ) {
-            (*qtd)++;
-
-            if (*qtd >= 100)
-                break;
+    if (f != NULL) {
+        char linha[64];
+        while (fgets(linha, sizeof(linha), f) != NULL && *qtd < 100) {
+            int camposNovo = sscanf(linha, "%10[^,],%d,%f",
+                                     nomes[*qtd], &pontos[*qtd], &tempos[*qtd]);
+            if (camposNovo == 3) {
+                (*qtd)++;
+                continue;
+            }
+            int camposAntigo = sscanf(linha, "%10[^,],%d", nomes[*qtd], &pontos[*qtd]);
+            if (camposAntigo == 2) {
+                tempos[*qtd] = -1.0f; 
+                (*qtd)++;
+            }
         }
         fclose(f);
 
         //pra deixar ordenado
         for (int i = 0; i < *qtd - 1; i++) {
             for (int j = i + 1; j < *qtd; j++) {
+                int troca = 0;
                 if (pontos[j] > pontos[i]) {
+                    troca = 1;
+                } else if (pontos[j] == pontos[i]) {
+                    if (tempos[i] < 0.0f && tempos[j] >= 0.0f) troca = 1;
+                    else if (tempos[j] >= 0.0f && tempos[j] < tempos[i]) troca = 1;
+                }
+
+                if (troca) {
                     int tempPontos = pontos[i];
                     pontos[i] = pontos[j];
                     pontos[j] = tempPontos;
+
+                    float tempTempo = tempos[i];
+                    tempos[i] = tempos[j];
+                    tempos[j] = tempTempo;
+
                     char tempNome[11];
                     strcpy(tempNome, nomes[i]);
                     strcpy(nomes[i], nomes[j]);
@@ -139,11 +158,13 @@ int main(void) {
     float tempo_do_limite = 3.0f;
     int vitorias = 0;
     float freezeMelancia = 0.0f;
+    float tempoPartida = 0.0f;
     char player[11] = {0};
     int placar_salvo = 0;
 
     char leaderboard_nomes[10][11];    //matrizes pra printar o leaderboard
     int leaderboard_pontos[10];
+    float leaderboard_tempos[10];
     int total_scores = 0;
     Rectangle btnLeaderboard = {20, 760, 120, 30};
 
@@ -174,6 +195,7 @@ int main(void) {
                         mostrarLeaderboard(
                             leaderboard_nomes,
                             leaderboard_pontos,
+                            leaderboard_tempos,
                             &total_scores
                         );
                         estado = EST_LEADERBOARD;
@@ -281,6 +303,7 @@ int main(void) {
                         vitorias        = 0;
                         freezeMelancia  = 0.0f;
                         cont_pontos     = 0;
+                        tempoPartida    = 0.0f;
                         placar_salvo    = 0;
                         memset(player, 0, sizeof(player));
 
@@ -294,7 +317,7 @@ int main(void) {
             case EST_GAMEOVER:
             case EST_VITORIA:
                 if (!placar_salvo) {
-                    salvarPlacar(player, cont_pontos);
+                    salvarPlacar(player, cont_pontos, tempoPartida);
                     placar_salvo = 1;
                 }
 
@@ -319,6 +342,7 @@ int main(void) {
                     vitorias = 0;
                     freezeMelancia = 0.0f;
                     cont_pontos = 0;
+                    tempoPartida = 0.0f;
                     placar_salvo = 0;
                     estado          = EST_MENU;
                     PlayMusicStream(bossaMelon);
@@ -352,6 +376,7 @@ int main(void) {
                     pode_soltar = 1;
                     contadorCliques = 0;
                     cont_pontos = 0;
+                    tempoPartida = 0.0f;
                     inicializarObstaculos(espaco);
                     StopMusicStream(bossaMelon);
                     PlayMusicStream(*musicas[musica_selecionada]);
@@ -376,6 +401,8 @@ int main(void) {
                     PauseMusicStream(violoncia);
                     PauseMusicStream(frutinhas);
                 }
+
+                if (!vitorias) tempoPartida += GetFrameTime();
 
                 pos_x = GetMousePosition().x;
                 if (pos_x < 115) pos_x = 115;
@@ -434,6 +461,10 @@ int main(void) {
                         if (v->fruta.nivel == NIVEIS_FRUTA - 1) { // melancia = ultimo nível
                             vitorias       = 1;
                             freezeMelancia = DELAY_MELANCIA;
+
+                            int bonusVelocidade = (int)(fmaxf(0.0f, BONUS_TEMPO_JANELA - tempoPartida)
+                                                         * BONUS_PONTOS_SEGUNDO);
+                            cont_pontos += bonusVelocidade;
                             break;
                         }
                         v = v->next;
@@ -633,15 +664,25 @@ int main(void) {
             DrawText("LEADERBOARD", 260, 140, 35, YELLOW);
 
             DrawText("NOME", 220, 200, 24, WHITE);
-            DrawText("PONTOS", 470, 200, 24, WHITE);
+            DrawText("PONTOS", 420, 200, 24, WHITE);
+            DrawText("TEMPO", 570, 200, 24, WHITE);
 
             for (int i = 0; i < total_scores && i < 10; i++) {
                 DrawText(leaderboard_nomes[i], 220, 240 + i * 30, 20, WHITE);
 
                 char scoreText[20];
                 sprintf(scoreText, "%d", leaderboard_pontos[i]);
+                DrawText(scoreText, 420, 240 + i * 30, 20, WHITE);
 
-                DrawText(scoreText, 470, 240 + i * 30, 20, WHITE);
+                char tempoText[16];
+                if (leaderboard_tempos[i] < 0.0f) {
+                    strcpy(tempoText, "-");
+                } else {
+                    int mm = (int)leaderboard_tempos[i] / 60;
+                    int ss = (int)leaderboard_tempos[i] % 60;
+                    snprintf(tempoText, sizeof(tempoText), "%02d:%02d", mm, ss);
+                }
+                DrawText(tempoText, 570, 240 + i * 30, 20, WHITE);
             }
 
             DrawText("Pressione ESC para voltar", 280, 580, 18, LIGHTGRAY);
@@ -658,6 +699,12 @@ int main(void) {
                 char texto_pontos[9];
                 snprintf(texto_pontos, sizeof(texto_pontos), "%d", cont_pontos);
                 DrawText(texto_pontos, 110, 160, 20, WHITE);
+
+                int mmAtual = (int)tempoPartida / 60;
+                int ssAtual = (int)tempoPartida % 60;
+                char texto_tempo[8];
+                snprintf(texto_tempo, sizeof(texto_tempo), "%02d:%02d", mmAtual, ssAtual);
+                DrawText(texto_tempo, 110, 182, 16, LIGHTGRAY);
 
                 float     raio_atual    = LISTA_FRUTAS[tipo_atual].raio;
                 float     diam_atual    = raio_atual * 2;
