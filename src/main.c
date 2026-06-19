@@ -98,6 +98,36 @@ void mostrarLeaderboard(char nomes[][11], int pontos[], float tempos[], int *qtd
     }
 }
 
+void resetarPartida(cpSpace *espaco, NodeFruta **head, int *tipo_atual, int *tipo_prox,
+                     float *pos_x, int *pode_soltar, int *contadorCliques,
+                     float *tempo_do_limite, int *tempoEsgotado, int *vitorias,
+                     float *freezeMelancia, int *cont_pontos, float *tempoPartida,
+                     int *placar_salvo) {
+    while (*head != NULL) {
+        NodeFruta *tmp = *head;
+        *head = tmp->next;
+        cpSpaceRemoveShape(espaco, tmp->fruta.shape);
+        cpShapeFree(tmp->fruta.shape);
+        cpSpaceRemoveBody(espaco, tmp->fruta.body);
+        cpBodyFree(tmp->fruta.body);
+        free(tmp);
+    }
+
+    inicializarObstaculos(espaco);
+    *tipo_atual      = GetRandomValue(0, 3);
+    *tipo_prox       = GetRandomValue(0, 3);
+    *pos_x           = Largura / 2.0f;
+    *pode_soltar     = 1;
+    *contadorCliques = 0;
+    *tempo_do_limite = 0.0f;
+    *tempoEsgotado   = 0;
+    *vitorias        = 0;
+    *freezeMelancia  = 0.0f;
+    *cont_pontos     = 0;
+    *tempoPartida    = 0.0f;
+    *placar_salvo    = 0;
+}
+
 int main(void) {
     InitWindow(LARGURA_JANELA, ALTURA_JANELA, "Watermelon Game");
     
@@ -183,6 +213,7 @@ int main(void) {
     int vitorias = 0;
     float freezeMelancia = 0.0f;
     float tempoPartida = 0.0f;
+    int tempoEsgotado = 0; 
     char player[11] = {0};
     int placar_salvo = 0;
 
@@ -309,28 +340,10 @@ int main(void) {
                         ResumeMusicStream(frutinhas);
                     }
                     if (CheckCollisionPointRec(mouse, (Rectangle){300, 400, 200, 50})) {
-                        while (head != NULL) {
-                            NodeFruta *tmp = head;
-                            head = head->next;
-                            cpSpaceRemoveShape(espaco, tmp->fruta.shape);
-                            cpShapeFree(tmp->fruta.shape);
-                            cpSpaceRemoveBody(espaco, tmp->fruta.body);
-                            cpBodyFree(tmp->fruta.body);
-                            free(tmp);
-                        }
-
-                        inicializarObstaculos(espaco);
-                        tipo_atual      = GetRandomValue(0, 3);
-                        tipo_prox       = GetRandomValue(0, 3);
-                        pos_x           = Largura / 2.0f;
-                        pode_soltar     = 1;
-                        contadorCliques = 0;
-                        tempo_do_limite = 0.0f;
-                        vitorias        = 0;
-                        freezeMelancia  = 0.0f;
-                        cont_pontos     = 0;
-                        tempoPartida    = 0.0f;
-                        placar_salvo    = 0;
+                        resetarPartida(espaco, &head, &tipo_atual, &tipo_prox, &pos_x,
+                                       &pode_soltar, &contadorCliques, &tempo_do_limite,
+                                       &tempoEsgotado, &vitorias, &freezeMelancia,
+                                       &cont_pontos, &tempoPartida, &placar_salvo);
                         memset(player, 0, sizeof(player));
 
                         estado = EST_MENU;
@@ -349,27 +362,10 @@ int main(void) {
 
                 if (IsKeyPressed(KEY_ENTER) || IsKeyPressed(KEY_ESCAPE)) {
                     // Resetar o jogo
-                    while (head != NULL) {
-                        NodeFruta *tmp = head;
-                        head = head->next;
-                        cpSpaceRemoveShape(espaco, tmp->fruta.shape);
-                        cpShapeFree(tmp->fruta.shape);
-                        cpSpaceRemoveBody(espaco, tmp->fruta.body);
-                        cpBodyFree(tmp->fruta.body);
-                        free(tmp);
-                    }
-                    inicializarObstaculos(espaco);
-                    tipo_atual      = GetRandomValue(0, 3);
-                    tipo_prox       = GetRandomValue(0, 3);
-                    pos_x           = Largura / 2.0f;
-                    pode_soltar     = 1;
-                    contadorCliques = 0;
-                    tempo_do_limite    = 0.0f;
-                    vitorias = 0;
-                    freezeMelancia = 0.0f;
-                    cont_pontos = 0;
-                    tempoPartida = 0.0f;
-                    placar_salvo = 0;
+                    resetarPartida(espaco, &head, &tipo_atual, &tipo_prox, &pos_x,
+                                   &pode_soltar, &contadorCliques, &tempo_do_limite,
+                                   &tempoEsgotado, &vitorias, &freezeMelancia,
+                                   &cont_pontos, &tempoPartida, &placar_salvo);
                     estado          = EST_MENU;
                     PlayMusicStream(bossaMelon);
                 }
@@ -379,7 +375,7 @@ int main(void) {
                 int input = GetCharPressed();
 
                 while (input > 0) {
-                    if (strlen(player) < 10 && input >= ' ') {
+                    if (strlen(player) < 10 && input >= ' ' && input != ',') {
                         int len = strlen(player);
                         player[len] = (char)input;
                         player[len + 1] = '\0';
@@ -395,15 +391,10 @@ int main(void) {
 
                 if (IsKeyPressed(KEY_ENTER) && strlen(player) > 0) {
                     estado = EST_JOGO;
-                    tipo_atual = GetRandomValue(0, 3);
-                    tipo_prox  = GetRandomValue(0, 3);
-                    pos_x = Largura / 2.0f;
-                    pode_soltar = 1;
-                    contadorCliques = 0;
-                    cont_pontos = 0;
-                    tempoPartida = 0.0f;
-                    tempo_do_limite = 0.0f;
-                    inicializarObstaculos(espaco);
+                    resetarPartida(espaco, &head, &tipo_atual, &tipo_prox, &pos_x,
+                                   &pode_soltar, &contadorCliques, &tempo_do_limite,
+                                   &tempoEsgotado, &vitorias, &freezeMelancia,
+                                   &cont_pontos, &tempoPartida, &placar_salvo);
                     StopMusicStream(bossaMelon);
                     PlayMusicStream(*musicas[musica_selecionada]);
                 }
@@ -430,6 +421,7 @@ int main(void) {
                 if (!vitorias && tempoPartida < TEMPO_LIMITE_PARTIDA) tempoPartida += GetFrameTime();
                 if (!vitorias && tempoPartida >= TEMPO_LIMITE_PARTIDA) {
                     tempoPartida = TEMPO_LIMITE_PARTIDA;
+                    tempoEsgotado = 1;
                     estado = EST_GAMEOVER;
                     StopMusicStream(violoncia);
                     StopMusicStream(frutinhas);
@@ -478,6 +470,7 @@ int main(void) {
                     if (fruta_no_limite) {
                         tempo_do_limite += GetFrameTime();
                         if (tempo_do_limite >= 3.0f) {
+                            tempoEsgotado = 0;
                             estado = EST_GAMEOVER;
                             StopMusicStream(violoncia);
                             StopMusicStream(frutinhas);
@@ -589,6 +582,7 @@ int main(void) {
                 DrawText("Pressione ENTER para confirmar", 240, 390, 16, LIGHTGRAY);
             
             } else if (estado == EST_PAUSE) {
+                // Desenha o jogo por baixo (congelado)
                 DrawTexture(bg_menu, 0, 0, WHITE);
                 DrawRectangleLinesEx((Rectangle){100, 150, 600, 600}, 5, RGB(255, 170, 98));
 
@@ -645,9 +639,10 @@ int main(void) {
                 int tw3 = MeasureText("Pressione ENTER ou ESC para voltar ao menu", 18);
                 DrawText("Pressione ENTER ou ESC para voltar ao menu", 400 - tw3/2, 520, 18, DARKGRAY);
 
+                const char *msgMotivo = tempoEsgotado ? "[ TEMPO ESGOTADO ]" : "[ LIMITE ULTRAPASSADO ]";
                 if ((int)(GetTime() * 2) % 2 == 0) {
-                    int tw4 = MeasureText("[ LIMITE ULTRAPASSADO ]", 22);
-                    DrawText("[ LIMITE ULTRAPASSADO ]", 400 - tw4/2, 430, 22, RED);
+                    int tw4 = MeasureText(msgMotivo, 22);
+                    DrawText(msgMotivo, 400 - tw4/2, 430, 22, RED);
                 }
 
             } else if (estado == EST_VITORIA) {
@@ -808,7 +803,9 @@ int main(void) {
 
             DrawTexturePro(
                 telaVirtual.texture,
+                // Eixo Y precisa ser invertido para texturas virtuais no Raylib
                 (Rectangle){ 0.0f, 0.0f, (float)telaVirtual.texture.width, -(float)telaVirtual.texture.height },
+                // Calcula automaticamente o centro para o ecrã real
                 (Rectangle){ (LARGURA_JANELA - Largura) / 2.0f, (ALTURA_JANELA - Altura) / 2.0f, (float)Largura, (float)Altura },
                 (Vector2){ 0, 0 }, 
                 0.0f, 
