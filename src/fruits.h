@@ -26,6 +26,7 @@ typedef struct {
     int      fundindo;        /* Flag temporário de fusão                     */
     int      estaPodre;       /* 1 = fusão bloqueada pela fruta podre         */
     int      cliquesRestantes;/* Cliques até a fruta se recuperar             */
+    int      impulsionadaPorPimenta; /* 1 = foi lançada pela pimenta, não pode passar do limite */
 } Fruta;
 
 typedef struct NodeFruta {

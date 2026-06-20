@@ -9,6 +9,8 @@
 #define PIMENTA_MULT_VELOCIDADE  5.0f  // multiplicador sobre a velocidade atual da fruta
 #define PIMENTA_IMPULSO_LATERAL  350   // variação horizontal aleatória do lançamento
 #define PIMENTA_IMPULSO_VERTICAL 500.0f // força do lançamento para cima
+#define PIMENTA_LIMITE_Y         200.0f // mesma linha vermelha de main.c; fruta lançada não pode passar disso
+#define PIMENTA_MARGEM_LIBERACAO 80.0f  // o quanto a fruta precisa cair abaixo da linha pra deixar de ser protegida/restrita
 
 ObjetoEspecial listaObstaculos[MAX_OBSTACULOS_TELA];
 int qtdObstaculos = 0;
@@ -68,6 +70,7 @@ static cpBool cbPimentaFruta(cpArbiter *arb, cpSpace *espaco, cpDataPointer data
             vel = cpvadd(vel, cpv((rand() % (PIMENTA_IMPULSO_LATERAL * 2)) - PIMENTA_IMPULSO_LATERAL,
                                   -PIMENTA_IMPULSO_VERTICAL));
             cpBodySetVelocity(bodyFruta, vel);
+            f->impulsionadaPorPimenta = 1;
             perderPontos(PONTOS_PERDA_PIMENTA);
         }
     }
@@ -238,6 +241,22 @@ void atualizarELimparObstaculos(cpSpace *espaco, NodeFruta **head) {
         }
     }
     qtdRemoverShapes = 0;
+
+    NodeFruta *atualPimenta = *head;
+    while (atualPimenta != NULL) {
+        if (atualPimenta->fruta.impulsionadaPorPimenta) {
+            cpVect pos = cpBodyGetPosition(atualPimenta->fruta.body);
+            if (pos.y < PIMENTA_LIMITE_Y) {
+                cpVect vel = cpBodyGetVelocity(atualPimenta->fruta.body);
+                if (vel.y < 0.0f) vel.y = 0.0f;
+                cpBodySetVelocity(atualPimenta->fruta.body, vel);
+                cpBodySetPosition(atualPimenta->fruta.body, cpv(pos.x, PIMENTA_LIMITE_Y));
+            } else if (pos.y >= PIMENTA_LIMITE_Y + PIMENTA_MARGEM_LIBERACAO) {
+                atualPimenta->fruta.impulsionadaPorPimenta = 0;
+            }
+        }
+        atualPimenta = atualPimenta->next;
+    }
 }
 
 void desenharObstaculos(Texture2D tex_bomba, Texture2D tex_podre, Texture2D tex_pimenta, Texture2D tex_bloco) {

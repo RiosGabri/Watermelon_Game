@@ -32,6 +32,7 @@ Fruta criarFruta(cpSpace *espaco, float x, float y, int tipo) {
     fruta.fundindo = 0;
     fruta.estaPodre = 0;
     fruta.cliquesRestantes = 0;
+    fruta.impulsionadaPorPimenta = 0;
     return fruta;
 }
 
