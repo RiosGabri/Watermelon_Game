@@ -21,14 +21,26 @@
 #define BONUS_TEMPO_JANELA   60.0f
 #define BONUS_PONTOS_SEGUNDO 5
 #define TEMPO_LIMITE_PARTIDA 600.0f // 10 minutos: partida acaba quando tempoPartida atinge este valor
+#define VELOCIDADE_ASSENTAMENTO_SQ 6400.0f // ~80px/s ao quadrado; mais tolerante a tremores residuais da física
+#define TIMEOUT_ESPERA_QUEDA 1.0f // segundos; depois disso libera o clique mesmo sem "assentar" perfeitamente
 
 #ifdef _WIN32
 #include <sys/stat.h>
 int stat64i32(const char *path, struct _stat *buffer) { return _stat(path, buffer); }
 #endif
 
+// Resolve o caminho de leaderboard.txt sempre relativo à pasta do executável,
+// em vez de depender do diretório de trabalho de onde o jogo foi iniciado.
+static const char *caminhoLeaderboard(void) {
+    static char caminho[512] = {0};
+    if (caminho[0] == '\0') {
+        snprintf(caminho, sizeof(caminho), "%sleaderboard.txt", GetApplicationDirectory());
+    }
+    return caminho;
+}
+
 void salvarPlacar(const char *nome, int pontos, float tempo) {
-    FILE *f = fopen("leaderboard.txt", "a");
+    FILE *f = fopen(caminhoLeaderboard(), "a");
     if (f) {
         fprintf(f, "%s,%d,%.2f\n", nome, pontos, tempo);
         fclose(f);
@@ -36,7 +48,7 @@ void salvarPlacar(const char *nome, int pontos, float tempo) {
 }
 
 void mostrarLeaderboard(char nomes[][11], int pontos[], float tempos[], int *qtd, int capacidade) {
-    FILE *f = fopen("leaderboard.txt", "r");
+    FILE *f = fopen(caminhoLeaderboard(), "r");
 
     *qtd = 0;
 
@@ -206,6 +218,8 @@ int main(void) {
     int   tipo_prox          = GetRandomValue(0, 3);
     float pos_x              = Largura / 2.0f;
     int   pode_soltar        = 1;
+    cpShape *shapeUltimaSolta = NULL; 
+    float tempoDesdeSolta     = 0.0f;
     int   contadorCliques    = 0;
     int musica_selecionada = 0;
     float volume_musica = 1.0f;
@@ -437,6 +451,8 @@ int main(void) {
                     tipo_atual  = tipo_prox;
                     tipo_prox   = GetRandomValue(0, 3);
                     pode_soltar = 0;
+                    shapeUltimaSolta = head->fruta.shape; // 'head' é exatamente a fruta que acabamos de inserir
+                    tempoDesdeSolta  = 0.0f;
                     atualizarFrutasPodres(head);
                     contadorCliques++;
 
@@ -447,9 +463,25 @@ int main(void) {
                         testarSpawnEspecial(espaco, &head);
                     }
                 }
-                if (!pode_soltar && head != NULL) {
-                    cpVect pos = cpBodyGetPosition(head->fruta.body);
-                    if (pos.y > 200) pode_soltar = 1;
+                if (!pode_soltar) {
+                    tempoDesdeSolta += GetFrameTime();
+                    NodeFruta *frutaSolta = NULL;
+                    NodeFruta *busca = head;
+                    while (busca != NULL) {
+                        if (busca->fruta.shape == shapeUltimaSolta) { frutaSolta = busca; break; }
+                        busca = busca->next;
+                    }
+
+                    if (frutaSolta == NULL || tempoDesdeSolta >= TIMEOUT_ESPERA_QUEDA) {
+                        pode_soltar = 1;
+                    } else {
+                        cpVect pos = cpBodyGetPosition(frutaSolta->fruta.body);
+                        cpVect vel = cpBodyGetVelocity(frutaSolta->fruta.body);
+                        float velQuadrada = (float)(vel.x * vel.x + vel.y * vel.y);
+                        if (pos.y > 200 && velQuadrada < VELOCIDADE_ASSENTAMENTO_SQ) {
+                            pode_soltar = 1;
+                        }
+                    }
                 }
                 cpSpaceStep(espaco, 1.0f / 60.0f);
                 atualizarELimparObstaculos(espaco, &head);
