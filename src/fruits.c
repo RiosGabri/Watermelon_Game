@@ -4,14 +4,14 @@
 #include <stdlib.h>
 
 const Fruta_Def LISTA_FRUTAS[NIVEIS_FRUTA] = {
-    {"Uva",      15.0f,   100},
-    {"Cereja",   20.0f,   150},
-    {"Morango",  27.0f,   200},
-    {"Maca",     35.0f,   250},
-    {"Pera",     43.0f,   500},
-    {"Laranja",  52.0f,   550},
-    {"Abacaxi",  62.0f,   600},
-    {"Melancia", 73.0f,   800}
+    {"Uva",      15.0f,   20},
+    {"Cereja",   20.0f,   50},
+    {"Morango",  27.0f,   120},
+    {"Maca",     35.0f,   280},
+    {"Pera",     43.0f,   650},
+    {"Laranja",  52.0f,   1500},
+    {"Abacaxi",  62.0f,   3500},
+    {"Melancia", 73.0f,   8000}
 };
 
 Fruta criarFruta(cpSpace *espaco, float x, float y, int tipo) {

@@ -19,7 +19,7 @@
 #define RGB(r, g, b) (Color){r, g, b, 255}
 #define DELAY_MELANCIA 3.0f
 #define BONUS_TEMPO_JANELA   60.0f
-#define BONUS_PONTOS_SEGUNDO 5
+#define BONUS_PONTOS_SEGUNDO 7 // recalibrado junto com LISTA_FRUTAS (~1.34x do valor antigo: 5)
 #define TEMPO_LIMITE_PARTIDA 600.0f // 10 minutos: partida acaba quando tempoPartida atinge este valor
 #define VELOCIDADE_ASSENTAMENTO_SQ 6400.0f // ~80px/s ao quadrado; mais tolerante a tremores residuais da física
 #define TIMEOUT_ESPERA_QUEDA 1.0f // segundos; depois disso libera o clique mesmo sem "assentar" perfeitamente
@@ -29,8 +29,6 @@
 int stat64i32(const char *path, struct _stat *buffer) { return _stat(path, buffer); }
 #endif
 
-// Resolve o caminho de leaderboard.txt sempre relativo à pasta do executável,
-// em vez de depender do diretório de trabalho de onde o jogo foi iniciado.
 static const char *caminhoLeaderboard(void) {
     static char caminho[512] = {0};
     if (caminho[0] == '\0') {
@@ -69,26 +67,17 @@ void mostrarLeaderboard(char nomes[][11], int pontos[], float tempos[], int *qtd
         }
         fclose(f);
 
-        float peso_eficiencia = 10.0f;
 
         for (int i = 0; i < *qtd - 1; i++) {
             for (int j = i + 1; j < *qtd; j++) {
-                
-                float scoreFinal_i = (float)pontos[i];
-                if (tempos[i] >= 0.0f) {
-                    float tempoCalc_i = (tempos[i] < 1.0f) ? 1.0f : tempos[i]; // Previne divisão por zero
-                    scoreFinal_i += ((float)pontos[i] / tempoCalc_i) * peso_eficiencia;
-                }
-
-                float scoreFinal_j = (float)pontos[j];
-                if (tempos[j] >= 0.0f) {
-                    float tempoCalc_j = (tempos[j] < 1.0f) ? 1.0f : tempos[j];
-                    scoreFinal_j += ((float)pontos[j] / tempoCalc_j) * peso_eficiencia;
-                }
-
                 int troca = 0;
-                if (scoreFinal_j > scoreFinal_i) {
+
+                if (pontos[j] > pontos[i]) {
                     troca = 1;
+                } else if (pontos[j] == pontos[i]) {
+                    float tempoI = (tempos[i] >= 0.0f) ? tempos[i] : 1e9f;
+                    float tempoJ = (tempos[j] >= 0.0f) ? tempos[j] : 1e9f;
+                    if (tempoJ < tempoI) troca = 1;
                 }
 
                 if (troca) {

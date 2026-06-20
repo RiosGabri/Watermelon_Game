@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define PONTOS_PERDA_PIMENTA          150 // equivalente a perder a fusão mais barata (cereja)
-#define PONTOS_PERDA_PODRE            120
+#define PONTOS_PERDA_PIMENTA          40// equivalente a perder a fusão mais barata (cereja, recalibrado)
+#define PONTOS_PERDA_PODRE            60
 #define PONTOS_PERDA_BOMBA_POR_FRUTA  100 // por fruta destruída; uma bomba bem posicionada pesa muito mais
 
 #define PIMENTA_MULT_VELOCIDADE  5.0f  // multiplicador sobre a velocidade atual da fruta
