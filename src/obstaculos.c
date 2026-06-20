@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include <math.h>
 
+#define PONTOS_PERDA_PIMENTA          150 // equivalente a perder a fusão mais barata (cereja)
+#define PONTOS_PERDA_PODRE            120
+#define PONTOS_PERDA_BOMBA_POR_FRUTA  100 // por fruta destruída; uma bomba bem posicionada pesa muito mais
+
+#define PIMENTA_MULT_VELOCIDADE  5.0f  // multiplicador sobre a velocidade atual da fruta
+#define PIMENTA_IMPULSO_LATERAL  350   // variação horizontal aleatória do lançamento
+#define PIMENTA_IMPULSO_VERTICAL 500.0f // força do lançamento para cima
+
 ObjetoEspecial listaObstaculos[MAX_OBSTACULOS_TELA];
 int qtdObstaculos = 0;
 
@@ -10,6 +18,11 @@ static int qtdRemoverShapes = 0;
 
 static cpVect fusoesBombaPos[MAX_OBSTACULOS_TELA];
 static int qtdBombasParaExplodir = 0;
+
+static void perderPontos(int valor) {
+    cont_pontos -= valor;
+    if (cont_pontos < 0) cont_pontos = 0;
+}
 
 
 void inicializarObstaculos(cpSpace *espaco) {
@@ -51,9 +64,11 @@ static cpBool cbPimentaFruta(cpArbiter *arb, cpSpace *espaco, cpDataPointer data
         if (f) {
             cpBody *bodyFruta = cpShapeGetBody(shapeFruta);
             cpVect  vel       = cpBodyGetVelocity(bodyFruta);
-            vel = cpvmult(vel, 3.5f);
-            vel = cpvadd(vel, cpv((rand() % 400) - 200, -300));
+            vel = cpvmult(vel, PIMENTA_MULT_VELOCIDADE);
+            vel = cpvadd(vel, cpv((rand() % (PIMENTA_IMPULSO_LATERAL * 2)) - PIMENTA_IMPULSO_LATERAL,
+                                  -PIMENTA_IMPULSO_VERTICAL));
             cpBodySetVelocity(bodyFruta, vel);
+            perderPontos(PONTOS_PERDA_PIMENTA);
         }
     }
     agendarRemocaoObstaculo(shapePimenta);
@@ -74,6 +89,7 @@ static cpBool cbPodreFruta(cpArbiter *arb, cpSpace *espaco, cpDataPointer data) 
         if (f && !f->estaPodre) {
             f->estaPodre        = 1;
             f->cliquesRestantes = 10; 
+            perderPontos(PONTOS_PERDA_PODRE);
         }
     }
     agendarRemocaoObstaculo(shapePodre);
@@ -181,6 +197,7 @@ void atualizarELimparObstaculos(cpSpace *espaco, NodeFruta **head) {
             
             if ((float)cpvdist(bPos, fPos) <= raioExplosao) {
                 removerFruta(espaco, atual->fruta.shape, head);
+                perderPontos(PONTOS_PERDA_BOMBA_POR_FRUTA);
             }
             atual = prox;
         }
